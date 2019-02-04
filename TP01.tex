@@ -1,0 +1,201 @@
+%%% LaTeX Template: Article/Thesis/etc. with colored headings and special fonts
+%%%
+%%% Source: http://www.howtotex.com/
+% vim: set spell spelllang=es syntax=tex :
+
+\documentclass[12pt]{article}
+\usepackage{styles/apuntes-estilo}
+\usepackage{styles/egyptian}
+\usepackage{fancyhdr,lastpage}
+\usepackage{hyperref}
+
+\def\maketitle{
+
+\makeatletter
+{\color{bl} \centering \huge \sc \textbf{ Trabajo práctico N° 1\\ \large
+\vspace*{-8pt} \color{black} Sistemas de numeración y unidades de información \vspace*{8pt} }\par}
+\makeatother
+
+\makeatletter
+\input{tex/banner.tex}
+
+}
+
+% Custom headers and footers
+\fancyhf{} % clear all header and footer fields
+\fancypagestyle{plain}{\fancyhf{}}
+\pagestyle{fancy}
+\lhead{\footnotesize TP N° 1 - Sistemas de numeración y unidades de información}
+\rhead{\footnotesize \thepage\ }	% "Page 1 of 2"
+
+\def\ti#1#2{\texttt{#1} & #2 \\ }
+
+\begin{document}
+
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{1pt}
+
+\textbf{Objetivo:} Comprender el sistema de numeración posicional, conversión
+entre sistemas de distintas bases, y las unidades de información.
+
+\textbf{Bibliografía básica:}
+
+\vspace{-2\topsep}
+\begin{itemize}
+
+    \itemsep2pt \parskip0pt \parsep0pt
+
+    \item   Andrew S. Tanenbaum. \emph{Organización de computadoras: un
+        enfoque estructurado}. Tercera edición, México, Editorial Prentice
+        Hall, 1992. ISBN 968-880-238-7. Disponible en biblioteca.
+
+    \item   Wikipedia: \emph{Prefijo binario}.
+        \url{http://es.wikipedia.org/wiki/Prefijo_binario}
+
+    \item   Wikipedia: \emph{Prefijos del sistema internacional}.
+        \url{https://es.wikipedia.org/wiki/Prefijos_del_Sistema_Internacional}
+
+\item   Apuntes de cátedra. Disponible en \it{PEDCO}.
+
+\end{itemize}
+
+\egmil{1}
+\eghuntho{1}
+\egtentho{1}
+\egtho{1}
+\eghun{1}
+\egten{1}
+\egone{1}
+
+
+\begin{enumerate}
+
+    \item En un sistema GNU/Linux, cree un archivo de texto pequeño (al menos
+        dos líneas) de contenido arbitrario con su editor favorito, guárdelo
+        como {\tt archivo1}.
+
+    \item ¿Qué formato interno indica el comando {\tt file} sobre
+        \emph{archivo1}? 
+
+    \item ¿ Qué aplicaciones podría utilizar para visualizar el contenido de
+        \emph{archivo1}?
+
+    \item Observe el contenido de \emph{archivo1} utilizando: ``{\tt od -c
+        archivo1}''. ¿Observa información adicional a la que vemos a través de
+        otras aplicaciones, como puede ser \emph{cat} o algún editor de texto?
+        ¿Qué representa esa información?
+
+    \item Observe el contenido de \emph{archivo1} utilizando: ``{\tt od -b
+        archivo1}''. En este caso observamos el contenido numérico de cada
+        byte. Cada grupo de tres dígitos octales mostrado, indica el contenido
+        de un byte. De este modo, podemos observar el flujo de bits que
+        componen un archivo de texto.
+
+\end{enumerate}
+
+Ahora cabe preguntarse. ¿Cómo es que un byte almacenado con valor octal 141
+(01100001), al ser visualizado por un editor se ve como el caracter ``a''?
+Esto sucede porque la aplicación que lo muestra hace una interpretación de
+esos bits utilizando un código. Observe la salida de ``{\tt file archivo1}''
+nuevamente y la referencia al sistema de codificación utilizado por el
+archivo. 
+
+\begin{enumerate}
+
+    \item Observando el contenido numérico de cada byte nuevamente ({\tt od -b
+    archivo1}), compare dichos valores con la tabla de caracteres ASCII
+    (http://en.wikipedia.org/wiki/ASCII) y corrobore el mapeo con la salida de
+    {\tt od -c archivo1}  para el mismo archivo.
+
+    \item ¿Cómo se llaman y qué función cumplen el/los caracter/es de control
+    observados en la salidas anteriores? 
+
+\end{enumerate}
+
+Hasta aquí no hemos enfrentado ningún problema de interoperabilidad con otros
+sistemas operativos. En principio el formato interno de archivos de texto no
+pareciera representar ningún desafío a la hora de ser interpretados en
+aplicaciones de uno u otro sistema operativo, sin embargo el uso de los
+caracteres de control que representan el fin de línea es el comienzo de la
+discordia. 
+
+En los sistemas GNU/Linux el caracter de control que indica el fin de una
+línea, en un archivo de texto es LF (Line Feed), visualizado como
+``\textbackslash n''
+\footnote{http://en.wikipedia.org/wiki/ASCII\#ASCII\_control\_code\_chart}.
+Mientras que en los sistemas Windows (C), será la combinación de CR (Carriage
+Return) \textbackslash r, y LF (Line Feed) lo que determine el fin de una
+línea.
+
+Vemos más de cerca esta ``insignificante'' discrepancia, y analicemos las
+implicaciones para los usuarios normales. 
+
+\begin{enumerate}
+
+    \item Abra el \emph{archivo1} con el editor \emph{Vim} y, en modo normal,
+    ejecute: {\tt :set ff?}. Este comando nos mostrará qué tipo de {\it fin de
+    línea} se está utilizando para leer el \emph{archivo1}.  Las opciones
+    pueden ser \emph{unix}, dos o mac (algunas versiones del sistema operativo
+    Mac OS utilizan sólo CR (\emph{Carriage Return}) para finalizar una
+    línea). ``ff'' se corresponde con ``fileformat''.
+
+    \begin{itemize}
+
+        \item Vuelva a observar con {\tt od -c} el caracter de control de fin
+        de línea de \emph{archivo1} y verifique lo mostrado por \emph{Vim}. 
+
+        \item Vuelva a observar qué formato de archivo indica el comando {\tt
+        file} sobre \emph{archivo1}. 
+
+    \end{itemize} 
+
+    \item Abra el \emph{archivo1} con el editor Vim y en modo normal, ejecute:
+    {\tt :bufdo! set
+    ff=dos|w}\footnote{http://Vim.wikia.com/wiki/File\_format}. 
+
+    \begin{itemize}
+
+        \item Consulte nuevamente el formato en uso: {\tt :set ff?}. ¿Cambió?
+
+        \item Vuelva a observar con {\tt od -c} el caracter de control de fin
+        de línea de \emph{archivo1} y verifique lo mostrado por \emph{Vim}. 
+
+        \item Vuelva a observar qué formato de archivo indica el comando {\tt
+        file} sobre \emph{archivo1}. ¿Cambió algo con respecto a la versión original? 
+
+        \item ¿Qué función cumple entonces el comando {\tt :bufdo!} utilizado
+        al comienzo de este ejercicio?
+
+    \end{itemize}
+
+\end{enumerate}
+
+Teniendo en cuenta todo lo visto hasta el momento, cabe ahora preguntarnos: 
+
+\begin{enumerate}
+
+    \item ¿Cómo afecta esta discrepancia a los usuarios normales? Imagine un
+    usuario de un sistema GNU/Linux que manda un correo electrónico con un
+    archivo de texto adjunto a un usuario de un sistema \emph{Microsoft
+    Windows} (C). ¿Qué sucederá cuando este último quiera abrir el archivo de
+    texto, digamos con \emph{Notepad}?
+
+    \item Observe editores gráficos como \emph{gedit}. ¿Qué opciones relativas
+    a estas cuestiones de interoperabilidad poseen a la hora de guardar un
+    archivo? ¿Cuál sería el equivalente en  \emph{gedit} a la sentencia {\tt
+    :bufdo! set ff=dos|w } de \emph{Vim}? 
+
+\end{enumerate}
+     
+Este es el ejemplo más sencillo que podemos analizar acerca de cómo distintas
+aplicaciones y distintos sistemas operativos pueden hacer interpretaciones
+diferentes del formato interno de un archivo. Imagine ahora que en lugar de un
+archivo de texto, hablamos de un archivo con formato enriquecido como puede
+ser el generado por \emph{Microsoft Office}, o \emph{LibreOffice}. ¿Cuántas
+discrepancias podrán surgir en la interpretación del formato? Parte de los
+objetivos de esta asignatura será vislumbrar esta clase de inconvenientes,
+cómo afecta esto a los usuarios y qué podemos hacer los administradores para
+ayudarlos. 
+
+\end{document}

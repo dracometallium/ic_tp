@@ -1,0 +1,49 @@
+% http://www.ux1.eiu.edu/~cfcem2/latex/
+
+\usepackage{multido} %Allows repetition of LaTeX commands
+
+\newcommand{\egmil}[1]{
+    \multido{\i=1+1}{#1}{\includegraphics[scale=.5]{styles/egyptian/egypt_person.pdf}
+\hspace{0.5mm}}}
+
+\newcommand{\eghuntho}[1]{
+    \multido{\i=1+1}{#1}{\includegraphics[scale=.5]{styles/egyptian/egypt_fish.pdf}
+\hspace{0.5mm}}}
+
+\newcommand{\egtentho}[1]{
+    \multido{\i=1+1}{#1}{\includegraphics[scale=.5]{styles/egyptian/egypt_finger.pdf}
+\hspace{0.5mm}}}
+
+\newcommand{\egtho}[1]{
+    \multido{\i=1+1}{#1}{\includegraphics[scale=.5]{styles/egyptian/egypt_lotus.pdf}
+\hspace{0.5mm}}}
+
+\newcommand{\eghun}[1]{
+    \multido{\i=1+1}{#1}{\includegraphics[scale=.5]{styles/egyptian/egypt_scroll.pdf}
+\hspace{0.5mm}}}
+
+\newcommand{\egten}[1]{
+    \multido{\i=1+1}{#1}{\includegraphics[scale=.5]{styles/egyptian/egypt_heel.pdf}
+\hspace{0.5mm}}}
+
+\newcommand{\egone}[1]{
+    \multido{\i=1+1}{#1}{\includegraphics[scale=.5]{styles/egyptian/egypt_stroke.pdf}
+\hspace{0.5mm}}}
+
+\newcommand{\egyptify}[7]{
+    \multido{\i=1+1}{#1}{\includegraphics[scale=.5]{styles/egyptian/egypt_person.pdf}
+    \hspace{0.5mm}}
+    \multido{\i=1+1}{#2}{\includegraphics[scale=.5]{styles/egyptian/egypt_fish.pdf}
+    \hspace{0.5mm}}
+    \multido{\i=1+1}{#3}{\includegraphics[scale=.5]{styles/egyptian/egypt_finger.pdf}
+    \hspace{0.5mm}}
+    \multido{\i=1+1}{#4}{\includegraphics[scale=.5]{styles/egyptian/egypt_lotus.pdf}
+    \hspace{0.5mm}}
+    \multido{\i=1+1}{#5}{\includegraphics[scale=.5]{styles/egyptian/egypt_scroll.pdf}
+    \hspace{0.5mm}}
+    \multido{\i=1+1}{#6}{\includegraphics[scale=.5]{styles/egyptian/egypt_heel.pdf}
+    \hspace{0.5mm}}
+    \multido{\i=1+1}{#7}{\includegraphics[scale=.5]{styles/egyptian/egypt_stroke.pdf}
+    \hspace{0.5mm}}
+    \hspace{.5mm}
+}
