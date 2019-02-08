@@ -8,6 +8,7 @@
 \usepackage{styles/egyptian}
 \usepackage{fancyhdr,lastpage}
 \usepackage{hyperref}
+\usepackage[inline]{enumitem}
 
 \def\maketitle{
 
@@ -56,146 +57,173 @@ entre sistemas de distintas bases, y las unidades de información.
     \item   Wikipedia: \emph{Prefijos del sistema internacional}.
         \url{https://es.wikipedia.org/wiki/Prefijos_del_Sistema_Internacional}
 
-\item   Apuntes de cátedra. Disponible en \it{PEDCO}.
+    \item   Apuntes de cátedra. Disponible en \it{PEDCO}.
 
 \end{itemize}
 
-\egmil{1}
-\eghuntho{1}
-\egtentho{1}
-\egtho{1}
-\eghun{1}
-\egten{1}
-\egone{1}
-
-
 \begin{enumerate}
 
-    \item En un sistema GNU/Linux, cree un archivo de texto pequeño (al menos
-        dos líneas) de contenido arbitrario con su editor favorito, guárdelo
-        como {\tt archivo1}.
+    \item \textbf{Sistema de numeración no posicional}
 
-    \item ¿Qué formato interno indica el comando {\tt file} sobre
-        \emph{archivo1}? 
+        El sistema de numeración egipcio es \textbf{aditivo}, es decir, cada
+        número se calcula sumando el valor de los símbolos. A continuación se
+        muestran los símbolos y sus valores:
 
-    \item ¿ Qué aplicaciones podría utilizar para visualizar el contenido de
-        \emph{archivo1}?
+        \begin{center}
+            \begin{tabular}[t]{|c|c|c|c|c|c|c|}
+            \hline
+            \egmil{1}&\eghuntho{1}&\egtentho{1}&\egtho{1}&\eghun{1}&\egten{1}&\egone{1}\\
+            \hline
+            1.000.000&100.000&10.000&1.000&100&10&1\\
+            \hline
+            \end{tabular}\\
+        \end{center}
 
-    \item Observe el contenido de \emph{archivo1} utilizando: ``{\tt od -c
-        archivo1}''. ¿Observa información adicional a la que vemos a través de
-        otras aplicaciones, como puede ser \emph{cat} o algún editor de texto?
-        ¿Qué representa esa información?
+        Por ejemplo, el número 13.745 se podría escribir así:
 
-    \item Observe el contenido de \emph{archivo1} utilizando: ``{\tt od -b
-        archivo1}''. En este caso observamos el contenido numérico de cada
-        byte. Cada grupo de tres dígitos octales mostrado, indica el contenido
-        de un byte. De este modo, podemos observar el flujo de bits que
-        componen un archivo de texto.
+        \egyptify{0}{0}{1}{3}{7}{4}{5}
+
+    \begin{enumerate}
+
+        \item Escribir los números que representen los siguientes símbolos
+            egipcios:
+
+        \begin{enumerate*}[itemjoin=\hspace{3em}]
+
+            \item \egyptify{0}{0}{1}{0}{5}{0}{4}
+
+            \item \egyptify{0}{0}{0}{1}{4}{1}{2}
+
+        \end{enumerate*}
+
+        \item Escribir en el sistema de numeración egipcio los siguientes
+            números:
+
+            \begin{enumerate*}[itemjoin=\hspace{3em}]
+
+                \item 3421
+
+                \item 1896
+
+                \item 120218
+
+            \end{enumerate*}
+
+    \end{enumerate}
+
+    \item \textbf{Sistema de numeración posicional}
+    
+        \begin{enumerate}
+
+            \item Descomponer los siguientes números en \emph{sumas de potencias
+                de la base} y calcular el resultados de:
+            
+            \begin{enumerate*}[itemjoin=\hspace{3em}]
+
+                \item $7249_{10}$
+                
+                \item $10111_{2}$
+                
+                \item $127_{8}$
+
+                \item $239E_{16}$
+
+                \item $10111_{3}$
+
+                \item $10111_{9}$
+
+            \end{enumerate*}
+
+            \item Tras descomponer los números en sumas de potencias de la
+                base, ¿en qué base queda expresado el resultado?
+
+        \end{enumerate}
+
+    \item \textbf{Conversión entre sistemas de numeración posicional}
+
+    \begin{enumerate}
+
+        \item Complete la tabla de conversiones de la página 5.
+            \label{ejTabla}
+            
+            Para convertir de decimal a otra base utilice el procedimiento de
+            división; para convertir de otra base a decimal utilizar la
+            descomposición en sumas de potencias de la base.
+        
+            \begin{enumerate}
+
+                \item Una vez completada la tabla, describa con sus palabras
+                    cuál es el patrón que observa para cada sistema binario,
+                    octal y hexadecimal.
+            
+            \end{enumerate}
+
+            A continuación, para convertir de decimal a otra base utilizar el
+            procedimiento de división; para convertir de otra base a decimal
+            utilizar la descomposición en sumas de potencias de la base, y
+            para convertir entre binario y octal/hexadecimal utilizar las
+            tabla elaborada en \ref{ejTabla}.
+
+        \item Convertir de decimal a binario, octal y hexadecimal:
+
+        \begin{enumerate*}[itemjoin=\hspace{3em}]
+            
+            \item $132_{10}$
+                
+            \item $500_{10}$
+
+            \item $27025_{10}$
+
+        \end{enumerate*}
+
+        \item Convertir de binario y hexadecimal a decimal:
+
+        \begin{enumerate*}[itemjoin=\hspace{3em}]
+            
+            \item $000011_{2}$
+
+            \item $101010_{2}$
+
+            \item $101111_{2}$
+
+            \item $F4_{16}$
+
+            \item $D3E_{16}$
+
+            \item $EBAC_{16}$
+
+        \end{enumerate*}
+
+        \item Convertir de hexadecimal a binario:
+
+        \begin{enumerate*}[itemjoin=\hspace{3em}]
+
+            \item $FF_{16}$
+
+            \item $B4_{16}$
+
+            \item $1FC_{16}$
+
+            \item $1A1_{16}$
+
+            \item $239E_{16}$
+
+            \item $5FFF_{16}$
+
+        \end{enumerate*}
+
+        \item Convertir de binario a hexadecimal y octal:
+
+        \begin{enumerate*}[itemjoin=\hspace{3em}]
+
+            \item $1001000111001001_{2}$
+
+            \item $0110111010111100_{2}$
+
+        \end{enumerate*}
+
+    \end{enumerate}
 
 \end{enumerate}
-
-Ahora cabe preguntarse. ¿Cómo es que un byte almacenado con valor octal 141
-(01100001), al ser visualizado por un editor se ve como el caracter ``a''?
-Esto sucede porque la aplicación que lo muestra hace una interpretación de
-esos bits utilizando un código. Observe la salida de ``{\tt file archivo1}''
-nuevamente y la referencia al sistema de codificación utilizado por el
-archivo. 
-
-\begin{enumerate}
-
-    \item Observando el contenido numérico de cada byte nuevamente ({\tt od -b
-    archivo1}), compare dichos valores con la tabla de caracteres ASCII
-    (http://en.wikipedia.org/wiki/ASCII) y corrobore el mapeo con la salida de
-    {\tt od -c archivo1}  para el mismo archivo.
-
-    \item ¿Cómo se llaman y qué función cumplen el/los caracter/es de control
-    observados en la salidas anteriores? 
-
-\end{enumerate}
-
-Hasta aquí no hemos enfrentado ningún problema de interoperabilidad con otros
-sistemas operativos. En principio el formato interno de archivos de texto no
-pareciera representar ningún desafío a la hora de ser interpretados en
-aplicaciones de uno u otro sistema operativo, sin embargo el uso de los
-caracteres de control que representan el fin de línea es el comienzo de la
-discordia. 
-
-En los sistemas GNU/Linux el caracter de control que indica el fin de una
-línea, en un archivo de texto es LF (Line Feed), visualizado como
-``\textbackslash n''
-\footnote{http://en.wikipedia.org/wiki/ASCII\#ASCII\_control\_code\_chart}.
-Mientras que en los sistemas Windows (C), será la combinación de CR (Carriage
-Return) \textbackslash r, y LF (Line Feed) lo que determine el fin de una
-línea.
-
-Vemos más de cerca esta ``insignificante'' discrepancia, y analicemos las
-implicaciones para los usuarios normales. 
-
-\begin{enumerate}
-
-    \item Abra el \emph{archivo1} con el editor \emph{Vim} y, en modo normal,
-    ejecute: {\tt :set ff?}. Este comando nos mostrará qué tipo de {\it fin de
-    línea} se está utilizando para leer el \emph{archivo1}.  Las opciones
-    pueden ser \emph{unix}, dos o mac (algunas versiones del sistema operativo
-    Mac OS utilizan sólo CR (\emph{Carriage Return}) para finalizar una
-    línea). ``ff'' se corresponde con ``fileformat''.
-
-    \begin{itemize}
-
-        \item Vuelva a observar con {\tt od -c} el caracter de control de fin
-        de línea de \emph{archivo1} y verifique lo mostrado por \emph{Vim}. 
-
-        \item Vuelva a observar qué formato de archivo indica el comando {\tt
-        file} sobre \emph{archivo1}. 
-
-    \end{itemize} 
-
-    \item Abra el \emph{archivo1} con el editor Vim y en modo normal, ejecute:
-    {\tt :bufdo! set
-    ff=dos|w}\footnote{http://Vim.wikia.com/wiki/File\_format}. 
-
-    \begin{itemize}
-
-        \item Consulte nuevamente el formato en uso: {\tt :set ff?}. ¿Cambió?
-
-        \item Vuelva a observar con {\tt od -c} el caracter de control de fin
-        de línea de \emph{archivo1} y verifique lo mostrado por \emph{Vim}. 
-
-        \item Vuelva a observar qué formato de archivo indica el comando {\tt
-        file} sobre \emph{archivo1}. ¿Cambió algo con respecto a la versión original? 
-
-        \item ¿Qué función cumple entonces el comando {\tt :bufdo!} utilizado
-        al comienzo de este ejercicio?
-
-    \end{itemize}
-
-\end{enumerate}
-
-Teniendo en cuenta todo lo visto hasta el momento, cabe ahora preguntarnos: 
-
-\begin{enumerate}
-
-    \item ¿Cómo afecta esta discrepancia a los usuarios normales? Imagine un
-    usuario de un sistema GNU/Linux que manda un correo electrónico con un
-    archivo de texto adjunto a un usuario de un sistema \emph{Microsoft
-    Windows} (C). ¿Qué sucederá cuando este último quiera abrir el archivo de
-    texto, digamos con \emph{Notepad}?
-
-    \item Observe editores gráficos como \emph{gedit}. ¿Qué opciones relativas
-    a estas cuestiones de interoperabilidad poseen a la hora de guardar un
-    archivo? ¿Cuál sería el equivalente en  \emph{gedit} a la sentencia {\tt
-    :bufdo! set ff=dos|w } de \emph{Vim}? 
-
-\end{enumerate}
-     
-Este es el ejemplo más sencillo que podemos analizar acerca de cómo distintas
-aplicaciones y distintos sistemas operativos pueden hacer interpretaciones
-diferentes del formato interno de un archivo. Imagine ahora que en lugar de un
-archivo de texto, hablamos de un archivo con formato enriquecido como puede
-ser el generado por \emph{Microsoft Office}, o \emph{LibreOffice}. ¿Cuántas
-discrepancias podrán surgir en la interpretación del formato? Parte de los
-objetivos de esta asignatura será vislumbrar esta clase de inconvenientes,
-cómo afecta esto a los usuarios y qué podemos hacer los administradores para
-ayudarlos. 
 
 \end{document}
