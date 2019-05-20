@@ -1,0 +1,87 @@
+%%% LaTeX Template: Article/Thesis/etc. with colored headings and special fonts
+%%%
+%%% Source: http://www.howtotex.com/
+% vim: set spell spelllang=es syntax=tex :
+
+\documentclass[12pt]{article}
+\usepackage{styles/apuntes-estilo}
+\usepackage{styles/egyptian}
+\usepackage{fancyhdr,lastpage}
+\usepackage{hyperref}
+\usepackage[inline]{enumitem}
+
+\def\maketitle{
+
+\makeatletter
+{\color{bl} \centering \huge \sc \textbf{ Trabajo práctico de laboratorio N° 1\\ \large
+\vspace*{-8pt} \color{black} Introducción al shell del sistema GNU/LINUX \vspace*{8pt} }\par}
+\makeatother
+
+\makeatletter
+\input{tex/banner.tex}
+
+}
+
+% Custom headers and footers
+\fancyhf{} % clear all header and footer fields
+\fancypagestyle{plain}{\fancyhf{}}
+\pagestyle{fancy}
+\lhead{\footnotesize Laboratorio N° 1 - Introducción al shell del sistema GNU/LINUX}
+\rhead{\footnotesize \thepage\ }
+
+\def\ti#1#2{\texttt{#1} & #2 \\ }
+
+\newcommand{\bash}{\emph{BASH}}
+
+\begin{document}
+
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{1pt}
+
+A continuación, se realizarán una serie de ejercicios para los cuales
+necesitará acceso a una computadora con el sistema operativo Linux (o una
+Máquina Virtual corriendo Linux) y las siguientes aplicaciones:
+
+\begin{itemize}
+        
+    \item   Intérprete de comandos \bash y demás utilidades que se encuentran
+        en la mayoría de las distribuciones de Linux.
+        
+    \item   Un editor de texto en la interfaz de línea de comando o gráfica.
+
+\end{itemize}
+
+El sistema operativo controla diferentes procesos de una computadora. Uno de
+ellos es el intérprete de comandos o \emph{shell}. Este es un programa que
+permite al usuario interactuar con el Sistema Operativo. Permite iniciar
+(ejecutar) otros programas así como también tiene comandos propios que no
+necesitan de otros programas, como por ejemplo comandos para movernos en la
+estructura de directorios. En este práctico, utilizaremos el intérprete
+\emph{BASH (Bourne-Again SHell)}, muy popular en el mundo de Linux.
+
+Dicho programa debe ser ejecutado en lo que llamamos Terminal o Consola, que
+es otro programa que nos permite interactuar mediante el teclado (ingresar
+caracteres) y ver los resultados de la ejecución de otros programas en la
+pantalla. Al iniciar una consola o terminal de textos, automáticamente se
+inicia el \emph{shell} \bash, que es con el que el usuario realmente
+interactúa (más abajo se explica esto con un ejemplo).
+
+\section{Sistemas de archivos}
+
+El concepto de directorios (comúnmente llamados ``carpetas'' y archivos es hoy
+en día familiar a los usuarios de computadoras, en general el usuario se
+maneja visualmente con el ratón y el Explorador de Archivos, utilizando estos
+para acceder a los directorios, abrir archivos, ejecutar programas, etc. Podemos
+pensar el sistema de archivos como una forma de organizar todo el contenido en
+el dispositivo de almacenamiento. Los archivos son datos concretos, utilizan
+espacio físico del dispositivo, mientras que las carpetas sirven para
+organizar ``lógicamente'' las cosas, igual que una persona tiene estanterías y
+cajones en un escritorio para organizar sus papeles.
+
+La Figura 1 muestra un esquema de como se puede pensar en una estructura de directorios y archivos. A,
+B, C, D, E, G y J son carpetas o directorios, F, H, I, K, L, M, N y O son archivos.
+
+FIGURA
+
+\end{document}
