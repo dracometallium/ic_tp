@@ -31,7 +31,7 @@
 
 \def\ti#1#2{\texttt{#1} & #2 \\ }
 
-\newcommand{\bash}{\emph{BASH}\ }
+\newcommand{\bash}{\textbf{\emph{BASH}}\ }
 
 \begin{document}
 
@@ -79,13 +79,23 @@ espacio físico del dispositivo, mientras que las carpetas sirven para
 organizar ``lógicamente'' las cosas, igual que una persona tiene estanterías y
 cajones en un escritorio para organizar sus papeles.
 
-La Figura 1 muestra un esquema de como se puede pensar en una estructura de
-directorios y archivos. \textbf{A}, \textbf{B}, \textbf{C}, \textbf{D},
-\textbf{E}, \textbf{G} y \textbf{J} son carpetas o directorios, \textbf{F},
-\textbf{H}, \textbf{I}, \textbf{K}, \textbf{L}, \textbf{M}, \textbf{N} y
-\textbf{O} son archivos.
+La figura \ref{arbolDirectorios} muestra un esquema de como se puede pensar en
+una estructura de directorios y archivos. \textbf{A}, \textbf{B}, \textbf{C},
+\textbf{D}, \textbf{E}, \textbf{G} y \textbf{J} son carpetas o directorios,
+\textbf{F}, \textbf{H}, \textbf{I}, \textbf{K}, \textbf{L}, \textbf{M},
+\textbf{N} y \textbf{O} son archivos.
 
-FIGURA
+\begin{figure}[!htb]
+
+	\centering
+
+	\includegraphics[height=0.45\textheight]{img/directorios.pdf}
+
+	\caption{Árbol de directorios.}
+
+	\label{arbolDirectorios}
+
+\end{figure}
 
 Cuando se inicia el intérprete de comandos, éste se posiciona en una
 determinada carpeta, es decir, los comandos que se escriben afectarán
@@ -122,7 +132,7 @@ Por ejemplo, las siguientes son direcciones relativas:
 
 \end{itemize}
 
-\section{Ejercicio 1. Entrando en calor con el shell bash}
+\subsection{Entrando en calor con el \emph{shell} \bash}
 
 Inicie el programa mate terminal: \textbf{Aplicaciones → Herramientas del sistema →
 Terminal de mate}.
@@ -166,7 +176,7 @@ se explica la funcionalidad del mismo.
     \hline
         ls & (listado del directorio actual) \\
     \hline
-        ls –R & (listado recursivo de los contenidos) \\
+        ls -R & (listado recursivo de los contenidos) \\
     \hline
         mv e/h1/a.txt e/h2/a.txt & (mueve el archivo a.txt a otro directorio) \\
     \hline
@@ -220,17 +230,15 @@ se explica la funcionalidad del mismo.
             al directorio de trabajo actual. Utilice un ejemplo.
 
     \item Liste el contenido del directorio ``J'', con el comando ``ls -l
-        camino\_a\_J''.
-        Analice la información que se muestra por pantalla, fecha de creación
-        de los archivos, propietario de los
+        \emph{camino\_a\_J}''.  Analice la información que se muestra por
+        pantalla, fecha de creación de los archivos, propietario de los
         archivos y tamaño de los archivos. Modifique alguno de los archivos en
-        el editor de texto y vuelva a
-        analizar la salida del comando ``ls -l''.
+        el editor de texto y vuelva a analizar la salida del comando ``ls
+        -l''.
 
     \item Con el comando ``ls -l'' encuentre un archivo dentro del directorio
-        ``/etc'' cuyo tamaño sea mayor a 4KB, y liste
-        el contenido de dicho archivo utilizando los comandos ``cat'', ``more'' y
-        ``less''.
+        ``/etc'' cuyo tamaño sea mayor a 4KiB, y liste el contenido de dicho
+        archivo utilizando los comandos ``cat'', ``more'' y ``less''.
 
     Teclas útiles:
 
@@ -249,8 +257,8 @@ se explica la funcionalidad del mismo.
 
     \item Retorne a su directorio \textbf{HOME}. Para esto ejecute:
         (\textbf{Atención}: el signo \emph{\$} a partir de ahora representa el
-        prompt del \emph{shell} \bash, no debe escribirlo al ingresar cada
-        comando)
+        \emph{prompt} del \emph{shell} \bash, no debe escribirlo al ingresar
+        cada comando)
 
         \begin{verbatim}
 $ cd           # este es el comando para retornar a su HOME
@@ -259,7 +267,7 @@ $ pwd          # pwd le indica cuál es su directorio de trabajo actual
 
 \end{enumerate}
 
-\section{Ejercicio 2: ARCHIVOS: nombre, tamaño, tipo, contenido}
+\subsection{Archivos: nombre, tamaño, tipo, contenido.}
 
 \begin{enumerate}
 
@@ -288,11 +296,11 @@ $ pwd
 $ ls -l
         \end{verbatim}
 
-    \item El comando ls anterior le ha entregado información sobre los
-        archivos.  Indique el tamaño de cada archivo (en bytes y en KB).
+    \item El comando ``ls'' anterior le ha entregado información sobre los
+        archivos.  Indique el tamaño de cada archivo (en bytes y en KiB).
 
-    \item Observe de qué tipo son los seis archivos en el directorio misc.
-        Utilice el comando ``file archivo''. Ejemplo:
+    \item Observe de qué tipo son los seis archivos en el directorio
+        \emph{misc}.  Utilice el comando ``file archivo''. Ejemplo:
 
         \begin{verbatim}
 $ file passwd

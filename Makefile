@@ -15,8 +15,6 @@ $(TP_PDF): %.pdf : %.tex $(STYLES) $(LOGOS_PDF) $(FIGURAS_PDF)
 	pdflatex $^
 	pdflatex $^
 
-
-
 $(FIGURAS_PDF): %.pdf : %.svg
 	inkscape $^ -z -A $@
 
