@@ -154,76 +154,79 @@ Por ejemplo, las siguientes son direcciones relativas:
 
 \subsection{Entrando en calor con el \emph{shell} \bash}
 
-Inicie el programa mate terminal: \textbf{Aplicaciones → Herramientas del sistema →
-Terminal de mate}.
+\begin{enumerate}
 
-Una vez iniciado, el \emph{shell} \bash en la terminal espera que se escriban
-órdenes para ejecutar (comandos). Ejecute y analice cuidadosamente la
-siguiente secuencia de comandos en el intérprete \bash (luego de los comandos
-y parámetros debe presionar \emph{ENTER}).
-
-Puede consultar el manual de cada uno de los comandos utilizados, usando el
-comando \emph{``man nombre\_del\_comando''}, donde se muestran opciones de uso y
-se explica la funcionalidad del mismo.
+    \item Inicie el programa mate terminal: \textbf{Aplicaciones →
+        Herramientas del sistema → Terminal de mate}.
+        
+        Una vez iniciado, el \emph{shell} \bash en la terminal espera que se
+        escriban órdenes para ejecutar (comandos). Ejecute y analice
+        cuidadosamente la siguiente secuencia de comandos en el intérprete
+        \bash (luego de los comandos y parámetros debe presionar
+        \emph{ENTER}).
+        
+        Puede consultar el manual de cada uno de los comandos utilizados,
+        usando el comando \emph{``man nombre\_del\_comando''}, donde se
+        muestran opciones de uso y se explica la funcionalidad del mismo.
 
 \begin{center}
-    \begin{tabular}[t]{|l|l|}
+
+    \begin{tabular}[t]{l l }
     \hline
         \textbf{Comandos y parámetros} & \textbf{Descripción} \\
     \hline
     \hline
-        mkdir e & (crear un directorio de nombre “e”) \\
-    \hline
-        cd e & (cambiar el directorio actual a “e”) \\
-    \hline
-        mkdir h1 & (crear un directorio “h1”) \\
-    \hline
-        mkdir h2 & (crear un directorio “h2”) \\
-    \hline
-        cd h1 & (cambiar el directorio actual a “h1”) \\
-    \hline
-        nano a.txt & (crear un archivo de texto y guardarlo) \\
-    \hline
-        pwd & (imprime el directorio actual) \\
-    \hline
-        cd .. & (cambiar el directorio actual al directorio padre) \\
-    \hline
-        pwd & (imprime el directorio actual) \\
-    \hline
-        cd .. & (cambiar el directorio actual al directorio padre) \\
-    \hline
-        pwd & (imprime el directorio actual) \\
-    \hline
-        ls & (listado del directorio actual) \\
-    \hline
-        ls -R & (listado recursivo de los contenidos) \\
-    \hline
-        mv e/h1/a.txt e/h2/a.txt & (mueve el archivo a.txt a otro directorio) \\
-    \hline
-        rm e/h2/ab.txt & (eliminar el archivo ab.txt) \\
-    \hline
-        rm e/h2/a.txt & (eliminar el archivo a.txt) \\
-    \hline
-        rmdir e/h1 & (elimina el directorio h1)\\
+        mkdir e &  \#crear un directorio de nombre ``e'' \\
+        cd e &  \#cambiar el directorio actual a ``e'' \\
+        mkdir h1 &  \#crear un directorio ``h1'' \\
+        mkdir h2 &  \#crear un directorio ``h2'' \\
+        cd h1 &  \#cambiar el directorio actual a ``h1'' \\
+        nano a.txt &  \#crear un archivo de texto y guardarlo \\
+        pwd &  \#imprime el directorio actual \\
+        cd .. &  \#cambiar el directorio actual al directorio padre \\
+        pwd &  \#imprime el directorio actual \\
+        cd .. &  \#cambiar el directorio actual al directorio padre \\
+        pwd &  \#imprime el directorio actual \\
+        ls &  \#listado del directorio actual \\
+        ls -R &  \#listado recursivo de los contenidos \\
+        mv e/h1/a.txt e/h2/a.txt &  \#mueve el archivo a.txt a otro directorio \\
+        rm e/h2/ab.txt &  \#eliminar el archivo ab.txt, falla por que no
+        existe\\
+        rm e/h2/a.txt &  \#eliminar el archivo a.txt \\
+        rmdir e/h1 &  \#elimina el directorio h1 \\
     \hline
     \end{tabular}
 
 \end{center}
 
-\begin{enumerate}
+    \item Realice un esquema visual como el de la figura
+        \ref{arbolDirectorios}, que muestre la estructura de directorios
+        resultante de ejecutar la siguiente secuencia de comandos:
 
-    \item Realice un esquema visual como el de la figura 1, que muestre la
-        estructura de directorios y archivos que se generan hasta el momento
-        de la creación del archivo (el comando que usa \emph{``nano''}).
+        \begin{verbatim}
+mkdir e
+cd e
+mkdir h1
+mkdir h2
+cd h1
+nano README
+cd ..
+cd h2
+mkdir h2 h3
+cd h2
+nano otroArchivo
+cd ../../
+nano a3.txt
+        \end{verbatim}
 
     \item Utilizando los comandos vistos en el listado, reproduzca la
-        estructura de directorios y archivos de la Figura 1, respetando
-        mayúsculas y nombres de los archivos. Esta estructura será utilizada
-        en los subsiguientes incisos.
+        estructura de directorios y archivos de la figura
+        \ref{arbolDirectorios}, respetando mayúsculas y nombres de los
+        archivos. Esta estructura será utilizada en los subsiguientes incisos.
         
     \item Utilizando la jerarquía de directorios generados en el inciso
-        anterior, posicione el intérprete en el directorio A, y realice las
-        siguientes acciones:
+        anterior, posicione el intérprete en el directorio ``A'', y realice
+        las siguientes acciones:
 
     \begin{enumerate}
 
