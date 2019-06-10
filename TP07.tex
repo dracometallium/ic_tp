@@ -310,38 +310,137 @@ $ telnet www.uncoma.edu.ar 80
         longitud es de 16 bits. Indique el rango de direcciones que puede
         utilizarse. 
 
-    \item Para las siguientes direcciones de red, calcule el rango de posibles
-        direcciones, expresándolas en notación decimal con puntos.
-
-    \begin{enumerate}
-
-        \item 192.56.0.0 con prefijo de 24 bits.
-
-        \item 134.142.0.0 con prefijo de 16 bits.
-
-        \item 120.0.0.0 con prefijo de 8 bits.
-
-    \end{enumerate}
-
-    \item Dado el rango de direcciones 168.45.0.0 a 168.45.255.255 indique
-        cuántos bits tiene el prefijo utilizado. Luego escriba la máscara
-        correspondiente en formato binario y en formato decimal con puntos. 
-
-    \item Dados los siguientes rangos de direcciones, indique la longitud del
-        prefijo y escriba la máscara correspondiente en notación decimal con
-        puntos.
-
-    \begin{enumerate}
-
-        \item 170.140.0.0 a 170.140.127.255 
-
-        \item 193.126.128.0 a 193.126.128.255 
-
-        \item 193.220.1.192 a 193.220.1.255
-
-    \end{enumerate}
-
+%    \item Para las siguientes direcciones de red, calcule el rango de posibles
+%        direcciones, expresándolas en notación decimal con puntos.
+%
+%    \begin{enumerate}
+%
+%        \item 192.56.0.0 con prefijo de 24 bits.
+%
+%        \item 134.142.0.0 con prefijo de 16 bits.
+%
+%        \item 120.0.0.0 con prefijo de 8 bits.
+%
+%    \end{enumerate}
+%
+%    \item Dado el rango de direcciones 168.45.0.0 a 168.45.255.255 indique
+%        cuántos bits tiene el prefijo utilizado. Luego escriba la máscara
+%        correspondiente en formato binario y en formato decimal con puntos. 
+%
+%    \item Dados los siguientes rangos de direcciones, indique la longitud del
+%        prefijo y escriba la máscara correspondiente en notación decimal con
+%        puntos.
+%
+%    \begin{enumerate}
+%
+%        \item 170.140.0.0 a 170.140.127.255 
+%
+%        \item 193.126.128.0 a 193.126.128.255 
+%
+%        \item 193.220.1.192 a 193.220.1.255
+%
+%    \end{enumerate}
+%
 \end{enumerate}
 
+\subsection*{Enrutamiento}
+
+Considerando el siguiente diagrama de una red de dispositivos donde \emph{R1},
+\emph{R2}, \emph{R3}, \emph{R4} y \emph{R5} son routers, y \emph{A}, \emph{B},
+\emph{C}, \emph{D} y \emph{E} son \emph{host}:
+
+    \includegraphics[width=0.50\textwidth]{img/red01.pdf}
+
+Donde las tablas de enrutamiento de los routers son las siguientes:
+
+\textbf{Router R1}
+
+\begin{tabular}{|c|c|c|}
+    \hline
+    Destino & Máscara & Interfaz \\
+    \hline
+    10.0.0.224 & 255.255.255.240 & I1 \\
+    \hline
+    10.0.0.240 & 255.255.255.240 & I3 \\
+    \hline
+    0.0.0.0 & 0.0.0.0 & I2 \\
+    \hline
+\end{tabular}
+
+\textbf{Router R2}
+
+\begin{tabular}{|c|c|c|}
+    \hline
+    Destino & Máscara & Interfaz \\
+    \hline
+    10.0.0.182 & 255.255.255.254 & I2 \\
+    \hline
+    10.0.0.224 & 255.255.255.224 & I1 \\
+    \hline
+    0.0.0.0 & 0.0.0.0 & I3 \\
+    \hline
+\end{tabular}
+
+\textbf{Router R3}
+
+\begin{tabular}{|c|c|c|}
+    \hline
+    Destino & Máscara & Interfaz \\
+    \hline
+    10.0.0.180 & 255.255.255.252 & I2 \\
+    \hline
+    10.0.0.224 & 255.255.255.224 & I3 \\
+    \hline
+    0.0.0.0 & 0.0.0.0 & I1 \\
+    \hline
+\end{tabular}
+
+\textbf{Router R4}
+
+\begin{tabular}{|c|c|c|}
+    \hline
+    Destino & Máscara & Interfaz \\
+    \hline
+    10.0.0.180 & 255.255.255.254 & I2 \\
+    \hline
+    10.0.0.182 & 255.255.255.254 & I3 \\
+    \hline
+    0.0.0.0 & 0.0.0.0 & I1 \\
+    \hline
+\end{tabular}
+
+\textbf{Router R4}
+
+\begin{tabular}{|c|c|c|}
+    \hline
+    Destino & Máscara & Interfaz \\
+    \hline
+    10.0.0.183 & 255.255.255.255 & I2 \\
+    \hline
+    10.0.0.182 & 255.255.255.255 & I3 \\
+    \hline
+    0.0.0.0 & 0.0.0.0 & I1 \\
+    \hline
+\end{tabular}
+
+\begin{enumerate}
+
+    \item ¿Por qué routers pasará un paquete que tenga como origen el
+        \emph{host A} y destino el \emph{host} con número de \emph{IP
+        10.0.0.181}?
+
+    \item ¿Por qué routers pasará un paquete que tenga como origen el
+        \emph{host E} y destino el \emph{host} con número de \emph{IP
+        10.0.0.225}?
+
+    \item ¿Por qué routers pasará un paquete que tenga como origen el
+        \emph{host C} y destino el \emph{host} con número de \emph{IP
+        192.168.0.1}?
+
+    \item ¿Puede determinar la \emph{IP} del \emph{host A}?
+
+    \item ¿Puede determinar la \emph{IP} del \emph{host C}?
+
+\end{enumerate}
 
 \end{document}
