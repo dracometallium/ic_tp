@@ -1,4 +1,5 @@
 TEX:=$(wildcard *.tex)
+TEX_INC:=$(wildcard tex/*.tex)
 STYLES:=$(wildcard styles/*)
 TP_PDF:=$(TEX:.tex=.pdf)
 AUX=$(TEX:.tex=.aux)
@@ -11,9 +12,9 @@ GARBAGE=*.aux *.bbl *.blg *.log *.pdf *.toc *.lof $(PDF) *.nav *.out *.snm
 
 all: $(TP_PDF)
 
-$(TP_PDF): %.pdf : %.tex $(STYLES) $(LOGOS_PDF) $(FIGURAS_PDF)
-	pdflatex $^
-	pdflatex $^
+$(TP_PDF): %.pdf : %.tex $(STYLES) $(LOGOS_PDF) $(FIGURAS_PDF) $(TEX_INC)
+	pdflatex -interaction=nonstopmode -halt-on-error $^
+	pdflatex -interaction=nonstopmode -halt-on-error $^
 
 $(FIGURAS_PDF): %.pdf : %.svg
 	inkscape $^ -z -A $@
