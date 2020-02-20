@@ -172,90 +172,6 @@ consumidor pueda consultar al proveedor la temperatura actual.
 
     \end{enumerate}
 
-    \item La World Wide Web se apoya en el protocolo \emph{Hyper Text
-        Transport Protocol} para que los navegadores web se comuniquen con los
-        servidores y obtengan contenido desde ellos. Cuando se ingresa una
-        dirección en el navegador se intercambian una serie de mensajes
-        \emph{HTTP} hasta lograr que el servidor envíe la información
-        solicitada al cliente.
-
-    \begin{enumerate}
-
-    \item Abra una terminal de texto en cualquier sistema Linux (o Windows que
-        disponga del comando telnet), y ejecute el siguiente comando (respete
-            las minúsculas):
-
-            \begin{verbatim}
-$ telnet www.uncoma.edu.ar 80
-            \end{verbatim}
-
-            Este comando no es parte del protocolo \emph{HTTP}, solamente
-            abrirá una conexión entre el programa \textbf{telnet} y el
-            servidor Web de \emph{UNCOMA}. Una vez establecida la conexión, se
-            pueden intercambiar mensajes entre las partes (cliente y
-            servidor).
-
-    \item A continuación pruebe los siguientes mensajes (luego de cada
-        mensaje, la conexión se cerrará, por lo que deberá volver a ingresar
-            la orden \textbf{telnet www.uncoma.edu.ar 80}) y explique
-            brevemente con sus palabras la respuesta que recibe. Utilice la
-            siguiente \emph{URL} para comprender las respuestas del protocolo
-            \emph{HTTP} del servidor de \emph{UNCOMA}:
-            \textbf{https://es.wikipedia.org/wiki/Anexo:C\'odigos\_de\_estado\_HTTP}
-
-            Luego de cada mensaje presione enter dos veces. Debe volver a
-            ejecutar el comando telnet luego de cada respuesta.
-
-        \begin{enumerate}
-
-            \item HOLA
-
-            \item \emph{(no presionar nada, esperar aproximadamente 1 minuto)}
-
-            \item GET / HTTP/1.0
-
-            \item GET /noexiste HTTP/1.0
-
-        \end{enumerate}
-
-    \end{enumerate}
-
-    \item Uno de los protocolos más útiles para los usuarios y utilizado
-        diariamente por prácticamente toda la Internet es el \emph{Domain Name
-        System} (DNS, Sistema de nombres de dominio). Este protocolo permite
-        convertir nombres legibles por usuarios (Ej: \url{www.wikipedia.org})
-        en números \emph{IP} que corresponden a direcciones de computadoras en
-        Internet.
-
-        En el ejercicio anterior, al usar el comando \textbf{telnet
-        www.uncoma.edu.ar 80}, lo primero que hace el programa telnet antes de
-        establecer la conexión es convertir \url{www.uncoma.edu.ar} en el
-        número 170.210.81.106 haciendo uso del protocolo \emph{DNS}, y luego
-        conociendo este número es cuando puede establecer la conexión.
-
-        \begin{enumerate}
-
-            \item Utilice el comando ``ping'' que envía un pequeño paquete de
-                información hasta un destino y espera una respuesta igual,
-                para conocer las direcciones correspondientes a los siguientes
-                servidores:
-
-            \begin{itemize}
-
-                \item \url{www.wikipedia.com}
-
-                \item \url{www.google.com.ar}
-
-            \end{itemize}
-
-                \textbf{Nota:} como alternativa al comando ``ping'', se puede utilizar el
-                comando ``host''
-
-            \item Explique con sus palabras los beneficios de utilizar nombres
-                en vez de números para los usuarios ¿Y para las máquinas?
-
-        \end{enumerate}
-
 \end{enumerate}
 
 \subsection*{Direcciones}
@@ -283,37 +199,19 @@ $ telnet www.uncoma.edu.ar 80
         longitud es de 16 bits. Indique el rango de direcciones que puede
         utilizarse.
 
-%    \item Para las siguientes direcciones de red, calcule el rango de posibles
-%        direcciones, expresándolas en notación decimal con puntos.
-%
-%    \begin{enumerate}
-%
-%        \item 192.56.0.0 con prefijo de 24 bits.
-%
-%        \item 134.142.0.0 con prefijo de 16 bits.
-%
-%        \item 120.0.0.0 con prefijo de 8 bits.
-%
-%    \end{enumerate}
-%
-%    \item Dado el rango de direcciones 168.45.0.0 a 168.45.255.255 indique
-%        cuántos bits tiene el prefijo utilizado. Luego escriba la máscara
-%        correspondiente en formato binario y en formato decimal con puntos.
-%
-%    \item Dados los siguientes rangos de direcciones, indique la longitud del
-%        prefijo y escriba la máscara correspondiente en notación decimal con
-%        puntos.
-%
-%    \begin{enumerate}
-%
-%        \item 170.140.0.0 a 170.140.127.255
-%
-%        \item 193.126.128.0 a 193.126.128.255
-%
-%        \item 193.220.1.192 a 193.220.1.255
-%
-%    \end{enumerate}
-%
+    \item Para las siguientes direcciones de red, calcule el rango de posibles
+        direcciones, expresándolas en notación decimal con puntos.
+
+    \begin{enumerate}
+
+        \item 192.56.0.0 con prefijo de 24 bits.
+
+        \item 134.142.0.0 con prefijo de 16 bits.
+
+        \item 120.0.0.0 con prefijo de 7 bits.
+
+    \end{enumerate}
+
 \end{enumerate}
 
 \subsection*{Enrutamiento}
