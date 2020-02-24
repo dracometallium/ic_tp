@@ -14,7 +14,7 @@
 
 \makeatletter
 {\color{bl} \centering \huge \sc \textbf{ Trabajo práctico N° 2\\ \large
-\vspace*{-8pt} \color{black} Representación de datos\vspace*{8pt} }\par}
+\vspace*{-8pt} \color{black} Representación de digital de datos\vspace*{8pt} }\par}
 \makeatother
 
 \makeatletter
@@ -26,7 +26,7 @@
 \fancyhf{} % clear all header and footer fields
 \fancypagestyle{plain}{\fancyhf{}}
 \pagestyle{fancy}
-\lhead{\footnotesize TP N° 2 - Representación de datos}
+\lhead{\footnotesize TP N° 2 - Representación de digital de datos}
 \rhead{\footnotesize \thepage\ }
 
 \def\ti#1#2{\texttt{#1} & #2 \\ }
@@ -38,8 +38,7 @@
 \setlength{\parindent}{1pt}
 
 \textbf{Objetivo:} comprender la representación binaria de números enteros y
-de punto (coma) flotante, y la suma de números enteros en binario. Comprender
-la representación binaria de texto y otros datos más complejos.
+de punto (coma) flotante, y la suma de números enteros en binario.
 
 \textbf{Recursos bibliográfico:}
 
@@ -47,11 +46,11 @@ la representación binaria de texto y otros datos más complejos.
 \begin{itemize}
 
     \itemsep2pt \parskip0pt \parsep0pt
-    \item Wikipedia: \emph{Coma flotante}:
+    \item Wikipedia: \emph{IEEE coma flotante}:
         \url{http://es.wikipedia.org/wiki/IEEE_coma_flotante}
     
-    \item Wikipedia: \emph{Conversión analógica digital}:
-        \url{http://en.wikipedia.org/wiki/Analog-to-digital_converter}
+    \item Wikipedia: \emph{Complemento a 2}:
+        \url{https://en.wikipedia.org/wiki/Two\%27s_complement}
 
 \end{itemize}
 
@@ -63,12 +62,6 @@ la representación binaria de texto y otros datos más complejos.
     \itemsep2pt \parskip0pt \parsep0pt
 
     \item Calculadora IEEE-754: \url{http://www.zator.com/Cpp/E2_2_4a1.htm}
-
-    \item Tabla de caracteres \emph{UTF-8}:
-        \url{http://www.fileformat.info/info/charset/UTF-8/list.htm}
-
-    \item Tabla de caracteres ASCII Extendida:
-        \url{http://www.programasprogramacion.com/caracteres.php}
 
 \end{itemize}
 
@@ -100,9 +93,9 @@ la representación binaria de texto y otros datos más complejos.
 
         \begin{tabular}[t]{|c|c|c|}
 
-        \hline
+        \cline{2-3}
 
-            &\multicolumn{2}{|c|}{\textbf{Sistema Binario}}\\
+            \multicolumn{1}{c}{}&\multicolumn{2}{|c|}{\textbf{Sistema Binario}}\\
 
         \hline
 
@@ -229,9 +222,9 @@ la representación binaria de texto y otros datos más complejos.
 
             \begin{tabular}[t]{|c|c|c|c|}
 
-            \hline
+            \cline{2-4}
 
-                &\multicolumn{3}{|c|}{\textbf{Sistema Binario}}\\
+            \multicolumn{1}{c}{}&\multicolumn{3}{|c|}{\textbf{Sistema Binario}}\\
 
             \hline
 
@@ -431,10 +424,10 @@ la representación binaria de texto y otros datos más complejos.
 
             \begin{tabular}[t]{|c|c|c|c|}
 
-            \hline
+            \cline{2-4}
 
-                 & \textbf{Sin Signo} & \textbf{Complemento a 2} &
-                 \textbf{Signo Magnitud}\\
+            \multicolumn{1}{c|}{}& \textbf{Sin Signo} &
+                \textbf{Complemento a 2} & \textbf{Signo Magnitud}\\
 
             \hline
 
@@ -498,9 +491,9 @@ la representación binaria de texto y otros datos más complejos.
 
             \begin{tabular}[t]{|c|c|c|}
 
-            \hline
+            \cline{2-3}
 
-                 & \textbf{Decimal} & \textbf{Binario} \\
+            \multicolumn{1}{c|}{}& \textbf{Decimal} & \textbf{Binario} \\
 
             \hline
 
@@ -626,29 +619,6 @@ la representación binaria de texto y otros datos más complejos.
 
     \item Calcular el rango de los números reales representables con el
         formato \emph{IEEE-754 de precisión simple}.
-
-\end{enumerate}
-
-\section{Codificación de texto}
-
-\begin{enumerate}
-
-    \item Decodifique los siguientes mensajes codificados en \emph{UTF-8} y
-        representados en hexadecimal.
-
-        \begin{enumerate}
-
-            \item \textbf{41 79 75 64 61}
-
-            \item \textbf{45 6C 20 C3 B1 61 6E 64 C3 BA 20 62 61 6A C3 B3 20
-                65 6C 20 C3 A1 72 62 6F 6C}
-
-            \item \textbf{48 6F 6C 61 20 6D 75 6E 64 6F}
-
-            \item Para cada uno de los mensajes anteriores, responda: ¿cuántos
-                caracteres posee? ¿cuántos bytes ocupa?
-
-        \end{enumerate}
 
 \end{enumerate}
 
