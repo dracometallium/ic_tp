@@ -1,0 +1,119 @@
+%%% LaTeX Template: Article/Thesis/etc. with colored headings and special fonts
+%%%
+%%% Source: http://www.howtotex.com/
+% vim: set spell spelllang=es syntax=tex :
+
+\documentclass[12pt]{article}
+\usepackage{styles/apuntes-estilo}
+\usepackage{fancyhdr,lastpage}
+\usepackage{hyperref}
+\usepackage[inline]{enumitem}
+\usepackage{xurl}
+\usepackage{nameref}
+
+\def\maketitle{
+
+\makeatletter{
+    \color{blue} \centering \huge \sc
+    \textbf{
+        Trabajo práctico N° 4\\
+        \large \vspace*{-8pt} \color{black}
+        Arquitectura y organización de computadoras
+        \vspace*{8pt}
+    }\\
+    \small Fecha de finalización: 26 de mayo
+    \par
+}
+
+\makeatother
+
+\makeatletter
+\input{tex/banner.tex}
+
+}
+
+% Custom headers and footers
+\fancyhf{} % clear all header and footer fields
+\fancypagestyle{plain}{\fancyhf{}}
+\pagestyle{fancy}
+\lhead{\footnotesize TP N° 4 - Arquitectura y organización de computadoras}
+\rhead{\footnotesize \thepage\ }
+
+\def\ti#1#2{\texttt{#1} & #2 \\ }
+
+\begin{document}
+
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{1pt}
+
+\textbf{Objetivo:} Comprender la organización y el funcionamiento básico de
+una computadora simple. Se involucran conocimientos de los componentes
+hardware y sus interacciones para ejecutar instrucciones.
+
+\textbf{Recursos bibliográfico:}
+
+\vspace{-2\topsep}
+\begin{itemize}
+
+    \itemsep2pt \parskip0pt \parsep0pt
+
+    \item \emph{Andrew S. Tanenbaum}. Organización de computadoras: un enfoque
+        estructurado. Cuarta edición, editorial Pearson Educación, 2000. ISBN
+        970-170-399-5.
+
+\end{itemize}
+
+\textbf{Lectura obligatoria:}
+
+\vspace{-2\topsep}
+\begin{itemize}
+
+    \itemsep2pt \parskip0pt \parsep0pt
+
+    \item Apuntes de cátedra. Capitulo 5: Arquitectura y Organización de
+        Computadoras. Disponible en \textit{PEDCO}:
+        \url{https://pedco.uncoma.edu.ar/mod/url/view.php?id=203642}
+
+\end{itemize}
+
+\section{Modelo Computacional Binario Elemental (MCBE)}
+
+\begin{enumerate}
+
+    \item Con respecto a la memoria de la \emph{MCBE}, indique:
+
+        \begin{enumerate}
+
+            \item Cantidad de celdas de memoria.
+
+            \item Tamaño de una celda de memoria en \emph{bits}
+                y \emph{bytes}.
+
+            \item Tamaño total en \emph{bytes}.
+
+            \item Dirección de la primera y de última celda de memoria.
+
+        \end{enumerate}
+
+    \item Con respecto a la \emph{CPU} de la \emph{MCBE}, indique:
+
+        \begin{enumerate}
+
+            \item Registros y sus propósitos.
+
+            \item ¿Qué representación y tamaño (en \emph{bits}) de números
+                utilizan las instrucciones aritméticas?
+
+            \item ¿En qué dirección de memoria debe ubicarse la primera
+                instrucción del programa?
+            
+            \item ¿Qué efecto tendría ubicar los datos del programa a partir
+                de la posición de memoria 0 y las instrucciones a
+                continuación?
+
+        \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
