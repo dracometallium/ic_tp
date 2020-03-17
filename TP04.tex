@@ -11,6 +11,10 @@
 \usepackage{xurl}
 \usepackage{nameref}
 
+\newcommand{\multiline}[2][c]{
+      \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}
+      }
+
 \def\maketitle{
 
 \makeatletter{
@@ -112,6 +116,148 @@ hardware y sus interacciones para ejecutar instrucciones.
                 de la posición de memoria 0 y las instrucciones a
                 continuación?
 
+        \end{enumerate}
+
+    \item Con respecto a la \emph{Entrada/Salida} de la \emph{MCBE}, indique:
+
+        \begin{enumerate}
+
+            \item ¿Para qué se utilizan las direcciones \textbf{30} y
+                \textbf{31}? ¿Qué dispositivos podrían conectarse en esas
+                direcciones?
+
+            \item ¿Cuántas lecturas son necesarias si se quiere leer el dato:
+                \textbf{0x01A397BCFF}? Y si en lugar de lecturas fueran
+                escrituras ¿cuántas son necesarias?
+
+        \end{enumerate}
+
+    \item Suponga la máquina \emph{MCBE} en su estado inicial con contenido de
+        memoria indicado en cada inciso (el resto de la memoria no indicada
+        puede tener cualquier valor).  Describir el efecto de la ejecución de
+        cada una de las instrucciones del programa, desde su inicio hasta su
+        finalización.
+
+        \begin{enumerate}
+
+            \item \begin{tabular}{| c | c |}
+                    \hline
+                    \textbf{Dirección}&\textbf{Contenido binario}\\
+                    \hline \hline
+                    0 & 0100 0100\\
+                    \hline
+                    1 & 1000 0100\\
+                    \hline
+                    2 & 0110 0100\\
+                    \hline
+                    3 & 0010 0000\\
+                    \hline
+                    4 & 0000 0011\\
+                    \hline
+            \end{tabular}
+
+            Ejemplo de Resolución:
+                
+                { \scriptsize
+                \begin{tabular}{|c|c||c|c||c|c|c|c|}
+                    \hline
+                    \multicolumn{2}{|c||}{\multiline{Búsqueda de la \\
+                    instrucción }} &
+                    \multicolumn{2}{|c||}{\multiline{Decodificación de la \\
+                    instrucción}} &
+                    \multicolumn{4}{|c|}{Ejecución de la instrucción}\\
+                    \hline
+                    PC & IR & Cod. Op. & Operando & Acumulador & Memoria &
+                    Salida & PC \\
+                    \hline \hline
+                    0000 0000 & 0100 0100 & 010 & 00100 & 0000 0011 & - & - &
+                    0000 0001 \\
+                    \hline
+                    0000 0001 & 1000 0100 & 100 & 00100 & 0000 0110 & - & - &
+                    0000 0010 \\
+                    \hline
+                    0000 0011 & 0110 0100 & 011 & 00100 & - & (00100) ←  0000
+                    0110 & - & 0000 0011 \\
+                    \hline
+                    0000 0011 & 0010 0000 & 001 & 00000 & - & - & - & - \\
+                    \hline
+                \end{tabular}
+                }
+
+            \item \begin{tabular}{| c | c |}
+                    \hline
+                    \textbf{Dirección}&\textbf{Contenido binario}\\
+                    \hline \hline
+                    0 & 0100 0110\\ \hline
+                    1 & 1010 1000\\ \hline
+                    2 & 0110 0110\\ \hline
+                    3 & 1010 0111\\ \hline
+                    4 & 1110 0000\\ \hline
+                    5 & 0010 0000\\ \hline
+                    6 & 0000 1101\\ \hline
+                    7 & 0000 1100\\ \hline
+                    8 & 0000 0010\\ \hline
+            \end{tabular}
+
+            \item \begin{tabular}{| c | c |}
+                    \hline
+                    \textbf{Dirección}&\textbf{Contenido binario}\\
+                    \hline \hline
+                    0 & 01011110\\ \hline
+                    1 & 10000101\\ \hline
+                    2 & 10100110\\ \hline
+                    3 & 01111111\\ \hline
+                    4 & 00100000\\ \hline
+                    5 & 00010100\\ \hline
+                    6 & 00000101\\ \hline
+            \end{tabular}
+
+            \item \begin{tabular}{| c | c |}
+                    \hline
+                    \textbf{Dirección}&\textbf{Contenido binario}\\
+                    \hline \hline
+                    0 & 01011110\\ \hline
+                    1 & 01100110\\ \hline
+                    2 & 10000110\\ \hline
+                    3 & 10100111\\ \hline
+                    4 & 01111111\\ \hline
+                    5 & 00100000\\ \hline
+                    6 & 00000000\\ \hline
+                    7 & 00000110\\ \hline
+            \end{tabular}
+
+            \item \begin{tabular}{| c | c |}
+                    \hline
+                    \textbf{Dirección}&\textbf{Contenido binario}\\
+                    \hline \hline
+                    0 & 01011110\\ \hline
+                    1 & 10001011\\ \hline
+                    2 & 01101011\\ \hline
+                    3 & 01001001\\ \hline
+                    4 & 10101010\\ \hline
+                    5 & 01101001\\ \hline
+                    6 & 11100010\\ \hline
+                    7 & 11011001\\ \hline
+                    8 & 00100000\\ \hline
+                    9 & 00000100\\ \hline
+                    10 & 00000001\\ \hline
+                    11 & 00000000\\ \hline
+            \end{tabular}
+
+            \item \begin{tabular}{| c | c |}
+                    \hline
+                    \textbf{Dirección}&\textbf{Contenido binario}\\
+                    \hline \hline
+                    0 & 01011110\\ \hline
+                    1 & 01100111\\ \hline
+                    2 & 01000110\\ \hline
+                    3 & 10000111\\ \hline
+                    4 & 01101000\\ \hline
+                    5 & 00100000\\ \hline
+                    6 & 00000101\\ \hline
+                    7 & 00000000\\ \hline
+                    8 & 00000000\\ \hline
+            \end{tabular}
         \end{enumerate}
 
 \end{enumerate}
