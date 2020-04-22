@@ -10,6 +10,12 @@
 \usepackage[inline]{enumitem}
 \usepackage{xurl}
 \usepackage{nameref}
+\usepackage{tabularx}
+
+\usepackage{appendix}
+\renewcommand{\appendixname}{Anexo}
+\renewcommand{\appendixtocname}{Anexo}
+\renewcommand{\appendixpagename}{Anexo}
 
 \newcommand{\multiline}[2][c]{
       \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}
@@ -261,5 +267,88 @@ hardware y sus interacciones para ejecutar instrucciones.
         \end{enumerate}
 
 \end{enumerate}
+
+\appendix
+\clearpage
+\addappheadtotoc
+\appendixpage
+
+\section*{Descripción del Modelo Computacional Binario Elemental (MCBE)}
+
+\begin{description}
+    \itemsep2pt \parskip0pt \parsep0pt
+
+    \item[Memoria:] consta de 32 posiciones de 8 bits. Las direcciones 0 a 29
+        corresponden a direcciones que pueden ser escritas y leídas. La
+        dirección 30 es de \textbf{sólo lectura}, permite leer datos del
+        dispositivo de entrada, por ejemplo un teclado. La dirección 31 es de
+        \textbf{sólo escritura}, permite escribir datos en el dispositivo de
+        salida, por ejemplo en una pantalla o una impresora.
+
+    \item[Registro PC:] registro de 8 bits, contiene la dirección de la
+        próxima instrucción a ejecutar. Se inicializa en cero.
+
+    \item[Registro IR:] registro 8 bits donde se guarda la instrucción que se
+        esta decodificando o ejecutando.
+
+    \item[Registro acumulador:] registro de 8 bits donde se almacena un
+        número entero representado en \emph{complemento a 2}.
+
+    \item[Instrucciones:] de 8 bits, los 3 bits más significativos almacenan
+        el código de operación, y los 5 menos significativos almacenan el
+        operando.
+    
+        \begin{figure}[h]
+            \centering
+            \includegraphics[height=4em]{img/instruccion.pdf}
+        \end{figure}
+
+\end{description}
+
+\begin{tabularx}{\textwidth}{c|c|X}
+
+    \textbf{Código de} & \textbf{Operando} &
+    \multicolumn{1}{c}{\textbf{Descripción}} \\
+    \textbf{operación} & & \\
+    \emph{3 bits} & \emph{5 bits} & \\
+    \hline
+    \hline
+
+    010 & \emph{dirección} & \textbf{Memoria → Acumulador}. Copia un byte
+    desde la dirección de memoria al acumulador. \\
+    \hline
+
+    100 & \emph{dirección} & \textbf{Acumulador → Memoria}. Copia el contenido
+    del acumulador en esa dirección de memoria. \\
+    \hline
+
+    100 & \emph{dirección} & \textbf{Suma}. El contenido de la dirección se
+    suma al acumulador, y el resultado se almacena en el acumulador. \\
+    \hline
+
+    101 & \emph{dirección} & \textbf{Resta}. El contenido de la dirección se
+    resta al acumulador, y el resultado se almacena en el acumulador. \\
+    \hline
+
+    110 & \emph{desplazamiento} & \textbf{Salto incondicional}. Se suma (en
+    complemento a 2) el desplazamiento al \textbf{PC}. \\
+    \hline
+
+    111 & \emph{desplazamiento} & \textbf{Salto condicional}. Si el acumulador
+    es cero, se suma (en complemento a 2) el desplazamiento al \textbf{PC}, en
+    caso contrario el \textbf{PC} se incrementa en uno. \\
+    \hline
+
+    001 & \emph{(sin uso)} & \textbf{Detiene la maquina}. No se ejecutan
+    nuevas instrucciones. Los registros y la memoria quedan con el último
+    valor que tenían. \\
+    \hline
+
+    001 & \emph{(sin uso)} & \textbf{No operación}. No tiene ningún efecto
+    sobre el acumulador ni memoria. El \textbf{PC} se incremente en uno. \\
+
+\end{tabularx}
+
+
 
 \end{document}
