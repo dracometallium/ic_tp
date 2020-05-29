@@ -17,10 +17,10 @@ $(TP_PDF): %.pdf : %.tex $(STYLES) $(LOGOS_PDF) $(FIGURAS_PDF) $(TEX_INC)
 	pdflatex -interaction=nonstopmode -halt-on-error $^
 
 $(FIGURAS_PDF): %.pdf : %.svg
-	inkscape $^ -z -A $@
+	inkscape $^ --batch-process --export-area-drawing  -o $@
 
 $(LOGOS_PDF): %.pdf : %.svg
-	inkscape $^ -z -A $@
+	inkscape $^ --batch-process --export-area-drawing -o $@
 
 clean:
 	rm -f $(GARBAGE)
