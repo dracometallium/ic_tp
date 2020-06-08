@@ -31,7 +31,7 @@
         Arquitectura y organización de computadoras (continuación)
         \vspace*{8pt}
     }\\
-    \small Fecha de finalización: 26 de mayo
+    \small Fecha de finalización: 19 de Junio
     \par
 }
 
@@ -108,7 +108,9 @@ hardware y sus interacciones para ejecutar instrucciones.
             \begin{enumerate}
             \itemsep2em \parskip0pt \parsep0pt
 
-                \item \begin{tabular}{r||l|l|l||c}
+                \item \begin{tabular}{|r||l|l|l||c|}
+
+                    \hline
 
                     \textbf{\#} & \textbf{Rotulo} & \textbf{Mnemónico} &
                     \textbf{Argumento} & \textbf{Contenido Binario}\\
@@ -121,11 +123,13 @@ hardware y sus interacciones para ejecutar instrucciones.
                     3 & & SUB & DATO & \\ \hline
                     4 & & ST & OUT & \\ \hline
                     5 & & HLT & & 0010 0000\\ \hline
-                    6 & DATO: & 2 & & 0000 0010\\
+                    6 & DATO: & 2 & & 0000 0010\\ \hline
 
                 \end{tabular}
 
-                \item \begin{tabular}{r||l|l|l||c}
+                \item \begin{tabular}{|r||l|l|l||c|}
+
+                    \hline
 
                     \textbf{\#} & \textbf{Rotulo} & \textbf{Mnemónico} &
                     \textbf{Argumento} & \textbf{Contenido Binario}\\
@@ -133,17 +137,17 @@ hardware y sus interacciones para ejecutar instrucciones.
                     \hline
 
                     0 & SALTO2: & LD & DATO & 0100 1001\\ \hline
-                    1 &  & JZ & SALTO1 & \\ \hline
-                    2 &  & LD & DATO2 & 0100 1011\\ \hline
-                    3 &  & ST & OUT & 0111 1111\\ \hline
-                    4 &  & LD & DATO & \\ \hline
-                    5 &  & SUB & UNO & \\ \hline
-                    6 &  & ST & DATO & 0110 1001\\ \hline
-                    7 &  & JMP & SALTO2  & \\ \hline
-                    8 & SALTO1: & HLT &  & 0010 0000\\ \hline
-                    9 & DATO: & 5 &  & 0000 0101\\ \hline
-                    10 & UNO: & 1 &  & 0000 0001\\ \hline
-                    11 & DATO2: & 8 &  & 0000 1000\\
+                    1 & & JZ & SALTO1 & \\ \hline
+                    2 & & LD & DATO2 & 0100 1011\\ \hline
+                    3 & & ST & OUT & 0111 1111\\ \hline
+                    4 & & LD & DATO & \\ \hline
+                    5 & & SUB & UNO & \\ \hline
+                    6 & & ST & DATO & 0110 1001\\ \hline
+                    7 & & JMP & SALTO2 & \\ \hline
+                    8 & SALTO1: & HLT & & 0010 0000\\ \hline
+                    9 & DATO: & 5 & & 0000 0101\\ \hline
+                    10 & UNO: & 1 & & 0000 0001\\ \hline
+                    11 & DATO2: & 8 & & 0000 1000\\ \hline
 
                 \end{tabular}
 
@@ -166,62 +170,200 @@ hardware y sus interacciones para ejecutar instrucciones.
             \begin{enumerate}
             \itemsep2em \parskip0pt \parsep0pt
 
-                \item \begin{tabular}{r||c||l|l|l}
+                \item \begin{tabular}{|r||c||l|l|l|}
+
+                    \hline
 
                     \textbf{\#} & \textbf{Contenido Binario} & \textbf{Rotulo}
                     & \textbf{Mnemónico} & \textbf{Argumento} \\
                     \hline
                     \hline
 
-                    0 & 0101 1110 &  &  & IN\\ \hline
-                    1 & 0110 0110 &  &  & DATO\\ \hline
-                    2 & 0101 1110 &  &  & IN\\ \hline
-                    3 & 1000 0110 &  &  & DATO\\ \hline
-                    4 & 0111 1111 &  &  & OUT\\ \hline
-                    5 & 0010 0000 &  &  & \\ \hline
-                    6 & 0000 0000 & DATO: &  & \\ \hline
+                    0 & 0101 1110 & & & IN\\ \hline
+                    1 & 0110 0110 & & & DATO\\ \hline
+                    2 & 0101 1110 & & & IN\\ \hline
+                    3 & 1000 0110 & & & DATO\\ \hline
+                    4 & 0111 1111 & & & OUT\\ \hline
+                    5 & 0010 0000 & & & \\ \hline
+                    6 & 0000 0000 & DATO: & & \\ \hline
 
                 \end{tabular}
 
-                \item \begin{tabular}{r||c||l|l|l}
+                \item \begin{tabular}{|r||c||l|l|l|}
+
+                    \hline
 
                     \textbf{\#} & \textbf{Contenido Binario} & \textbf{Rotulo}
                     & \textbf{Mnemónico} & \textbf{Argumento} \\
                     \hline
                     \hline
 
-                    0 & 0101 1110 &  &  & IN\\ \hline
-                    1 & 1010 0110 &  &  & DATO1\\ \hline
-                    2 & 0111 1111 &  &  & OUT\\ \hline
-                    3 & 1000 0111 &  &  & DATO2\\ \hline
-                    4 & 0010 0000 &  &  & \\ \hline
-                    5 & 0000 0100 & DATO1: &  & \\ \hline
-                    6 & 0000 1001 & DATO2: &  & \\ \hline
+                    0 & 0101 1110 & & & IN\\ \hline
+                    1 & 1010 0110 & & & DATO1\\ \hline
+                    2 & 0111 1111 & & & OUT\\ \hline
+                    3 & 1000 0111 & & & DATO2\\ \hline
+                    4 & 0010 0000 & & & \\ \hline
+                    5 & 0000 0100 & DATO1: & & \\ \hline
+                    6 & 0000 1001 & DATO2: & & \\ \hline
 
                 \end{tabular}
 
-                \item \begin{tabular}{r||c||l|l|l}
+                \item \begin{tabular}{|r||c||l|l|l|}
+
+                    \hline
 
                     \textbf{\#} & \textbf{Contenido Binario} & \textbf{Rotulo}
                     & \textbf{Mnemónico} & \textbf{Argumento} \\
                     \hline
                     \hline
 
-                    0 & 0101 1110 &  &  & IN\\ \hline
-                    1 & 0110 1001 &  &  & DATO\\ \hline
-                    2 & 1000 1001 &  &  & DATO\\ \hline
-                    3 & 1000 1001 &  &  & DATO\\ \hline
-                    4 & 1000 1001 &  &  & DATO\\ \hline
-                    5 & 1000 1001 &  &  & DATO\\ \hline
-                    6 & 1010 1010 &  &  & DATO2\\ \hline
-                    7 & 0111 1111 &  &  & OUT\\ \hline
-                    8 & 0010 0000 &  &  & \\ \hline
-                    9 & 0000 0000 & DATO: &  & \\ \hline
-                    10 & 0000 0011 & DATO2: &  & \\ \hline
+                    0 & 0101 1110 & & & IN\\ \hline
+                    1 & 0110 1001 & & & DATO\\ \hline
+                    2 & 1000 1001 & & & DATO\\ \hline
+                    3 & 1000 1001 & & & DATO\\ \hline
+                    4 & 1000 1001 & & & DATO\\ \hline
+                    5 & 1000 1001 & & & DATO\\ \hline
+                    6 & 1010 1010 & & & DATO2\\ \hline
+                    7 & 0111 1111 & & & OUT\\ \hline
+                    8 & 0010 0000 & & & \\ \hline
+                    9 & 0000 0000 & DATO: & & \\ \hline
+                    10 & 0000 0011 & DATO2: & & \\ \hline
 
                 \end{tabular}
 
             \end{enumerate}
+        \end{enumerate}
+
+    \item Dado el siguiente programa:
+
+        \begin{tabular}{|r||l|l|l||c|}
+
+            \hline
+
+            \textbf{\#} & \textbf{Rotulo} & \textbf{Mnemónico} &
+            \textbf{Argumento} & \textbf{Contenido Binario} \\
+            \hline
+            \hline
+
+            0 & & LD & IN & 0101 1110\\ \hline
+            1 & SIGUE: & JZ & FIN & 1110 0100\\ \hline
+            2 & & ST & OUT & 0111 1111\\ \hline
+            3 & & SUB & UNO & 1010 0110\\ \hline
+            4 & & JMP & SIGUE & 1101 1101\\ \hline
+            5 & FIN: & HLP & & 0010 0000\\ \hline
+            6 & UNO: & 1 & & 0000 0001\\ \hline
+
+        \end{tabular}
+
+        \begin{enumerate}
+
+            \item ¿Qué tarea realiza el programa?
+
+            \item ¿Qué modificación seria necesaria realizarle al código
+                ensamblador para que el programa imprima cada número dos
+                veces? ¿Se modifican la misma cantidad de celdas en el
+                programa en código maquina?
+
+        \end{enumerate}
+
+    \item Dado el siguiente programa:
+
+        \begin{tabular}{|r||l|l|l|}
+
+            \hline
+
+            \textbf{\#} & \textbf{Rotulo} & \textbf{Mnemónico} &
+            \textbf{Argumento}\\
+            \hline
+            \hline
+
+            0 & & LD & IN\\ \hline
+            1 & & ST & NUM\\ \hline
+            2 & SIGUE: & LD & CANT\\ \hline
+            3 & & JZ & IMPRIME\\ \hline
+            4 & & SUB & UNO\\ \hline
+            5 & & ST & CANT\\ \hline
+            6 & & LD & NUM\\ \hline
+            7 & & SUB & DOS\\ \hline
+            8 & & ST & NUM\\ \hline
+            9 & & JMP & SIGUE\\ \hline
+            10 & IMPRIME: & LD & NUM\\ \hline
+            11 & & ST & OUT\\ \hline
+            12 & FIN: & HLT & \\ \hline
+            13 & TEST: & -64 & \\ \hline
+            14 & NUM: & 0 & \\ \hline
+            15 & CANT: & 5 & \\ \hline
+            16 & UNO: & 1 & \\ \hline
+            17 & DOS: & 2 & \\ \hline
+
+        \end{tabular}
+
+        \begin{enumerate}
+
+            \item ¿Qué tarea realiza el programa?
+
+            \item ¿Cual sera el comportamiento del programa si se cambia la
+                instrucción en la dirección nueve por ``\textbf{JMP TEST}''?
+
+        \end{enumerate}
+
+
+    \item Analice y responda las siguientes preguntas, justificando su
+        respuesta:
+
+        \begin{enumerate}
+
+            \item ¿Cuál es la dirección de la primera instrucción que
+                ejecutará la máquina?
+
+            \item ¿Qué rango de datos numéricos puede manejar el \emph{MCBE}?
+                ¿Cuál es el rango de valores del acumulador?
+
+            \item ¿A qué distancia máxima puede ``saltar'' el control del
+                programa?
+
+            \item ¿Cuál es la dirección más alta donde puede encontrarse una
+                instrucción a ser ejecutada?
+
+            \item ¿Puede el \emph{MCBE} encontrar una instrucción que no sea
+                capaz de decodificar?
+
+            \item ¿Qué utilidad tendría un programa que no hiciera ningún uso
+                de la Unidad de Entrada/Salida para comunicar sus resultados?
+
+            \item Supongamos que hemos almacenado en la posición 14 un dato
+                numérico que representa la edad de una persona. ¿Qué pasa si
+                en algún momento de la ejecución el \emph{PC} contiene el
+                número 14?  ¿Qué pasará si esa persona tiene 33 años? ¿Qué
+                pasará si tiene 65?
+
+            \item ¿Qué pasa si el programa no contiene una instrucción
+                \emph{HLT}?
+
+            \item Un programa ¿Puede modificarse a sí mismo? ¿Esto es útil?
+                ¿Conveniente? ¿Peligroso?
+
+            \item ¿Podría aumentarse la capacidad de memoria de el
+                \emph{MCBE}? ¿Esto requeriría algún cambio adicional a la
+                máquina?
+
+            \item ¿Cómo se podría aumentar la cantidad de instrucciones
+                diferentes de el \emph{MCBE}? ¿Esto tendría algún efecto sobre
+                la longitud de los programas que puede correr la máquina?
+
+            \item Si una nueva arquitectura tiene instrucciones con 5 bits
+                para el código de operación y 10 para operando (donde en el
+                caso de las instrucciones de carga y almacenamiento indican la
+                dirección de la celda origen o destino) ¿Cuantas operaciones
+                distintas puede tener como máximo esta arquitectura? ¿Cuantas
+                celdas de memoria puede tener?
+
+            \item Se desea establecer el tamaño mínimo para una arquitectura
+                que tiene 14 instrucciones distintas, y cada instrucción tiene
+                tres operandos, donde cada operando referencia una de las 512
+                celdas de memoria ¿Cuál es la cantidad mínima de bits que
+                puede tener una instrucción?
+
         \end{enumerate}
 
 
@@ -317,7 +459,5 @@ hardware y sus interacciones para ejecutar instrucciones.
     en uno. \\
 
 \end{tabularx}
-
-
 
 \end{document}
