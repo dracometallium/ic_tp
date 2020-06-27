@@ -1,0 +1,210 @@
+%%% LaTeX Template: Article/Thesis/etc. with colored headings and special fonts
+%%%
+%%% Source: http://www.howtotex.com/
+% vim: set spell spelllang=es syntax=tex :
+
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{styles/apuntes-estilo}
+\usepackage{styles/egyptian}
+\usepackage{fancyhdr,lastpage}
+\usepackage{hyperref}
+\usepackage[inline]{enumitem}
+
+\def\maketitle{
+    %\makeatletter{\color{bl} \centering \huge \sc \textbf{Primer examen parcial}}
+
+\makeatletter{
+    \color{blue} \centering \huge \sc
+    \textbf{
+        Primer examen parcial\\
+        \small \vspace*{-8pt} \color{black}
+        Tema: 4
+        \vspace*{8pt}
+    }\\
+    \par
+}
+\makeatother
+
+\makeatletter
+\input{tex/banner.tex}
+
+}
+
+% Custom headers and footers
+\fancyhf{} % clear all header and footer fields
+\fancypagestyle{plain}{\fancyhf{}}
+\pagestyle{fancy}
+\lhead{\footnotesize Primer examen parcial}
+\rhead{\footnotesize \thepage\ }
+
+\def\ti#1#2{\texttt{#1} & #2 \\ }
+
+\begin{document}
+
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{1pt}
+
+\textbf{Condiciones de la entrega:} La entrega del parcial se debe realizar en
+la siguiente tarea de pedco:
+\url{https://pedco.uncoma.edu.ar/mod/assign/view.php?id=336612}. Incluir las
+hojas con los resultados y las resoluciones. De ser posible, nombre cada
+fotografía con el formato \textbf{hoja\_\emph{<número de hoja>}}, o si se
+entrega una foto por cada ejerció \textbf{ej\_\emph{<número de ejercicio>}}.
+\textbf{Deben conservar las hojas originales}, ya que podemos pedirles que nos
+envíen nuevas fotos.
+
+\textbf{IMPORTANTE: \emph{Las resoluciones tienen que estar hechas en su puño
+y letra.}} Si esta permitido imprimir las tablas de traza, pero deben estar
+completadas a mano.
+
+\begin{enumerate}
+
+    \item ¿Cuál es la representación de 42 en las siguientes bases?
+
+        \begin{enumerate}
+
+            \item Base 5.
+
+            \item Base 2.
+
+            \item Base 16.
+
+        \end{enumerate}
+
+    \item ¿Cual es la representación en \emph{punto fijo} y \emph{complemento
+        a 2} de los siguientes números si se utilizan 4 bits para la parte
+        entera y 4 para la parte fraccionaria?
+
+        \begin{enumerate}
+
+            \item $3.625$
+
+            \item $-3.625$
+
+        \end{enumerate}
+
+    \item Sean $A=1010\,1011$ y $B=0011\,0011$ números enteros con signo
+        representados en complemento a dos. Realizar las siguientes
+        operaciones y verifique si se produce \emph{overflow}:
+
+        \begin{enumerate}
+
+            \item $A+B$
+
+            \item $A-B$
+
+        \end{enumerate}
+
+    \item Sea \textbf{0xBE333333} un número en base 16 (hexadecimal) que
+        representa a un número real expresado en el sistema de \emph{Punto
+        Flotante IEEE-754 de precisión simple (32 bits)}. Indique cuál es el
+        valor en base 10 de dicho número real.
+
+    \item ¿Que mensaje esta codificado en la siguiente secuencia de bytes
+        expresados en hexadecimal: \textbf{48 6F 6C 61 20 4D 75 6E 64 6F 21}?
+        \emph{Respetar mayúsculas y minúsculas.}
+
+    \item Considerando la imagen que se muestra abajo, aplique un esquema de
+        compresión que agrupa píxeles consecutivos de igual color y los
+        reemplaza por una codificación ``\emph{cantidad/color}'', utilizando
+        una codificación \textbf{3+2}, con tres bits para la cantidad y dos
+        bits para el color. Asuma que 00 = blanco, 11 = negro y 01 = naranja.
+
+        \textit{Tenga en cuenta que al calcular la cantidad se debe considerar
+        que las filas de la imagen son consecutivas. Es decir, si una fila
+        termina con un grupo de pixeles un color y la siguiente comienza con
+        pixeles del mismo color, se deben considerar todos como un solo grupo.
+        \textbf{No olvide incluir la cabecera.}}
+
+    \includegraphics[width=0.50\textwidth]{img/img_2020_1par.pdf}
+
+    \item Dado el siguiente programa:
+
+        \begin{verbatim}
+     0  START:  LD  MAX
+     1          ST  OUT
+     2          JZ  END
+     3          SUB NUM
+     4          J   START
+     5  END:    HLT
+     6  NUM:    3
+     7  MAX:    9
+        \end{verbatim}
+
+        \begin{enumerate}
+
+            \item ¿Cuál es la salida del programa?
+
+
+            \item ¿Cuál es el equivalente en código maquina binario de las
+                instrucciones de las direcciones \textbf{0}, \textbf{2} y
+                \textbf{4}?
+
+        \end{enumerate}
+
+    \item Dado el siguiente programa en binario:
+
+        \begin{verbatim}
+    0 01001000
+    1 01111111
+    2 01001001
+    3 10101010
+    4 01101001
+    5 11100010
+    6 11011010
+    7 00100000
+    8 00101010
+    9 00000101
+    10 00000001
+        \end{verbatim}
+
+        ¿Cuál es la salida del programa?
+
+    \item Si se desea extender la funcionalidad de la \emph{MCBE} para que
+        tenga un total de 34 instrucciones distintas y la cantidad de celdas
+        de memoria se extiende a 256 (incluyendo aquellas mapeadas a la
+        \emph{entrada/salida} ¿Cuántos bits deberán tener el código de
+        operación y el argumento?
+
+\end{enumerate}
+
+\subsection*{ \large\textbf{Anexo:} }
+
+\textbf{Códigos de operación}
+
+\begin{verbatim}
+    010     LD
+    011     ST
+    100     ADD
+    101     SUB
+    110     JMP
+    111     JZ
+    001     HLT
+    000     NOP
+\end{verbatim}
+
+\textbf{Tabla \emph{ASCII}:}
+
+\begin{verbatim}
+Dec Hex    Dec Hex    Dec Hex  Dec Hex  Dec Hex  Dec Hex   Dec Hex   Dec Hex
+  0 00 NUL  16 10 DLE  32 20    48 30 0  64 40 @  80 50 P   96 60 `  112 70 p
+  1 01 SOH  17 11 DC1  33 21 !  49 31 1  65 41 A  81 51 Q   97 61 a  113 71 q
+  2 02 STX  18 12 DC2  34 22 "  50 32 2  66 42 B  82 52 R   98 62 b  114 72 r
+  3 03 ETX  19 13 DC3  35 23 #  51 33 3  67 43 C  83 53 S   99 63 c  115 73 s
+  4 04 EOT  20 14 DC4  36 24 $  52 34 4  68 44 D  84 54 T  100 64 d  116 74 t
+  5 05 ENQ  21 15 NAK  37 25 %  53 35 5  69 45 E  85 55 U  101 65 e  117 75 u
+  6 06 ACK  22 16 SYN  38 26 &  54 36 6  70 46 F  86 56 V  102 66 f  118 76 v
+  7 07 BEL  23 17 ETB  39 27 '  55 37 7  71 47 G  87 57 W  103 67 g  119 77 w
+  8 08 BS   24 18 CAN  40 28 (  56 38 8  72 48 H  88 58 X  104 68 h  120 78 x
+  9 09 HT   25 19 EM   41 29 )  57 39 9  73 49 I  89 59 Y  105 69 i  121 79 y
+ 10 0A LF   26 1A SUB  42 2A *  58 3A :  74 4A J  90 5A Z  106 6A j  122 7A z
+ 11 0B VT   27 1B ESC  43 2B +  59 3B ;  75 4B K  91 5B [  107 6B k  123 7B {
+ 12 0C FF   28 1C FS   44 2C ,  60 3C <  76 4C L  92 5C \  108 6C l  124 7C |
+ 13 0D CR   29 1D GS   45 2D -  61 3D =  77 4D M  93 5D ]  109 6D m  125 7D }
+ 14 0E SO   30 1E RS   46 2E .  62 3E >  78 4E N  94 5E ^  110 6E n  126 7E ~
+ 15 0F SI   31 1F US   47 2F /  63 3F ?  79 4F O  95 5F _  111 6F o  127 7F DEL
+\end{verbatim}
+
+\end{document}
