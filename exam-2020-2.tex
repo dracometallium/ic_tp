@@ -105,26 +105,26 @@ completadas a mano.
 
 \subsection*{Parte 2}
 
-    \item ¿Que mensaje esta codificado en la siguiente secuencia de bytes
-        expresados en hexadecimal: \textbf{48 6F 6C 61 20 4D 75 6E 64 6F 21}?
-
     \item ¿Cuál es la codificación en ASCII (representado en hexadecimal) de
         texto "\emph{ASCII usa 7b.}"? \emph{Respetar mayúsculas y
         minúsculas, e ignore las comillas}.
 
-    \item TODO: Considerando la imagen que se muestra abajo, aplique un esquema de
-        compresión que agrupa píxeles consecutivos de igual color y los
-        reemplaza por una codificación ``\emph{cantidad/color}'', utilizando
-        una codificación \textbf{3+2}, con tres bits para la cantidad y dos
-        bits para el color. Asuma que 00 = blanco, 11 = negro y 01 = naranja.
+    \item Si se utiliza un esquema de compresión \emph{RLE(Run Lenght
+        Encoding)} utilizando una codificación ``\emph{cantidad/color}'' de
+        \textbf{2+2} (dos bits para la cantidad y dos bits para el color),
+        donde la paleta de colores es 00 = blanco, 01 = amarillo, 10 = naranja
+        y 11 = negro.
 
-        \textit{Tenga en cuenta que al calcular la cantidad se debe considerar
-        que las filas de la imagen son consecutivas. Es decir, si una fila
-        termina con un grupo de pixeles un color y la siguiente comienza con
-        pixeles del mismo color, se deben considerar todos como un solo grupo.
-        \textbf{No olvide incluir la cabecera.}}
+        \begin{enumerate}
 
-    \includegraphics[width=0.50\textwidth]{img/img_2020_1par.pdf}
+            \item ¿Cuál es la imagen codificada en la secuencia de bytes
+                \textbf{04 05 02 89 89 87 46 4B E7}?
+
+            \item ¿Cuántos bytes ocupa la imagen sin comprimir? \textbf{No
+                olvide incluir la cabecera.}
+
+        \end{enumerate}
+
 
 \subsection*{Parte 3}
 
