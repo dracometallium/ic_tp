@@ -47,7 +47,7 @@
 
 \textbf{Condiciones de la entrega:} La entrega del parcial se debe realizar en
 la siguiente tarea de pedco:
-\url{https://pedco.uncoma.edu.ar/mod/assign/view.php?id=336612}. Incluir las
+\url{https://pedco.uncoma.edu.ar/mod/assign/view.php?id=350076}. Incluir las
 hojas con los resultados y las resoluciones. De ser posible, nombre cada
 fotografía con el formato \textbf{hoja\_\emph{<número de hoja>}}, o si se
 entrega una foto por cada ejerció \textbf{ej\_\emph{<número de ejercicio>}}.
@@ -55,13 +55,14 @@ entrega una foto por cada ejerció \textbf{ej\_\emph{<número de ejercicio>}}.
 envíen nuevas fotos.
 
 \textbf{IMPORTANTE: \emph{Las resoluciones tienen que estar hechas en su puño
-y letra.}} Si esta permitido imprimir las tablas de traza, pero deben estar
-completadas a mano.
+y letra.}} Está permitido tener impresas las tablas de la traza de ejecución,
+pero deben estar completadas a mano.
+
 \begin{enumerate}
 \subsection*{Parte 1}
 
-    \item ¿Qué número esta representa $101$ si se lo interpreta en cada una de
-        las siguientes bases?
+    \item ¿Qué número representa en base 10 el numeral $101$ si se lo
+        interpreta en cada una de las siguientes bases?
 
         \begin{enumerate}
 
@@ -73,9 +74,9 @@ completadas a mano.
 
         \end{enumerate}
 
-    \item Dada una representación en \emph{punto fijo} y \emph{complemento
-        a 2} utilizando 6 bits para la parte entera y 2 para la parte
-        fraccionaria:
+    \item Utilizando una representación en \emph{punto fijo} y
+        \emph{complemento a 2} utilizando 6 bits para la parte entera y 2 para
+        la parte fraccionaria:
 
         \begin{enumerate}
 
@@ -86,16 +87,15 @@ completadas a mano.
 
         \end{enumerate}
 
-    \item Sean $A=1001\,1101$ y $B=0101\,0110$ números enteros con signo
-        representados en complemento a dos. Realizar las siguientes
-        operaciones e \textbf{indique para ambos casos si se produce
-        \emph{overflow} o no}:
+    \item Sean $A=-99_{10}$ y $B=86_{10}$:
 
         \begin{enumerate}
 
-            \item $A+B$
+            \item Realice la suma $A+B$ en complemento a dos e \textbf{indique
+                si se produce overflow o no}.
 
-            \item $A-B$
+            \item Realice la resta $A-B$ en complemento a dos e
+                \textbf{indique si se produce overflow o no}.
 
         \end{enumerate}
 
@@ -105,8 +105,8 @@ completadas a mano.
 
 \subsection*{Parte 2}
 
-    \item ¿Cuál es la codificación en ASCII (representado en hexadecimal) de
-        texto "\emph{ASCII usa 7b.}"? \emph{Respetar mayúsculas y
+    \item ¿Cuál es la codificación en ASCII (representado en hexadecimal) del
+        texto ``\textbf{ASCII usa 7b.}''? \emph{Respetar mayúsculas y
         minúsculas, e ignore las comillas}.
 
     \item Si se utiliza un esquema de compresión \emph{RLE(Run Lenght
@@ -117,8 +117,9 @@ completadas a mano.
 
         \begin{enumerate}
 
-            \item ¿Cuál es la imagen codificada en la secuencia de bytes
-                \textbf{04 05 02 89 89 87 46 4B E7}?
+            \item ¿Cuál es la imagen codificada en la siguiente secuencia de
+                bytes representada en hexadecimal: \textbf{04 05 02 89 89 87
+                46 4B E7}?
 
             \item ¿Cuántos bytes ocupa la imagen sin comprimir? \textbf{No
                 olvide incluir la cabecera.}
@@ -140,7 +141,7 @@ completadas a mano.
      6:         JMP START
      7: FIN:    HLT
      8: I:      0
-     9: MAX:    3
+     9: MAX:    2
     10: UNO:    1
         \end{verbatim}
 
@@ -157,17 +158,19 @@ completadas a mano.
     \item Dado el siguiente programa en binario:
 
         \begin{verbatim}
-     0: 01001000
-     1: 11100110
-     2: 10101010
-     3: 01101000
-     4: 01001001
+     0: 01001010
+     1: 11100111
+     2: 10101100
+     3: 01101010
+     4: 01001011
      5: 01111111
      6: 11011010
      7: 00100000
-     8: 00000110
-     9: 00000101
+     8: 01111111
+     9: 11011110
     10: 00000010
+    11: 00000101
+    12: 00000010
         \end{verbatim}
 
         ¿Cuál es la salida del programa?
