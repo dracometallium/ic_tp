@@ -1,0 +1,305 @@
+%%% LaTeX Template: Article/Thesis/etc. with colored headings and special fonts
+%%%
+%%% Source: http://www.howtotex.com/
+% vim: set spell spelllang=es syntax=tex :
+
+\documentclass[12pt]{article}
+\usepackage{styles/apuntes-estilo}
+\usepackage{styles/egyptian}
+\usepackage{fancyhdr,lastpage}
+\usepackage{hyperref}
+\usepackage[inline]{enumitem}
+\usepackage{xurl}
+
+\def\maketitle{
+
+\makeatletter{
+    \color{blue} \centering \huge \sc
+    \textbf{
+        Trabajo práctico N° 1\\
+        \large \vspace*{-8pt} \color{black}
+        Sistemas de numeración
+        \vspace*{8pt}
+    }\\
+    \small Fecha de finalización: 2 de abril
+    \par
+}
+
+\makeatother
+
+\makeatletter
+\input{tex/banner.tex}
+
+}
+
+% Custom headers and footers
+\fancyhf{} % clear all header and footer fields
+\fancypagestyle{plain}{\fancyhf{}}
+\pagestyle{fancy}
+\lhead{\footnotesize TP N° 1 - Sistemas de numeración}
+\rhead{\footnotesize \thepage\ }
+
+\def\ti#1#2{\texttt{#1} & #2 \\ }
+
+\begin{document}
+
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{1pt}
+
+\textbf{Objetivo:} Comprender el sistema de numeración posicional, y conversión
+entre sistemas de distintas bases.
+
+\textbf{Lectura obligatoria:}
+
+\vspace{-2\topsep}
+\begin{itemize}
+
+    \itemsep2pt \parskip0pt \parsep0pt
+
+    \item Apuntes de cátedra. Capitulo 1: Sistemas de Numeración, y Capitulo
+        2: Unidades de Información. Disponible en \textit{PEDCO}:
+        \url{https://pedco.uncoma.edu.ar/mod/url/view.php?id=203642}
+
+\end{itemize}
+
+\section{Sistema de numeración no posicional}
+
+El sistema de numeración egipcio es \textbf{aditivo}, es decir, cada número se
+calcula sumando el valor de los símbolos. A continuación se muestran los
+símbolos y sus valores:
+
+\begin{center}
+    \begin{tabular}[t]{|c|c|c|c|c|c|c|}
+
+        \hline
+        El dios \emph{Heh} & Renacuajo & Dedo & Flor de loto & Cuerda
+        enrollada & Grillete & Trazo\\
+
+        \egmil{1} & \eghuntho{1} & \egtentho{1} & \egtho{1} & \eghun{1} &
+        \egten{1} & \egone{1}\\
+
+        \hline
+        1\,000\,000 & 100\,000 & 10\,000 & 1\,000 & 100 & 10 & 1\\
+        \hline
+
+    \end{tabular}
+\end{center}
+
+Por ejemplo, el número 13\,745 se podría escribir así:
+
+\egyptify{0}{0}{1}{3}{7}{4}{5}
+
+\begin{enumerate}
+
+    \item Escribir los números que representen los siguientes símbolos
+        egipcios:
+
+    \begin{enumerate*}[itemjoin=\hspace{2em}]
+
+        \item \egyptify{0}{0}{1}{0}{5}{0}{4}
+
+        \item \egyptify{0}{0}{0}{1}{4}{1}{2}
+
+    \end{enumerate*}
+
+    \item Escribir en el sistema de numeración egipcio los siguientes números:
+
+        \begin{enumerate*}[itemjoin=\hspace{2em}]
+
+            \item 3\,421
+
+            \item 1\,896
+
+        \end{enumerate*}
+
+    \item La distancia promedio entre la tierra y el sol es de aproximadamente
+        $149\,597\,870\,700$ metros\footnote{Esta distancia es conocida como
+        \emph{unidad astronómica}.} ¿Puede expresar esta distancia utilizando
+        el sistema de numeración Egipcio? ¿Qué problemas pueden surgir?
+
+\end{enumerate}
+
+\section{Sistema de numeración posicional}
+
+\begin{enumerate}
+
+    \item Descomponer los siguientes números en \emph{sumas de potencias de la
+        base} y calcular el resultados de:
+
+    \begin{enumerate*}[itemjoin=\hspace{2em}]
+
+        \item $7\,249_{10}$
+
+        \item $1\,0111_{2}$
+
+        \item $125_{6}$
+
+        \item $23\,9E_{16}$
+
+    \end{enumerate*}
+
+    \item Tras descomponer los números en sumas de potencias de la base ¿en
+        qué base queda expresado el resultado?
+
+\end{enumerate}
+
+\subsection{Conversión entre sistemas de numeración posicional}
+
+\begin{enumerate}
+
+    \item Complete la tabla de conversiones \ref{tablaConversiones} de la
+        página \pageref{tablaConversiones}. \label{ejTabla}
+
+        Para convertir de decimal a otra base utilice el procedimiento de
+        división; para convertir de otra base a decimal utilizar la
+        descomposición en sumas de potencias de la base.
+
+        \begin{enumerate}
+
+            \item Una vez completada la tabla: ¿Encuentra algún patrón que
+                permita una conversión rápida entre los sistemas binario,
+                octal y hexadecimal?
+
+        \end{enumerate}
+
+        A continuación, para convertir de decimal a otra base utilizar el
+        procedimiento de división; para convertir de otra base a decimal
+        utilizar la descomposición en sumas de potencias de la base, y para
+        convertir entre binario y octal/hexadecimal utilizar la tabla
+        completada en el ejercicio \ref{ejTabla}.
+
+    \item Convertir de hexadecimal a binario:
+
+    \begin{enumerate*}[itemjoin=\hspace{2em}]
+
+        \item $FF_{16}$
+
+        \item $B4_{16}$
+
+        \item $23\,9E_{16}$
+
+        \item $5F\,FF_{16}$
+
+    \end{enumerate*}
+
+    \item Convertir de binario a hexadecimal y octal:
+
+    \begin{enumerate*}[itemjoin=\hspace{2em}]
+
+        \item $1001\,0001\,1100\,1001_{2}$
+
+        \item $0110\,1110\,1011\,1100_{2}$
+
+    \end{enumerate*}
+
+    \item En el siguiente número se desconoce un dígito representado con
+        \emph{X} ¿Qué valores puede tomar ese dígito desconocido?
+
+    \begin{enumerate*}[itemjoin=\hspace{2em}]
+
+        \item $621X43_{10}$
+
+        \item $11X01_{2}$
+
+        \item $43X21_{9}$
+
+    \end{enumerate*}
+
+    \item En el siguiente número se desconoce la base representada con
+        \emph{Y} ¿Cuál es el menor valor que puede tomar \emph{Y}?
+
+    \begin{enumerate*}[itemjoin=\hspace{2em}]
+
+        \item $6\,350_{Y}$
+
+        \item $2\,031_{Y}$
+
+        \item $348_{Y}$
+
+    \end{enumerate*}
+
+\end{enumerate}
+
+\begin{table}[h]
+
+    \centering
+
+    \caption{Tabla de conversiones}
+    \label{tablaConversiones}
+
+    \begin{tabular}{ | c | c | c | c | }
+        \hline
+        Decimal & Binario & Octal & Hexadecimal \\
+        \hline
+        0 & \hspace{8em} & \hspace{6em} & \hspace{6em} \\
+        \hline
+        1 & & & \\
+        \hline
+        2 & & & \\
+        \hline
+        3 & & & \\
+        \hline
+        4 & & & \\
+        \hline
+        5 & & & \\
+        \hline
+        6 & & & \\
+        \hline
+        7 & & & \\
+        \hline
+        8 & & & \\
+        \hline
+        9 & & & \\
+        \hline
+        10 & & & \\
+        \hline
+        11 & & & \\
+        \hline
+        12 & & & \\
+        \hline
+        13 & & & \\
+        \hline
+        14 & & & \\
+        \hline
+        15 & & & \\
+        \hline
+        16 & & & \\
+        \hline
+        234 & & & EA \\
+        \hline
+        \hspace{6em} & 1010\,1110 & & \\
+        \hline
+        & & 35 & \\
+        \hline
+        & 0010\,1011 & & \\
+        \hline
+        & & 70 & \\
+        \hline
+        & & & F0 \\
+        \hline
+        & 0001\,0100 & & \\
+        \hline
+        & 0010\,1000 & & \\
+        \hline
+        128 & & & \\
+        \hline
+        35 & & & \\
+        \hline
+        245 & & & \\
+        \hline
+        & & 42 & \\
+        \hline
+        & 010\, 100 & & \\
+        \hline
+        & & & 42 \\
+        \hline
+        & 0010\,0100 & & \\
+        \hline
+        255 & & & \\
+        \hline
+    \end{tabular}
+
+\end{table}
+
+\end{document}
