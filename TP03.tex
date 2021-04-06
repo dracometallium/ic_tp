@@ -1,0 +1,364 @@
+%%% LaTeX Template: Article/Thesis/etc. with colored headings and special fonts
+%%%
+%%% Source: http://www.howtotex.com/
+% vim: set spell spelllang=es syntax=tex :
+
+\documentclass[12pt]{article}
+\usepackage{styles/apuntes-estilo}
+\usepackage{fancyhdr,lastpage}
+\usepackage{hyperref}
+\usepackage[inline]{enumitem}
+\usepackage{xurl}
+
+\def\maketitle{
+
+\makeatletter{
+    \color{bl} \centering \huge \sc
+    \textbf{
+        Trabajo práctico N° 3\\
+        \large \vspace*{-8pt} \color{black}
+        Representación de la información - Números enteros
+        \vspace*{8pt}
+    }\\
+    \small Fecha de finalización: 12 de abril
+    \par
+}
+
+\makeatother
+
+\makeatletter
+\input{tex/banner.tex}
+
+}
+
+% Custom headers and footers
+\fancyhf{} % clear all header and footer fields
+\fancypagestyle{plain}{\fancyhf{}}
+\pagestyle{fancy}
+\lhead{\footnotesize TP N° 3 - Representación de la información - Números
+enteros}
+\rhead{\footnotesize \thepage\ }
+
+\def\ti#1#2{\texttt{#1} & #2 \\ }
+
+\begin{document}
+
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{1pt}
+
+\textbf{Objetivo:} comprender la representación binaria de números enteros.
+
+\textbf{Recursos Web:}
+
+\vspace{-2\topsep}
+\begin{itemize}
+
+    \itemsep2pt \parskip0pt \parsep0pt
+
+    \item Wikipedia: \emph{Complemento a 2}:
+        \url{https://en.wikipedia.org/wiki/Two\%27s_complement}
+
+\end{itemize}
+
+\textbf{Lectura obligatoria:}
+
+\vspace{-2\topsep}
+\begin{itemize}
+
+    \itemsep2pt \parskip0pt \parsep0pt
+
+    \item Apuntes de cátedra. Capitulo 3: Representación de la Información.
+        Disponible en: \url{https://egrosclaude.github.io/IC/IC-notes.pdf}
+
+\end{itemize}
+
+\begin{enumerate}
+
+    \item Completar la siguiente tabla en el sistema binario. Recuerde que,
+        para la representación en 8 bits, debe completar con ceros a la
+        izquierda en caso de ser necesario.
+
+    \begin{center}
+
+        \begin{tabular}[t]{|c|c|c|}
+
+        \cline{2-3}
+
+            \multicolumn{1}{c}{}&\multicolumn{2}{|c|}{\textbf{Sistema Binario}}\\
+
+        \hline
+
+            \textbf{Sistema} & \textbf{Sin Signo}& \textbf{Sin Signo}\\
+
+            \textbf{Decimal} & ~ & \textbf{en 8 bits}\\
+
+        \hline
+
+            0 & \hspace{14em}~&\hspace{14em}~\\
+
+        \hline
+
+            40&&\\
+
+        \hline
+
+            80&&\\
+
+        \hline
+
+            147&&\\
+
+        \hline
+
+            255&&\\
+
+        \hline
+
+        \end{tabular}
+
+    \end{center}
+
+\item Completar la siguiente tabla con la representación en \emph{8 bits} de
+    los siguientes números en \emph{Signo Magnitud} y \emph{Complemento a 2}.
+    Indique con un guion aquellos casos donde no sea posible.
+
+    \begin{center}
+
+        \begin{tabular}[t]{|c|c|c|}
+
+        \hline
+
+            \textbf{Decimal} & \textbf{Signo Magnitud} & \textbf{Complemento a
+            2}\\
+
+        \hline
+
+            3 & \hspace{14em}~&\hspace{14em}~\\
+
+        \hline
+
+            -3&&\\
+
+        \hline
+
+            66&&\\
+
+        \hline
+
+            -66&&\\
+
+        \hline
+
+            -128&&\\
+
+        \hline
+
+        \end{tabular}
+
+    \end{center}
+
+    \item Complete la siguiente tabla que representa enteros de \textbf{3
+        bits}. Indique con un guion aquellos casos donde no sea posible.
+
+        \begin{center}
+
+            \begin{tabular}[t]{|c|c|c|c|}
+
+            \cline{2-4}
+
+            \multicolumn{1}{c}{}&\multicolumn{3}{|c|}{\textbf{Sistema Binario}}\\
+
+            \hline
+
+                \textbf{Sistema} & \textbf{Complemento a 2}& \textbf{Signo
+                Magnitud} & \textbf{Sin Signo}\\
+
+                \textbf{Decimal} & ~ & ~ &\\
+
+            \hline
+
+                3 & \hspace{9em}~&\hspace{9em}~&\hspace{9em}~\\
+
+            \hline
+
+                2&&&\\
+
+            \hline
+
+                1&&&\\
+
+            \hline
+
+                0&&&\\
+
+            \hline
+
+                -1&&&\\
+
+            \hline
+
+                -2&&&\\
+
+            \hline
+
+                -3&&&\\
+
+            \hline
+
+                -4&&&\\
+
+            \hline
+
+            \end{tabular}
+
+        \end{center}
+
+        \begin{enumerate}
+
+            \item Una vez completada la tabla, a cada valor de la columna
+                Complemento a 2 aplique la operación de complemento a 2 y
+                responda: ¿Cuál es el \emph{significado aritmético} de lo que
+                observamos?
+
+            \item ¿Cuál es el rango de números representables para \textbf{3
+                bits} en:
+
+            \begin{enumerate*}[itemjoin=\hspace{2em}]
+
+                \item Sin signo?
+
+                \item Signo magnitud?
+
+                \item Complemento a 2?
+
+            \end{enumerate*}
+
+    \end{enumerate}
+
+    \item ¿Cuál es la \emph{fórmula general} para obtener el rango de números
+    representables para \textbf{n} bits si la representación se trata de:
+
+        \begin{enumerate*}[itemjoin=\hspace{2em}]
+
+            \item Sin signo?
+
+            \item Signo magnitud?
+
+            \item Complemento a 2?
+
+        \end{enumerate*}
+
+    \item Indicar el rango de los números representables con 4, 8, 16 y 32
+        bits utilizando notación:
+
+        \begin{center}
+
+            \begin{tabular}[t]{|c|c|c|c|}
+
+            \cline{2-4}
+
+            \multicolumn{1}{c|}{}& \textbf{Sin Signo} &
+                \textbf{Complemento a 2} & \textbf{Signo Magnitud}\\
+
+            \hline
+
+                4 bits & \hspace{9em}~ &\hspace{9em}~&\hspace{9em}~\\
+
+            \hline
+
+            8 bits&&&\\
+
+            \hline
+
+            16 bits&&&\\
+
+            \hline
+
+            32 bits&&&\\
+
+            \hline
+
+            \end{tabular}
+
+        \end{center}
+
+
+    \item Representar en Complemento a 2 los siguientes números enteros
+        decimales. Utilizar representaciones de 8, 16 o 32 bits según sea
+        necesario.
+
+        \begin{center}
+
+            \begin{tabular}[t]{|c|c|}
+
+            \hline
+
+                \textbf{Sistema} & \textbf{Complemento a 2}\\
+
+                \textbf{Decimal} & ~ \\
+
+            \hline
+
+                -50 & \hspace{27em}~ \\
+
+            \hline
+
+                -128&\\
+
+            \hline
+
+                -256&\\
+
+            \hline
+
+                -542&\\
+
+            \hline
+
+                -40090&\\
+
+            \hline
+
+            \end{tabular}
+
+        \end{center}
+
+    \pagebreak %Agregado por que sino queda solo la tabla al final del TP
+    \item Complete la siguiente tabla para los números hexadecimales
+        representados en 8 bits. Una vez expresado en numero hexadecimal en
+        binario, interprete la secuencia de bits como un numero decimal
+        expresado en los sistemas \emph{Sin signo} y \emph{Complemento a 2}.
+
+        \begin{center}
+            \begin{tabular}[t]{|c|c|c|c|}
+
+            \hline
+
+            \textbf{Hex.} & \textbf{Binario} & \textbf{Sin Signo} & \textbf{Complemento a 2}\\
+
+            \hline
+
+            \textbf{A3} & $1010\,0011$ & $163$ & $-93$\\
+
+            \hline
+
+            \textbf{2B} & \hspace{9em}~ &~&~\\
+
+            \hline
+
+            \textbf{9F}&&&\\
+
+            \hline
+
+            \textbf{F9}&&&\\
+
+            \hline
+
+            \end{tabular}
+
+        \end{center}
+
+\end{enumerate}
+
+\end{document}
