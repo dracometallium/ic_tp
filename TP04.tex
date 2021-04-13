@@ -1,0 +1,226 @@
+%%% LaTeX Template: Article/Thesis/etc. with colored headings and special fonts
+%%%
+%%% Source: http://www.howtotex.com/
+% vim: set spell spelllang=es syntax=tex :
+
+\documentclass[12pt]{article}
+\usepackage{styles/apuntes-estilo}
+\usepackage{fancyhdr,lastpage}
+\usepackage{hyperref}
+\usepackage[inline]{enumitem}
+\usepackage{xurl}
+
+\def\maketitle{
+
+\makeatletter{
+    \color{bl} \centering \huge \sc
+    \textbf{
+        Trabajo práctico N° 4\\
+        \large \vspace*{-8pt} \color{black}
+        Representación de la información
+        \vspace*{8pt}
+    }\\
+    \small Fecha de finalización: 19 de abril
+    \par
+}
+
+\makeatother
+
+\makeatletter
+\input{tex/banner.tex}
+
+}
+
+% Custom headers and footers
+\fancyhf{} % clear all header and footer fields
+\fancypagestyle{plain}{\fancyhf{}}
+\pagestyle{fancy}
+\lhead{\footnotesize TP N° 4 - Representación de la información}
+\rhead{\footnotesize \thepage\ }
+
+\def\ti#1#2{\texttt{#1} & #2 \\ }
+
+\begin{document}
+
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{1pt}
+
+\textbf{Objetivo:} comprender la representación binaria de números de punto
+(coma) fijo, y la suma de números enteros y punto fijo en binario.
+
+\textbf{Recursos web:}
+
+\vspace{-2\topsep}
+\begin{itemize}
+
+    \itemsep2pt \parskip0pt \parsep0pt
+    \item Wikipedia: \emph{IEEE coma flotante}:
+        \url{http://es.wikipedia.org/wiki/IEEE_coma_flotante}
+
+    \item Wikipedia: \emph{Complemento a 2}:
+        \url{https://en.wikipedia.org/wiki/Two\%27s_complement}
+
+\end{itemize}
+
+\textbf{Lectura obligatoria:}
+
+\vspace{-2\topsep}
+\begin{itemize}
+
+    \itemsep2pt \parskip0pt \parsep0pt
+
+    \item Apuntes de cátedra. Capitulo 3: Representación de la Información.
+        Disponible en: \url{https://egrosclaude.github.io/IC/IC-notes.pdf}
+
+\end{itemize}
+
+\textbf{Nota}: La abreviatura ``Hex'' significa Hexadecimal, y el prefijo
+``\textbf{0x}'' indica que un número está en hexadecimal.
+
+\section{Operaciones aritméticas de números enteros}
+
+\begin{enumerate}
+
+    \item Dados los siguientes números representados en Complemento a 2 con 6
+        bits, efectuar las siguientes restas utilizando el mecanismo donde la
+        resta se transforma en una suma: $A-B = A+(-B)$.
+
+        \begin{enumerate*}[itemjoin=\hspace{2em}]
+
+            \item $00\,1010 - 00\,0110$
+
+            \item $01\,0000 - 00\,0001$
+
+            \item $01\,1100 - 11\,1111$
+
+        \end{enumerate*}
+
+    \item Determinar cuáles de las siguientes operaciones producen overflow,
+        considerando una representación en \emph{complemento a 2} con
+        \textbf{8 bits}:
+
+        \begin{enumerate*}[itemjoin=\hspace{2em}]
+
+            \item $0100\,1111 + 0011\,1100$
+
+            \item $0101\,1111 + 1011\,1100$
+
+            \item $1010\,0100 + 1101\,1000$
+
+        \end{enumerate*}
+
+    \item Elija un numero $N$ entre 33 y 50 y complete la siguiente tabla,
+        realizando la \textbf{división entera} del número decimal y luego
+        representándolo en binario:
+
+        \begin{center}
+
+            \begin{tabular}[t]{|c|c|c|}
+
+            \cline{2-3}
+
+            \multicolumn{1}{c|}{}& \textbf{Decimal} & \textbf{Binario} \\
+
+            \hline
+
+                $N$ & \hspace{9em}~ &\hspace{9em}~\\
+
+            \hline
+
+                $N/(2^1)$ & ~ &~\\
+
+            \hline
+
+                $N/(2^2)$ & ~ &~\\
+
+            \hline
+
+                $N/(2^3)$ & ~ &~\\
+
+            \hline
+
+                $N/(2^4)$ & ~ &~\\
+
+            \hline
+
+                $N/(2^5)$ & ~ &~\\
+
+            \hline
+
+            \end{tabular}
+
+        \end{center}
+
+        \begin{enumerate}
+
+            \item ¿De que manera sencilla se puede multiplicar y dividir por diez un
+                número representado base 10 sin realizar calculo alguno?
+
+            \item ¿Puede deducir algún mecanismo sencillo para dividir por dos un
+                numero representado en binario?
+
+            \item ¿Puede deducir algún mecanismo sencillo para multiplicar por dos un
+                numero representado en binario?
+
+        \end{enumerate}
+
+\end{enumerate}
+
+\section{Representación de números reales}
+
+\begin{enumerate}[resume]
+
+    \item Representar los números reales en notación de \emph{punto Fijo} y
+        \emph{complemento a 2}, utilizando 4 bits para la parte entera y 4
+        para la parte fraccionaria:
+
+        \begin{enumerate*}[itemjoin=\hspace{2em}]
+
+            \item $1.75$
+
+            \item $-1.75$
+
+            \item $7.06$
+
+            \item $-5.9$
+
+        \end{enumerate*}
+
+    \item Para cada inciso del ejercicio anterior, realice la conversión
+        inversa (es decir, de Punto Fijo a expresión decimal) e indique el
+        \textbf{error de precisión cometido} (la diferencia entre el número
+        original y el representado).
+
+    \item Los siguientes números están representados en \emph{Punto Fijo
+        y complemento a dos en 8 bits, con cuatro bits para la parte entera y
+        4 para la parte fraccionaria}. Indique a qué número decimal se corresponde:
+
+        \begin{enumerate*}[itemjoin=\hspace{2em}]
+
+            \item 0x41
+
+            \item 0xF8
+
+            \item 0xA3
+
+        \end{enumerate*}
+
+    \item Dados los siguientes números representados en \emph{Punto Fijo y
+        Complemento a 2, con 4 bits para la parte entra y 4 bits para la parte
+        fraccionaria}, efectuar las siguientes sumas y determinar cuales de ellas
+        producen \emph{overflow}:
+
+        \begin{enumerate*}[itemjoin=\hspace{2em}]
+
+            \item $1000.1010 + 1100.0110$
+
+            \item $0001.0000 + 1000.0001$
+
+            \item $0111.1100 + 0111.0010$
+
+        \end{enumerate*}
+
+\end{enumerate}
+
+\end{document}
