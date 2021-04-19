@@ -1,0 +1,130 @@
+%%% LaTeX Template: Article/Thesis/etc. with colored headings and special fonts
+%%%
+%%% Source: http://www.howtotex.com/
+% vim: set spell spelllang=es syntax=tex :
+
+\documentclass[12pt]{article}
+\usepackage{styles/apuntes-estilo}
+\usepackage{fancyhdr,lastpage}
+\usepackage{hyperref}
+\usepackage[inline]{enumitem}
+\usepackage{xurl}
+
+\def\maketitle{
+
+\makeatletter{
+    \color{bl} \centering \huge \sc
+    \textbf{
+        Trabajo práctico N° 5\\
+        \large \vspace*{-8pt} \color{black}
+        Representación de digital de datos
+        \vspace*{8pt}
+    }\\
+    \small Fecha de finalización: 26 de abril\\
+    \color{red}
+    \textbf{IMPORTANTE:}\\
+    Fecha del primer examen parcial: Martes 27/04
+    \par
+}
+
+\makeatother
+
+\makeatletter
+\input{tex/banner.tex}
+
+}
+
+% Custom headers and footers
+\fancyhf{} % clear all header and footer fields
+\fancypagestyle{plain}{\fancyhf{}}
+\pagestyle{fancy}
+\lhead{\footnotesize TP N° 5 - Representación de la Información}
+\rhead{\footnotesize \thepage\ }
+
+\def\ti#1#2{\texttt{#1} & #2 \\ }
+
+\begin{document}
+
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{1pt}
+
+\textbf{Objetivo:} comprender la representación binaria de números de punto
+(coma) flotante.
+
+\textbf{Recursos web:}
+
+\vspace{-2\topsep}
+\begin{itemize}
+
+    \itemsep2pt \parskip0pt \parsep0pt
+    \item Wikipedia: \emph{IEEE coma flotante}:
+        \url{http://es.wikipedia.org/wiki/IEEE_coma_flotante}
+
+    \item Calculadora IEEE-754: \url{http://www.zator.com/Cpp/E2_2_4a1.htm}
+
+\end{itemize}
+
+\textbf{Lectura obligatoria:}
+
+\vspace{-2\topsep}
+\begin{itemize}
+
+    \itemsep2pt \parskip0pt \parsep0pt
+
+    \item Apuntes de cátedra. Capitulo 3: Representación de la Información.
+        Disponible en: \url{https://egrosclaude.github.io/IC/IC-notes.pdf}
+
+\end{itemize}
+
+\textbf{Nota}: La abreviatura ``Hex'' significa Hexadecimal, y el prefijo
+``\textbf{0x}'' indica que un número está en hexadecimal.
+
+\section{Representación de números reales}
+
+\begin{enumerate}
+
+    \item Los siguientes números están representados en \emph{Punto Flotante
+        IEEE-754 de precisión simple (32 bits)}. Indique a qué número decimal
+        se corresponde:
+
+        \begin{enumerate*}[itemjoin=\hspace{2em}]
+
+            \item 0x41700000
+
+            \item 0x42CD8000
+
+            \item 0x42008000
+
+        \end{enumerate*}
+
+    \item Convertir del sistema decimal a la notación \emph{Punto Flotante
+        IEEE-754 de precisión simple (32 bits)} y mostrar el resultado final
+        en notación hexadecimal:
+
+        \begin{enumerate*}[itemjoin=\hspace{2em}]
+
+            \item $1.75$
+
+            \item $-0.0625$
+
+            \item $0.3$
+
+            \item $-5.9$
+
+            \item $0$
+
+            \item $-infinito$
+
+        \end{enumerate*}
+
+    \item Para cada inciso del ejercicio anterior, realice la conversión
+        inversa (es decir, de Punto Flotante a expresión decimal) e indique el
+        \textbf{error de precisión cometido}.
+
+    \item Calcular el rango de los números reales representables con el
+        formato \emph{IEEE-754 de precisión simple}.
+
+\end{enumerate}
+
+\end{document}
