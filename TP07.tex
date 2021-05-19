@@ -92,6 +92,24 @@ hardware y sus interacciones para ejecutar instrucciones.
 \begin{enumerate}
     \itemsep2pt \parskip0pt \parsep0pt
 
+    \item ¿Qué es organización de una computadora y que es su arquitectura?
+
+    \item ¿Cuáles son las componentes de una CPU? ¿Cuáles son las componentes
+        de una computadora?
+
+    \item ¿Qué diferencias entre los registros y la memoria principal?
+
+    \item Si una nueva arquitectura tiene instrucciones con 5 bits para el
+        código de operación y 10 para operando (donde en el caso de las
+        instrucciones de carga y almacenamiento indican la dirección de la
+        celda origen o destino) ¿Cuantas operaciones distintas puede tener
+        como máximo esta arquitectura? ¿Cuantas celdas de memoria puede tener?
+
+    \item Se desea establecer el tamaño mínimo para una arquitectura que tiene
+        14 instrucciones distintas. Cada instrucción tiene tres operandos, y
+        cada operando referencia una de las 512 celdas de memoria ¿Cuál es la
+        cantidad mínima de bits que puede tener una instrucción?
+
     \item Con respecto a la memoria de la \emph{MCBE}, indique:
 
         \begin{enumerate}
@@ -121,12 +139,6 @@ hardware y sus interacciones para ejecutar instrucciones.
                 utilizan las instrucciones aritméticas? ¿Cuál es el rango de
                 valores del acumulador?
 
-            \item ¿En qué dirección de memoria debe ubicarse la primera
-                instrucción del programa?
-
-            \item ¿Cuál es la dirección más alta donde puede encontrarse una
-                instrucción a ser ejecutada?
-
         \end{enumerate}
 
     \item Con respecto a las instrucciones ejecutadas por la \emph{CPU} de la
@@ -140,44 +152,10 @@ hardware y sus interacciones para ejecutar instrucciones.
             \item ¿Puede el \emph{MCBE} encontrar una instrucción que no sea
                 capaz de decodificar?
 
-            \item Supongamos que hemos almacenado en la posición 14 un dato
-                numérico que representa la edad de una persona ¿Qué pasa si
-                en algún momento de la ejecución el \emph{PC} contiene el
-                número 14?  ¿Qué pasará si esa persona tiene 33 años? ¿Qué
-                pasará si tiene 65?
-
-            \item ¿Qué efecto tendría ubicar los datos del programa a partir
-                de la posición de memoria 0 y las instrucciones a
-                continuación?
-
             \item ¿Qué pasa si el programa no contiene una instrucción
                 \emph{HLT}?
 
-            \item Un programa ¿Puede modificarse a sí mismo? ¿Esto es útil?
-                ¿Conveniente? ¿Peligroso?
-
-            \item ¿Cómo se podría aumentar la cantidad de instrucciones
-                diferentes de el \emph{MCBE}? ¿Esto tendría algún efecto sobre
-                la longitud de los programas que puede ejecutar la máquina?
-
-            \item ¿Podría aumentarse la capacidad de memoria de el
-                \emph{MCBE}? ¿Esto requeriría algún cambio adicional a la
-                máquina?
-
         \end{enumerate}
-
-        \item Si una nueva arquitectura tiene instrucciones con 5 bits para el
-            código de operación y 10 para operando (donde en el caso de las
-            instrucciones de carga y almacenamiento indican la dirección de la
-            celda origen o destino) ¿Cuantas operaciones distintas puede tener
-            como máximo esta arquitectura? ¿Cuantas celdas de memoria puede
-            tener?
-
-        \item Se desea establecer el tamaño mínimo para una arquitectura que
-            tiene 14 instrucciones distintas, con cada instrucción tiene tres
-            operandos, y donde cada operando referencia una de las 512 celdas
-            de memoria ¿Cuál es la cantidad mínima de bits que puede tener una
-            instrucción?
 
 \end{enumerate}
 
