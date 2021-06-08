@@ -8,7 +8,7 @@ FIGURAS:=$(wildcard img/*.svg)
 LOGOS_PDF=$(LOGOS:.svg=.pdf)
 FIGURAS_PDF=$(FIGURAS:.svg=.pdf)
 PDF=$(FIGURAS_PDF) $(LOGOS_PDF)
-GARBAGE=*.aux *.bbl *.blg *.log *.pdf *.toc *.lof $(PDF) *.nav *.out *.snm
+GARBAGE=*.aux *.bbl *.blg *.log *.toc *.lof *.nav *.out *.snm
 
 all: $(TP_PDF)
 
@@ -23,5 +23,11 @@ $(LOGOS_PDF): %.pdf : %.svg
 	inkscape $^ --batch-process --export-area-drawing -o $@
 
 clean:
+	rm -f $(GARBAGE) *.pdf
+	rm -f $(PDF)
+
+clean-garbage:
 	rm -f $(GARBAGE)
-	rm -f $(PDF) $(DATOS)
+
+pdf-only: all clean-garbage
+	rm -f $(PDF)
