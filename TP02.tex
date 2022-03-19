@@ -10,6 +10,8 @@
 \usepackage{hyperref}
 \usepackage[inline]{enumitem}
 \usepackage{xurl}
+\usepackage{setspace} % para el espacio de las filas de la tabla
+\usepackage{booktabs}
 
 \def\maketitle{
 
@@ -21,7 +23,7 @@
         Unidades de información
         \vspace*{8pt}
     }\\
-    \small Fecha de finalización: 5 de abril
+    \small Fecha de finalización: 8 de Abril de 2022
     \par
 }
 
@@ -207,9 +209,11 @@ de medida internacional y de prefijo binario.
     \caption{Prefijos del Sistema Internacional}
     \label{tablaPrefijoSI}
 
-    \begin{tabular}{ | c | c | c | }
+	\begin{spacing}{1.5}
+	
+    \begin{tabular}{ c | c | c }
         \hline
-        Prefijo & Símbolo & Equivalencia a la unidad \\
+        \textbf{Símbolo} & \textbf{Prefijo} & \textbf{Equivalencia a la unidad} \\
         \hline
         \textbf{T} & tera & $10^{12}=1\,000^{4}$ \\
         \hline
@@ -219,7 +223,7 @@ de medida internacional y de prefijo binario.
         \hline
         \textbf{K} & kilo & $10^{3}=1\,000^{1}$ \\
         \hline
-        \multicolumn{2}{|c|}{\emph{sin prefijo}} & $10^{0}=1\,000^{0}=1$ \\
+        \multicolumn{2}{c|}{\emph{sin prefijo}} & $10^{0}=1\,000^{0}=1$ \\
         \hline
         \textbf{m} & mili & $10^{-3}=1\,000^{-1}$ \\
         \hline
@@ -227,20 +231,17 @@ de medida internacional y de prefijo binario.
         \hline
         \textbf{n} & nano & $10^{-9}=1\,000^{-3}$ \\
         \hline
-    \end{tabular}
-
-    \vspace{2\topsep}
-    Ejemplo:
-    \vspace{-1\topsep}
-    \begin{itemize}
-
-        \itemsep2pt \parskip0pt \parsep0pt
-        \item   Un \emph{kilo}gramo son $10^{3}$ gramos.
-        \item   Un \emph{nano}litro son $10^{-9}$ litros.
-
-    \end{itemize}
-
+    \end{tabular}    
+	\end{spacing}
 \end{table}
+
+Ejemplos:
+\begin{itemize}
+  \itemsep2pt \parskip0pt \parsep0pt
+  \item   Un \emph{kilo}gramo son $10^{3}$ gramos.
+  \item   Un \emph{nano}litro son $10^{-9}$ litros.
+\end{itemize}
+
 
 \begin{table}[h]
 
@@ -249,49 +250,47 @@ de medida internacional y de prefijo binario.
     \caption{Prefijos decimales y binarios}
     \label{tablaComparacionPrefijos}
 
-    \begin{tabular}{ | c | c | }
+	\begin{spacing}{1.5}
+	
+    \begin{tabular}{ c | c }
         \hline
         \textbf{Prefijos decimales} &
         \textbf{prefijos binarios}\\
         \hline
+        $kilobyte(\emph{\textbf{KB}})=10^{3}\emph{bytes}=1\,000^{1}$\emph{bytes} &
+        $kibibyte(\emph{\textbf{KiB}})=2^{10}\emph{bytes}=1\,024^{1}$\emph{bytes} \\
         \hline
-        $kilobyte(\emph{KB})=10^{3}\emph{bytes}=1\,000^{1}$\emph{bytes} &
-        $kibibyte(\emph{KiB})=2^{10}\emph{bytes}=1\,024^{1}$\emph{bytes} \\
+        $megabyte(\emph{\textbf{MB}})=10^{6}\emph{bytes}=1\,000^{2}$\emph{bytes} &
+        $mebibyte(\emph{\textbf{MiB}})=2^{20}\emph{bytes}=1\,024^{2}$\emph{bytes} \\
         \hline
-        $megabyte(\emph{MB})=10^{6}\emph{bytes}=1\,000^{2}$\emph{bytes} &
-        $mebibyte(\emph{MiB})=2^{20}\emph{bytes}=1\,024^{2}$\emph{bytes} \\
+        $gigabyte(\emph{\textbf{GB}})=10^{9}\emph{bytes}=1\,000^{3}$\emph{bytes} &
+        $gibibyte(\emph{\textbf{GiB}})=2^{30}=1\,024^{3}$\emph{bytes} \\
         \hline
-        $gigabyte(\emph{GB})=10^{9}\emph{bytes}=1\,000^{3}$\emph{bytes} &
-        $gibibyte(\emph{GiB})=2^{30}=1\,024^{3}$\emph{bytes} \\
+        $terabyte(\emph{\textbf{TB}})=10^{12\emph{bytes}}=1\,000^{4}$\emph{bytes} &
+        $tebibyte(\emph{\textbf{TiB}})=2^{40}\emph{bytes}=1\,024^{4}$\emph{bytes} \\
         \hline
-        $terabyte(\emph{TB})=10^{12\emph{bytes}}=1\,000^{4}$\emph{bytes} &
-        $tebibyte(\emph{TiB})=2^{40}\emph{bytes}=1\,024^{4}$\emph{bytes} \\
+        $petabyte(\emph{\textbf{PB}})=10^{15}\emph{bytes}=1\,000^{5}$\emph{bytes} &
+        $pebibyte(\emph{\textbf{PiB}})=2^{50}\emph{bytes}=1\,024^{5}$\emph{bytes} \\
         \hline
-        $petabyte(\emph{PB})=10^{15}\emph{bytes}=1\,000^{5}$\emph{bytes} &
-        $pebibyte(\emph{PiB})=2^{50}\emph{bytes}=1\,024^{5}$\emph{bytes} \\
+        $exabyte(\emph{\textbf{EB}})=10^{18}\emph{bytes}=1\,000^{6}$\emph{bytes} &
+        $exbibyte(\emph{\textbf{EiB}})=2^{60}\emph{bytes}=1\,024^{6}$\emph{bytes} \\
         \hline
-        $exabyte(\emph{EB})=10^{18}\emph{bytes}=1\,000^{6}$\emph{bytes} &
-        $exbibyte(\emph{EiB})=2^{60}\emph{bytes}=1\,024^{6}$\emph{bytes} \\
+        $zettabyte(\emph{\textbf{ZB}})=10^{21}\emph{bytes}=1\,000^{7}$\emph{bytes} &
+        $zebibyte(\emph{\textbf{ZiB}})=2^{70}\emph{bytes}=1\,024^{7}$\emph{bytes} \\
         \hline
-        $zettabyte(\emph{ZB})=10^{21}\emph{bytes}=1\,000^{7}$\emph{bytes} &
-        $zebibyte(\emph{ZiB})=2^{70}\emph{bytes}=1\,024^{7}$\emph{bytes} \\
-        \hline
-        $yottabyte(\emph{YB})=10^{24}\emph{bytes}=1\,000^{8}$\emph{bytes} &
-        $yobibyte(\emph{YiB})=2^{80}\emph{bytes}=1\,024^{8}$\emph{bytes} \\
+        $yottabyte(\emph{\textbf{YB}})=10^{24}\emph{bytes}=1\,000^{8}$\emph{bytes} &
+        $yobibyte(\emph{\textbf{YiB}})=2^{80}\emph{bytes}=1\,024^{8}$\emph{bytes} \\
         \hline
     \end{tabular}
-
-    \vspace{2\topsep}
-    Ejemplo:
-    \vspace{-1\topsep}
-    \begin{itemize}
-
-        \itemsep2pt \parskip0pt \parsep0pt
-        \item   Un \emph{kilo}byte son $1\,000^{1}$ bytes.
-        \item   Un \emph{mebi}byte son $2^{20}$ bytes.
-
-    \end{itemize}
-
+	\end{spacing}
 \end{table}
+
+Ejemplos:
+\begin{itemize}
+	\itemsep2pt \parskip0pt \parsep0pt
+    \item   Un \emph{kilo}byte son $1\,000^{1}$ bytes.
+    \item   Un \emph{mebi}byte son $2^{20}$ bytes.
+\end{itemize}
+
 
 \end{document}
