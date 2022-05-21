@@ -40,7 +40,7 @@
 
 \def\ti#1#2{\texttt{#1} & #2 \\ }
 
-\newcommand{\bash}{\textbf{\emph{BASH}}\ }
+\newcommand{\bash}{\textbf{\emph{BASH}}}
 
 \begin{document}
 
@@ -98,21 +98,21 @@ interactúa (más abajo se explica esto con un ejemplo).
 
 \section{Sistemas de archivos}
 
-El concepto de directorios (comúnmente llamados ``carpetas'' y archivos es hoy
-en día familiar a los usuarios de computadoras, en general el usuario se
-maneja visualmente con el ratón y el Explorador de Archivos, utilizando estos
-para acceder a los directorios, abrir archivos, ejecutar programas, etc. Podemos
+El concepto de directorios (comúnmente llamados ``carpetas'') y archivos es hoy
+en día familiar a los usuarios de computadoras, en general el usuario se maneja
+visualmente con el ratón y el Explorador de Archivos, utilizando estos para
+acceder a los directorios, abrir archivos, ejecutar programas, etc. Podemos
 pensar el sistema de archivos como una forma de organizar todo el contenido en
 el dispositivo de almacenamiento. Los archivos son datos concretos, utilizan
-espacio físico del dispositivo, mientras que las carpetas sirven para
+espacio físico del dispositivo, mientras que los directorios sirven para
 organizar ``lógicamente'' las cosas, igual que una persona tiene estanterías y
 cajones en un escritorio para organizar sus papeles.
 
 La figura \ref{arbolDirectorios} muestra un esquema de como se puede pensar en
 una estructura de directorios y archivos. \textbf{A}, \textbf{B}, \textbf{C},
-\textbf{D}, \textbf{E}, \textbf{G} y \textbf{J} son carpetas o directorios,
-\textbf{F}, \textbf{H}, \textbf{I}, \textbf{K}, \textbf{L}, \textbf{M},
-\textbf{N} y \textbf{O} son archivos.
+\textbf{D}, \textbf{E}, \textbf{G} y \textbf{J} son directorios, \textbf{F},
+\textbf{H}, \textbf{I}, \textbf{K}, \textbf{L}, \textbf{M}, \textbf{N} y
+\textbf{O} son archivos.
 
 \begin{figure}[!htb]
 
@@ -135,11 +135,11 @@ comandos, se posiciona al usuario en la carpeta personal o \textbf{``HOME''}
 (en Linux en general es \emph{``/home/usuarioX''}). Desde aquí el usuario
 puede navegar por sus archivos y ejecutar comandos.
 
-Además, existen dos formas de hacer referencia a las carpetas y a los archivos
-en el intérprete, absoluta y relativa. Cuando utilizamos la forma absoluta se
-escribe todo el camino desde la carpeta inicial (en \emph{Linux} se denota con
-el símbolo \emph{``/''}) hasta la ubicación deseada. Ejemplos de uso absoluto:
-\emph{/home/usuario/trabajo1}, \emph{/etc}, \emph{/tmp}, etc.
+Además, existen dos formas de hacer referencia a los directorios y a los
+archivos en el intérprete, absoluta y relativa. Cuando utilizamos la forma
+absoluta se escribe todo el camino desde la carpeta inicial (en \emph{Linux}
+se denota con el símbolo \emph{``/''}) hasta la ubicación deseada. Ejemplos de
+uso absoluto: \emph{/home/usuario/trabajo1}, \emph{/etc}, \emph{/tmp}, etc.
 
 El modo relativo sirve para hacer referencia a un directorio que se encuentra
 ``cerca'' del directorio de trabajo actual en la jerarquía, como por ejemplo
