@@ -15,12 +15,12 @@
 \makeatletter{
     \color{blue} \centering \huge \sc
     \textbf{
-        Trabajo práctico de laboratorio N° 1\\
+        Trabajo práctico de laboratorio N° 10\\
         \large \vspace*{-8pt} \color{black}
         Introducción al shell del sistema GNU/LINUX
         \vspace*{8pt}
     }\\
-    \small Fecha de finalización: 12 de junio
+    \small Fecha de finalización: 10 de Junio
     \par
 }
 
@@ -81,6 +81,16 @@ Máquina Virtual corriendo Linux) y las siguientes aplicaciones:
 
 \end{itemize}
 
+NOTA: para un tutorial de conexión remota desde Windows a su usuario de alumno
+FI (creado por la Facultad de Informática oportunamente), dirijase a
+\ref{subsec:anexoI} Anexo I: Conexión desde entorno Windows a usuario de
+alumno FI\\
+
+NOTA 2: para un tutorial de conexión remota desde Linux a su usuario de alumno
+FI (creado por la Facultad de Informática oportunamente), dirijase a
+\ref{subsec:anexoII} Anexo II: Conexión desde entorno Linux a usuario de
+alumno FI\\
+
 El sistema operativo controla diferentes procesos de una computadora. Uno de
 ellos es el intérprete de comandos o \emph{shell}. Este es un programa que
 permite al usuario interactuar con el Sistema Operativo. Permite iniciar
@@ -98,15 +108,16 @@ interactúa (más abajo se explica esto con un ejemplo).
 
 \section{Sistemas de archivos}
 
-El concepto de directorios (comúnmente llamados ``carpetas'') y archivos es hoy
-en día familiar a los usuarios de computadoras, en general el usuario se maneja
-visualmente con el ratón y el Explorador de Archivos, utilizando estos para
-acceder a los directorios, abrir archivos, ejecutar programas, etc. Podemos
-pensar el sistema de archivos como una forma de organizar todo el contenido en
-el dispositivo de almacenamiento. Los archivos son datos concretos, utilizan
-espacio físico del dispositivo, mientras que los directorios sirven para
-organizar ``lógicamente'' las cosas, igual que una persona tiene estanterías y
-cajones en un escritorio para organizar sus papeles.
+El concepto de directorios (comúnmente llamados ``carpetas'') y archivos es
+hoy en día familiar a los usuarios de computadoras, en general el usuario se
+maneja visualmente con el ratón y el Explorador de Archivos, utilizando estos
+para acceder a los directorios, abrir archivos, ejecutar programas, etc.
+Podemos pensar el sistema de archivos como una forma de organizar todo el
+contenido en el dispositivo de almacenamiento. Los archivos son datos
+concretos, utilizan espacio físico del dispositivo, mientras que los
+directorios sirven para organizar ``lógicamente'' las cosas, igual que una
+persona tiene estanterías y cajones en un escritorio para organizar sus
+papeles.
 
 La figura \ref{arbolDirectorios} muestra un esquema de como se puede pensar en
 una estructura de directorios y archivos. \textbf{A}, \textbf{B}, \textbf{C},
@@ -116,13 +127,13 @@ una estructura de directorios y archivos. \textbf{A}, \textbf{B}, \textbf{C},
 
 \begin{figure}[!htb]
 
-	\centering
+    \centering
 
-	\includegraphics[height=0.45\textheight]{img/directorios.pdf}
+    \includegraphics[height=0.45\textheight]{img/directorios.pdf}
 
-	\caption{Árbol de directorios.}
+    \caption{Árbol de directorios.}
 
-	\label{arbolDirectorios}
+    \label{arbolDirectorios}
 
 \end{figure}
 
@@ -364,4 +375,116 @@ $ hexdump -C cpio | head -2
 
 \end{enumerate}
 
+\clearpage
+\subsection{Anexo I: Conexión desde entorno Windows a usuario de alumno FI}
+\label{subsec:anexoI}
+
+\begin{enumerate}
+
+\item Ingresamos en el buscador de Windows y ponemos la palabra \emph{remoto}, lo que nos traerá como resultado la aplicación: “Conexión a Escritorio remoto”. Dicho procedimiento se ilustra en la Figura \ref{busquedaWindows}. 
+
+\begin{figure}[!hb]
+
+    \centering
+
+    \includegraphics[width=0.5\textwidth]{img/tpLabImg1Win.pdf}
+
+    \caption{Búsqueda de Escritorio Remoto Windows.}
+
+    \label{busquedaWindows}
+
+\end{figure}
+
+\item Al hacer clic sobre el programa se nos abrirá la interfaz para ingresar
+    la dirección a la cual queremos conectarnos según Figura \ref{escRemoto}.
+
+    En donde dice Equipo ingresamos: \emph{\mbox{aularemota.fi.uncoma.edu.ar:1199}}
+
+\begin{figure}[!hb]
+
+    \centering
+
+    \includegraphics[width=0.5\textwidth]{img/tpLabImg2Win.pdf}
+
+    \caption{Pantalla de Escritorio Remoto Windows.}
+
+    \label{escRemoto}
+
+\end{figure}
+
+
+\item Luego nos aparecerá la pantalla de inicio de sesión del laboratorio
+    Linux como se muestra en la Figura \ref{logueoLinux}, donde tendrá que
+        proceder con su usuario y contraseña oportunamente creado.
+
+\begin{figure}[!htb]
+
+    \centering
+
+    \includegraphics[width=0.5\textwidth]{img/tpLabImg3Win.pdf}
+
+    \caption{Logueo de Usuario Linux.}
+
+    \label{logueoLinux}
+
+\end{figure}
+
+\item Una vez que esté logueado, para acceder a la Terminal, deberá ir a
+    \emph{Aplicaciones - Herramientas del sistema - Terminal} según Figura
+        \ref{terminalLinux}
+
+\begin{figure}[!htb]
+
+    \centering
+
+    \includegraphics[width=0.5\textwidth]{img/tpLabImg4Win.pdf}
+
+    \caption{Búsqueda de terminal Linux.}
+
+    \label{terminalLinux}
+
+\end{figure}
+\end{enumerate}
+
+\clearpage
+
+\subsection{Anexo II: Conexión desde entorno Linux a usuario de alumno FI}
+
+\label{subsec:anexoII}
+
+En GNU/Linux utilizaremos el comando freerdp para conectarnos al laboratorio
+de Introducción de Computación. Para instalar freerdp, desde una terminal
+ejecutar los siguientes comandos:\\
+
+\begin{enumerate}
+
+\item En Ubuntu: \emph{sudo apt install freedp2-x11 freerdp2-shadow-x11}
+
+\item En Debian: \emph{sudo apt install lightdm-remote-session-freerdp2}
+
+\item Para conectarse a un escritorio remoto usando xfreerdp:
+
+\emph{ xfreerdp /u:USERNAME /p:PASSWORD /v:HOST[:PORT]}
+
+\item Por ejemplo, para el usuario “mafalda” y su clave “12345”:
+
+\emph{xfreerdp /u:mafalda /p:12345 +glyph-cache /v:aularemota.fi.uncoma.edu:1199}
+
+\item Una vez que esté logueado, para acceder a la Terminal, deberá ir a
+    \emph{Aplicaciones - Herramientas del sistema - Terminal} según Figura
+        \ref{terminalLinuxEnLinux}.
+
+\begin{figure}[!htb]
+
+    \centering
+
+    \includegraphics[width=0.5\textwidth]{img/tpLabImg4Win.pdf}
+
+    \caption{Búsqueda de terminal Linux.}
+
+    \label{terminalLinuxEnLinux}
+
+\end{figure}
+
+\end{enumerate}
 \end{document}
