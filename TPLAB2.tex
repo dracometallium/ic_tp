@@ -1,0 +1,122 @@
+%%% LaTeX Template: Article/Thesis/etc. with colored headings and special fonts
+%%%
+%%% Source: http://www.howtotex.com/
+% vim: set spell spelllang=es syntax=tex :
+
+\documentclass[12pt]{article}
+\usepackage{styles/apuntes-estilo}
+\usepackage{fancyhdr,lastpage}
+\usepackage{hyperref}
+\usepackage[inline]{enumitem}
+\usepackage{xurl}
+\usepackage{upquote}
+
+\def\maketitle{
+
+\makeatletter{
+    \color{blue} \centering \huge \sc
+    \textbf{
+        Trabajo práctico de laboratorio N° 11\\
+        \large \vspace*{-8pt} \color{black}
+        Administración de procesos en sistema GNU/LINUX
+        \vspace*{8pt}
+    }\\
+    \small Fecha de finalización: 10 de Junio
+    \par
+}
+
+\makeatother
+
+\makeatletter
+\input{tex/banner.tex}
+
+}
+
+% Custom headers and footers
+\fancyhf{} % clear all header and footer fields
+\fancypagestyle{plain}{\fancyhf{}}
+\pagestyle{fancy}
+\lhead{\footnotesize Práctico N° 11 - Administración de procesos en sistema GNU/LINUX }
+\rhead{\footnotesize \thepage\ }
+
+\def\ti#1#2{\texttt{#1} & #2 \\ }
+
+\newcommand{\bash}{\textbf{\emph{BASH}}}
+
+\begin{document}
+
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{1pt}
+
+\textbf{Lectura obligatoria:}
+
+\vspace{-2\topsep}
+\begin{itemize}
+
+    \itemsep2pt \parskip0pt \parsep0pt
+
+    \item Apunte del shell de Linux:
+        \url{http://pedco.uncoma.edu.ar/mod/resource/view.php?id=207175}
+
+    \item Apunte introductorio a \bash:
+        \url{http://pedco.uncoma.edu.ar/mod/resource/view.php?id=244968}
+
+    \item Linux Man Pages Online: \url{https://linux.die.net/man/}
+
+\end{itemize}
+
+A continuación, se realizarán una serie de ejercicios para los cuales
+necesitará acceso a una computadora con el sistema operativo Linux (o una
+Máquina Virtual corriendo Linux) y las siguientes aplicaciones:
+
+\vspace{-2\topsep}
+\begin{itemize}
+
+    \itemsep2pt \parskip0pt \parsep0pt
+
+    \item   Intérprete de comandos \bash y demás utilidades que se encuentran
+        en la mayoría de las distribuciones de Linux.
+
+    \item   Un editor de texto en la interfaz de línea de comando o gráfica.
+
+\end{itemize}
+
+\section*{Administración de procesos}
+
+\begin{enumerate}
+
+    \item Cree un archivo con nombre \emph{dance.sh} con el siguiente
+        contenido:
+
+        \begin{verbatim}
+#!/bin/sh
+
+while true; do
+    printf "\t(>'-')>\r"
+    sleep 0.5
+    printf "\t<('-'<)\r"
+    sleep 0.5
+    printf "\t^('-')^\r"
+    sleep 0.5
+    printf "\t<('-'<)\r"
+    sleep 0.5
+done
+        \end{verbatim}
+
+    \item Agregue permisos de ejecución utilizando el comando \emph{chmod} al
+        archivo \emph{dance.sh} (puede usar el comando \emph{man chmod} para
+        más información de como se utiliza el comando).
+
+    \item Ejecute el programa ingresando en la terminal \emph{./dance.sh} ¿En
+        qué tipo de lenguaje esta escrito este programa: compilado o
+        interpretado?
+
+    \item Abra otra ventana y utilizando los comandos \emph{top} o \emph{ps a}
+        encuentre el \emph{PID} del proceso del programa \emph{dance.sh}.
+        Termine el programa utilizando el comando \emph{kill
+        \textbf{PID\_DEL\_PROCESO}}.
+
+\end{enumerate}
+
+\end{document}
