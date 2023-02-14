@@ -16,7 +16,7 @@
 \makeatletter{
     \color{blue} \centering \huge \sc
     \textbf{
-        Examen final libre 2022\\
+        Examen final libre\\
         \small \vspace*{-8pt} \color{black}
         Parte práctica
         \vspace*{8pt}
@@ -47,124 +47,109 @@
 
 \begin{enumerate}
 
-    \item ¿Cuál es la representación de $21_{12}$ en las siguientes bases?
+    \item ¿Cuál es la representación de 110 (en base 6) en las siguientes bases?
 
         \begin{enumerate}
 
-            \item Base 4.
+            \item Base 3.
 
             \item Base 2.
 
-            \item Base 8.
+            \item Base 16.
 
         \end{enumerate}
 
     \item ¿Cuál es rango de representación del los  sistemas \emph{de complemento a
-        dos}, \emph{signo magnitud} y \emph{sin signo} con 6 bytes?
+        dos}, \emph{signo magnitud} y \emph{sin signo} con 9 bytes?
 
     \item ¿Cual es la representación en \emph{punto fijo} y \emph{complemento
-        a 2} de los siguientes números si se utilizan 5 bits para la parte
-        entera y 3 para la parte fraccionaria? Indicar cual es el error de
+        a 2} de los siguientes números si se utilizan 4 bits para la parte
+        entera y 4 para la parte fraccionaria? Indicar cual es el error de
         representación (la diferencia entre el valor original y el
         almacenado).
 
         \begin{enumerate}
 
-            \item $15.3$
+            \item $6.3$
 
-            \item $-15.3$
+            \item $-6.3$
 
         \end{enumerate}
 
-    \item ¿Cuál es la representación hexadecimal del número $15.75$ cuando es
-        almacenado utilizando el sistema de \emph{Punto Flotante IEEE-754 de
-        precisión simple (32 bits)}?
+    \item Sea \textbf{0xC0C80000} un número en base 16 (hexadecimal) que
+        representa a un número real expresado en el sistema de \emph{Punto
+        Flotante IEEE-754 de precisión simple (32 bits)}. Indique cuál es el
+        valor en base 10 de dicho número real.
 
-    \item ¿Cuál es la representación hexadecimal de la codificación
-        en \emph{ASCII} la cadena ``\emph{Final Libre/22}''?
+    \item ¿Que mensaje esta codificado en la siguiente secuencia de bytes
+        expresados en hexadecimal: \textbf{46 69 6E 61 6C 20 41 47 4F 53 54 4F
+        2F 32 32}? \emph{Respetar mayúsculas y minúsculas.}
 
     \item Considerando la imagen que se muestra abajo, aplique el esquema de
-        codificación de imágenes visto en la práctica. \textbf{No olvide
-        incluir la cabecera}. Asuma que 00 = blanco, 11 = negro y 01 =
-        celeste. Muestre el resultado final expresado en hexadecimal.
+    codificación de imágenes visto en la práctica. \textbf{No olvide incluir
+    la cabecera}.  Asuma que 00 = blanco, 11 = negro y 01 = rojo. Muestre el
+    resultado final expresado en hexadecimal.
 
-    \includegraphics[width=0.50\textwidth]{img/img_2020_1tpo-r.pdf}
+    \includegraphics[width=0.50\textwidth]{img/img_2020_1par.pdf}
 
-    \item Si se tiene una imagen con 1024 píxeles de ancho, 256 píxeles de
-        alto, y una profundidad de color de 7 bits por pixel ¿Cuántos colores
-        distintos puede tener la imagen?
+    \item Si se tiene una imagen con 130 colores distintos ¿Cuál es la
+        cantidad mínima de bits necesarios para la profundidad de color, de
+        manera de poder representar la imagen sin pérdida de colores?
 
     \item Dado el siguiente programa:
 
         \begin{verbatim}
-     0          LD  MAX
-     1          JZ  END
-     2          SUB NUM
-     3          ST OUT
-     4          J   END
-     5  END:    HLT
-     6  NUM:    2
-     7  MAX:    16
+     0: START:  LD NUM
+     1:         ST OUT
+     2:         SUB UNO
+     3:         JZ FIN
+     4:         JMP START
+     5:         FIN: HLT
+     6: NUM:    3
+     7: UNO:    1
         \end{verbatim}
 
         \begin{enumerate}
 
             \item ¿Cuál es la salida del programa?
 
-            \item Si se compila el programa ¿Cuál sera el contenido binario de
-                las direcciones \textbf{1}, \textbf{2} y \textbf{4}?
+            \item ¿Cuál es el equivalente en código maquina binario de las
+                instrucciones de las direcciones \textbf{0}, \textbf{3} y
+                \textbf{4}?
 
         \end{enumerate}
 
     \item Dado el siguiente programa en binario:
 
         \begin{verbatim}
-    00 01001000
-    01 01111111
-    02 01001001
-    03 10101010
-    04 01101001
-    05 11100010
-    06 11011010
-    07 00100000
-    08 00101010
-    09 00000101
-    10 00000001
+     0: 01000100
+     1: 10001011
+     2: 01100100
+     3: 01001001
+     4: 11000000
+     5: 10001010
+     6: 10101001
+     7: 01111111
+     8: 00100000
+     9: 00000101
+    10: 00001010
+    11: 00000011
         \end{verbatim}
 
         ¿Cuál es la salida del programa?
 
-    \item Si se extendiera el \textbf{MCBE} para que utilice 7 bits para el
-        código de operación y 9 bits para el operando:
-
-        \begin{enumerate}
-
-            \item ¿Cuántos códigos de operación distintos podría soportar?
-
-            \item ¿Cuántas celdas de memoria podría soportar?
-
-            \item ¿Cuál seria el nuevo rango de los saltos?
-
-        \end{enumerate}
+    \item Si se desea extender la funcionalidad de la \emph{MCBE} para que
+        tenga un total de 30 instrucciones distintas y la cantidad de celdas
+        de memoria se extiende a 256 (incluyendo aquellas mapeadas a la
+        \emph{entrada/salida} ¿Cuántos bits deberán tener el código de
+        operación y el argumento?
 
     \item Muestre una secuencia de comandos que permita crear la estructura de
-        directorios mostrada en la figura \ref{directorios}. Asuma que el
-        directorio raíz (“/”) ya existe.
+    directorios mostrada en la Figura \ref{directorios}. Asuma que el
+    directorio raíz (“/”) ya existe.
 
-    \item Si el usuario se encuentra posicionado en el directorio \emph{E} del
-        árbol de directorios mostrado en la figura \ref{directorios}:
-
-        \begin{enumerate}
-
-            \item Indique una secuencia de comandos para mover el archivo
-                \emph{M} a la carpeta \emph{G} utilizando solo rutas
-                relativas.
-
-            \item Indique una secuencia de comandos para mover el archivo
-                \emph{I} a la carpeta \emph{C} utilizando solo rutas
-                absolutas.
-
-        \end{enumerate}
+    \item Si el usuario quiere eliminar el proceso \emph{BASH} con \emph{PID}
+        \textbf{1245} ¿Qué secuencia de comandos puede utilizar el usuario?
 
 \end{enumerate}
 
@@ -209,7 +194,7 @@ Dec Hex    Dec Hex    Dec Hex  Dec Hex  Dec Hex  Dec Hex   Dec Hex   Dec Hex
 
     \centering
 
-    \includegraphics[width=0.5\textwidth]{img/directorios.pdf}
+    \includegraphics[width=0.5\textwidth]{img/directorios_2.pdf}
 
     \caption{Estructura de directorios I}
 

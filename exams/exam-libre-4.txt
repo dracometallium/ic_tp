@@ -17,7 +17,7 @@
 \makeatletter{
     \color{blue} \centering \huge \sc
     \textbf{
-        Examen final libre 2022\\
+        Examen final libre\\
         \small \vspace*{-8pt} \color{black}
         Parte práctica
         \vspace*{8pt}
