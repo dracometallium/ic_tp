@@ -1,4 +1,3 @@
-OUTDIR=output
 TEX:=$(wildcard *.tex exams/*.tex)
 TEX_INC:=$(wildcard tex/*.tex)
 STYLES:=$(wildcard styles/*)
@@ -14,26 +13,21 @@ GARBAGE=*.aux *.bbl *.blg *.log *.toc *.lof *.nav *.out *.snm
 all: $(TP_PDF)
 
 $(TP_PDF): %.pdf : %.tex $(STYLES) $(LOGOS_PDF) $(FIGURAS_PDF) $(TEX_INC)
-	mkdir -p $(OUTDIR)
-	pdflatex -interaction=nonstopmode -halt-on-error \
-		-output-directory $(OUTDIR) $^
-	pdflatex -interaction=nonstopmode -halt-on-error \
-		-output-directory $(OUTDIR) $^
+	pdflatex -interaction=nonstopmode -halt-on-error $<
+	pdflatex -interaction=nonstopmode -halt-on-error $<
 
 $(FIGURAS_PDF): %.pdf : %.svg
-	inkscape $^ --batch-process --export-area-drawing  -o $@
+	inkscape $< --batch-process --export-area-drawing  -o $@
 
 $(LOGOS_PDF): %.pdf : %.svg
-	inkscape $^ --batch-process --export-area-drawing -o $@
+	inkscape $< --batch-process --export-area-drawing -o $@
 
 clean:
-	cd $(OUTDIR) && \
-		rm -f $(GARBAGE) *.pdf
+	rm -f $(GARBAGE) *.pdf
 	rm -f $(PDF)
 
 clean-garbage:
-	cd $(OUTDIR) && \
-		rm -f $(GARBAGE)
+	rm -f $(GARBAGE)
 
 pdf-only: all clean-garbage
 	rm -f $(PDF)
