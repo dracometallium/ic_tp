@@ -1,0 +1,117 @@
+%%% LaTeX Template: Article/Thesis/etc. with colored headings and special fonts
+%%%
+%%% Source: http://www.howtotex.com/
+% vim: set spell spelllang=es syntax=tex :
+
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{styles/apuntes-estilo}
+\usepackage{styles/egyptian}
+\usepackage{fancyhdr,lastpage}
+\usepackage{hyperref}
+\usepackage[inline]{enumitem}
+\usepackage{pmboxdraw} % Para poder usar la salida del comando tree
+\usepackage{graphicx}
+
+\def\maketitle{
+
+\makeatletter{
+    \color{blue} \centering \huge \sc
+    \textbf{
+        Examen final regular
+    }\\
+    \par
+}
+\makeatother
+
+\makeatletter
+\input{tex/banner.tex}
+
+}
+
+% Custom headers and footers
+\fancyhf{} % clear all header and footer fields
+\fancypagestyle{plain}{\fancyhf{}}
+\pagestyle{fancy}
+\lhead{\footnotesize Primer examen de promoción}
+\rhead{\footnotesize \thepage\ }
+
+\def\ti#1#2{\texttt{#1} & #2 \\ }
+
+\begin{document}
+
+\begin{minipage}[c]{\linewidth}
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{0pt}
+
+\begin{enumerate}[topsep=4pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
+
+    \item \textbf{Representación de digital de datos}
+        ¿A que hacemos referencia cuando hablamos de rango de representación?
+        ¿De que factores depende (ayuda: es más de uno)? ¿Qué sucede si el
+        resultado de una operación esta fuera del rango de representación?
+
+    \item \textbf{Organización de las Computadoras}
+        Describa características y funcionalidad (lo mas completo que pueda)
+        de cada componente de una computadora (son 4). Aclaración: En este
+        ejercicio, cuando decimos ``computadora'' nos referimos a una
+        computadora general (llamadas también de arquitectura de von Neumman).
+        Puede ejemplificar con la \texttt{MCBE} u otra.
+
+    \item \textbf{El Software}
+        ¿Cuales son las ventajas y desventajas de los lenguajes compilados
+        sobre los interpretados? Mencione las etapas de cada proceso.
+
+    \item \textbf{Sistemas Operativos}
+        Explique que es el esquema de asignación de memoria contigua ¿Qué
+        problema soluciona? Explique que problemas tiene y cuales son las
+        posibles soluciones.
+
+    \item \textbf{Redes de computadoras}
+        ¿Qué es el DNS? ¿Cuál es su utilidad? ¿Cuales son los pasos para
+        resolver ``\emph{www.uncoma.edu.ar}''?
+
+\end{enumerate}
+\end{minipage}
+
+%\pagebreak
+\vspace{5em}
+
+\begin{minipage}[c]{\linewidth}
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{1pt}
+
+\begin{enumerate}[topsep=4pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
+
+    \item \textbf{Representación de digital de datos}
+        ¿A que hacemos referencia cuando hablamos de rango de representación?
+        ¿De que factores depende (ayuda: es más de uno)? ¿Qué sucede si el
+        resultado de una operación esta fuera del rango de representación?
+
+    \item \textbf{Organización de las Computadoras}
+        Describa características y funcionalidad (lo mas completo que pueda)
+        de cada componente de una computadora (son 4). Aclaración: En este
+        ejercicio, cuando decimos ``computadora'' nos referimos a una
+        computadora general (llamadas también de arquitectura de von Neumman).
+        Puede ejemplificar con la \texttt{MCBE} u otra.
+
+    \item \textbf{El Software}
+        ¿Cuales son las ventajas y desventajas de los lenguajes compilados
+        sobre los interpretados? Mencione las etapas de cada proceso.
+
+    \item \textbf{Sistemas Operativos}
+        Explique que es el esquema de asignación de memoria contigua ¿Qué
+        problema soluciona? Explique que problemas tiene y cuales son las
+        posibles soluciones.
+
+    \item \textbf{Redes de computadoras}
+        ¿Qué es el DNS? ¿Cuál es su utilidad? ¿Cuales son los pasos para
+        resolver ``\emph{www.uncoma.edu.ar}''?
+
+
+\end{enumerate}
+\end{minipage}
+
+\end{document}
