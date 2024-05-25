@@ -11,7 +11,7 @@
 \usepackage{xurl}
 \usepackage{upquote}
 
-\newcommand{\cw}[1]{\mbox{\texttt{\textcolor{blue}{#1}}}}
+\newcommand{\cw}[1]{\texttt{\textcolor{blue}{#1}}}
 
 \newcommand{\bash}{\textbf{\texttt{BASH}}}
 
@@ -324,9 +324,9 @@ nano a3.txt
         el editor de texto y vuelva a analizar la salida del comando ``ls
         -l''.
 
-    \item Ejecute los comando ``cat'', ``more'' y ``less'' para visualizar el
-        contenido del archivo ``/etc/wgetrc'' ¿Cual es la utilizad de estos
-        programas? ¿Qué diferencias tienen?
+    \item Ejecute los comando \cw{cat}, \cw{more} y \cw{less} para visualizar
+        el contenido del archivo \cw{/etc/wgetrc} ¿Cual es la utilizad de
+        estos programas? ¿Qué diferencias tienen?
 
     Teclas útiles:
 
@@ -334,12 +334,13 @@ nano a3.txt
 
         \itemsep2pt \parskip0pt \parsep0pt
 
-        \item cat: no tiene.
+        \item \cw{cat}: no tiene.
 
-        \item more: ``q'' para salir, ``barra espaciadora'' avanzar página.
+        \item \cw{more}: ``q'' para salir, ``barra espaciadora'' avanzar
+            página.
 
-        \item less: ``q'' para salir, ``barra espaciadora'' avanzar página, y
-            ``j'', ''k'' para subir y bajar.
+        \item \cw{less}: ``q'' para salir, ``barra espaciadora'' avanzar
+            página, y ``j'', ''k'' para subir y bajar.
 
     \end{itemize}
 
@@ -403,13 +404,92 @@ correo es \emph{peperina@est.fi.uncoma.edu.ar}, su usuario es
 cuenta de usuario, o quiere cambiar la contraseña, puede dirigirse a este
 sitio: \url{https://formulario.fi.uncoma.edu.ar/}.
 
-\subsection{Shell WEB}
+\subsection*{Shell WEB}
 
 \begin{enumerate}
     \item Abra en el navegador el sitio
         \url{https://aula-ssh.fi.uncoma.edu.ar/}.
 
     \item Ingrese su usuario y presione la tecla \emph{enter}.
+
+    \item Ingrese su contraseña. Por cuestiones de seguridad, no se mostrará
+        ningún eco de las teclas presionadas (al presionar teclas no se
+        mostrarán en pantalla). Al terminar, presione la tecla 
+        \emph{enter}.
+
+    \item Si el usuario y contraseña son correctos, se iniciará el
+        \emph{shell} y esperará a que ingrese un comando.
+
+\end{enumerate}
+
+\subsection*{PuTTY}
+
+\begin{enumerate}
+    \item Descargue e instale la última versión de \emph{PuTTY}. Para cada
+        sistema:
+
+        \begin{description}
+
+            \item[Microsoft Windows:] diríjase a
+                \url{https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html}.
+                Descargue y ejecute la última versión.
+
+            \item[Debian y derribados:] En una terminal ingrese el comando
+                \cw{sudo apt update; sudo apt install putty} y presione la
+                tecla \emph{enter}.
+
+        \end{description}
+
+    \item Ejecute el programa \emph{PuTTY}. En \emph{Microsoft Windows} haga
+        click sobre icono correspondiente, en sistemas \emph{GNU/Linux} puede
+        ejecutar el comando \cw{putty} en la terminal. Al ejecutar
+        correctamente, se mostrara una pantalla como la mostrada en la figura
+        \ref{imgPuTTY}.
+
+\begin{figure}[!htb]
+
+    \centering
+
+    \includegraphics[width=0.75\textwidth]{img/putty.png}
+
+    \caption{Ventana de inició y configuración de
+    \emph{PuTTY}.}
+
+    \label{imgPuTTY}
+
+\end{figure}
+
+
+    \item En el campo \emph{Host Name} ingrese su nombre de usuario seguido de
+        \\cw{@aularemota.fi.uncoma.edu.ar}. Por ejemplo si su nombre de
+        usuario es \emph{peperina}, debe ingresar
+        \cw{peperina@aularemota.fi.uncoma.edu.ar}.
+
+    \item En el campo \emph{Port} ingrese el número \texttt{1200}.
+
+    \item Para no tener que re ingresar los datos cada ves que se ejecuta el
+        programa, seleccione el campo \emph{Default Settings} y luego presione
+        el botón \emph{Save}.
+
+    \item Para conectarse al sistema remoto, presione el botón \emph{Open}. Se
+        abrirá una terminar virtual.
+
+    \item Ingrese su contraseña. Por cuestiones de seguridad, no se mostrará
+        ningún eco de las teclas presionadas (al presionar teclas no se
+        mostrarán en pantalla). Al terminar, presione la tecla 
+        \emph{enter}.
+
+    \item Si el usuario y contraseña son correctos, se iniciará el
+        \emph{shell} y esperará a que ingrese un comando.
+
+\end{enumerate}
+
+\subsection*{\emph{SSH}}
+
+\begin{enumerate}
+    \item Abra una consola e ingrese el comando \cw{ssh -p 1200
+        \emph{\$USER}@aularemota.fi.uncoma.edu.ar}, remplazando \emph{\$USER}
+        por su usuario de los laboratorios. Presione la tecla \emph{enter}.
 
     \item Ingrese su contraseña. Por cuestiones de seguridad, no se mostrará
         ningún eco de las teclas presionadas (al presionar teclas no se
