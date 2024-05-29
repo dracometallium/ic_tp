@@ -147,9 +147,9 @@ persona tiene estanterías y cajones en un escritorio para organizar sus
 papeles.
 
 La figura \ref{arbolDirectorios} muestra un esquema de como se puede pensar en
-una estructura de directorios y archivos. \textbf{ic}, \textbf{parciales} y
-\textbf{imagenes} son directorios, mientras que \textbf{notas.tsv},
-\textbf{p1.pdf}, \textbf{p2.pdf} y \textbf{gatito.jpg} son archivos.
+una estructura de directorios y archivos. \cw{ic}, \cw{parciales} y
+\cw{imagenes} son directorios, mientras que \cw{notas.tsv}, \cw{p1.pdf},
+\cw{p2.pdf} y \cw{gatito.jpg} son archivos.
 
 \begin{figure}[!htb]
 
@@ -284,30 +284,30 @@ nano a3.txt
         archivos. Esta estructura será utilizada en los subsiguientes incisos.
 
     \item Utilizando la jerarquía de directorios generados en el inciso
-        anterior, posicione el intérprete en el directorio ``imagenes'', y
+        anterior, posicione el intérprete en el directorio \cw{imagenes} y
         realice las siguientes acciones:
 
     \begin{enumerate}
 
-        \item Elimine el archivo ``notas.tsv'' sin cambiar de directorio.
+        \item Elimine el archivo \cw{notas.tsv} sin cambiar de directorio.
 
-        \item Mueva los archivos ``p1.pdf'' y ``p2.pdf'' a la carpeta
-            ``imagenes''.
+        \item Mueva los archivos \cw{p1.pdf} y \cw{p2.pdf} a la carpeta
+            \cw{imagenes}.
 
-        \item Elimine la carpeta ``parciales''.
+        \item Elimine la carpeta \cw{parciales}.
 
-        \item Cree una carpeta ``nueva'' dentro de la carpeta ``ic''
+        \item Cree una carpeta \cw{nueva} dentro de la carpeta \cw{ic}.
 
-        \item Posicione el intérprete en el directorio ``nueva''.
+        \item Posicione el intérprete en el directorio \cw{nueva}.
 
         \item Sin cambiar de directorio (es decir, sin utilizar el comando
-            \cw{cd}), listar el contenido del directorio ``imagenes'' usando
+            \cw{cd}), listar el contenido del directorio \cw{imagenes} usando
             directorios relativos.
 
         \item Sin cambiar de directorio(es decir, sin utilizar el comando
-            \cw{cd}), listar el contenido del directorio ``imagenes'' usando
+            \cw{cd}), listar el contenido del directorio \cw{imagenes} usando
             directorios absolutos. Para armar una dirección absoluta puede
-            usar el comando ``pwd'' para conocer como se conforma el camino
+            usar el comando \cw{pwd} para conocer como se conforma el camino
             completo hasta la ubicación actual.
 
     \end{enumerate}
@@ -316,13 +316,13 @@ nano a3.txt
             hora de hacer referencia a otros archivos cercanos en la jerarquía
             al directorio de trabajo actual. Utilice un ejemplo.
 
-    \item Liste el contenido del directorio ``imagenes'', con el comando ``ls
-        -l \emph{camino\_a\_imagenes}'' (remplace \emph{camino\_a\_imagenes}
+    \item Liste el contenido del directorio \cw{imagenes} con el comando \cw{ls
+        -l \emph{camino\_a\_imagenes}} (remplace \emph{camino\_a\_imagenes}
         por la ruta apropiada). Analice la información que se muestra por
         pantalla, fecha de creación de los archivos, propietario de los
         archivos y tamaño de los archivos. Modifique alguno de los archivos en
-        el editor de texto y vuelva a analizar la salida del comando ``ls
-        -l''.
+        el editor de texto y vuelva a analizar la salida del comando \cw{ls
+        -l}.
 
     \item Ejecute los comando \cw{cat}, \cw{more} y \cw{less} para visualizar
         el contenido del archivo \cw{/etc/wgetrc} ¿Cual es la utilizad de
@@ -465,7 +465,8 @@ sitio: \url{https://formulario.fi.uncoma.edu.ar/}.
         usuario es \emph{peperina}, debe ingresar
         \cw{peperina@aularemota.fi.uncoma.edu.ar}.
 
-    \item En el campo \emph{Port} ingrese el número \texttt{1200}.
+    \item En el campo \emph{Port} ingrese el número \texttt{60173} (si ese
+        equipo no responde, puede cambiar el puerto por \texttt{1200})
 
     \item Para no tener que re ingresar los datos cada ves que se ejecuta el
         programa, seleccione el campo \emph{Default Settings} y luego presione
@@ -487,9 +488,11 @@ sitio: \url{https://formulario.fi.uncoma.edu.ar/}.
 \subsection*{\emph{SSH}}
 
 \begin{enumerate}
-    \item Abra una consola e ingrese el comando \cw{ssh -p 1200
+    \item Abra una consola e ingrese el comando \cw{ssh -p 60173
         \emph{\$USER}@aularemota.fi.uncoma.edu.ar}, remplazando \emph{\$USER}
-        por su usuario de los laboratorios. Presione la tecla \emph{enter}.
+        por su usuario de los laboratorios. Presione la tecla \emph{enter}. Si
+        ese equipo no responde, puede cambiar el puerto por
+        \texttt{1200}.
 
     \item Ingrese su contraseña. Por cuestiones de seguridad, no se mostrará
         ningún eco de las teclas presionadas (al presionar teclas no se
