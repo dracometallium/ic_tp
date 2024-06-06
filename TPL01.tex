@@ -85,7 +85,7 @@ aplicaciones:
 \end{itemize}
 
 Para un tutorial sobre como realizar una conexión remota a los laboratorios de
-la facultad, diríjase al anexo \ref{sec:anexoConexion}.
+la facultad, diríjase al anexo de la página \pageref{sec:anexoConexion}.
 
 \section{Entrando en calor con el \emph{shell} \bash}
 
@@ -134,6 +134,8 @@ interactúa (más abajo se explica esto con un ejemplo).
 \end{enumerate}
 
 \section{Sistemas de archivos}
+
+\label{sec:sistemaDeArchivos}
 
 El concepto de directorios (comúnmente llamados ``carpetas'') y archivos es
 hoy en día familiar a los usuarios de computadoras. En general el usuario se
@@ -188,6 +190,8 @@ Por ejemplo, las siguientes son direcciones relativas:
 \begin{itemize}
 
     \itemsep2pt \parskip0pt \parsep0pt
+
+    \item \cw{./} (el directorio actual)
 
     \item \cw{../} (directorio inmediatamente superior)
 
@@ -289,7 +293,9 @@ nano a3.txt
 
     \begin{enumerate}
 
-        \item Elimine el archivo \cw{notas.tsv} sin cambiar de directorio.
+        \item Elimine el archivo \cw{notas.tsv} sin cambiar de directorio
+            (repase la introducción de la sección
+            \ref{sec:sistemaDeArchivos}).
 
         \item Mueva los archivos \cw{p1.pdf} y \cw{p2.pdf} a la carpeta
             \cw{imagenes}.
@@ -302,13 +308,13 @@ nano a3.txt
 
         \item Sin cambiar de directorio (es decir, sin utilizar el comando
             \cw{cd}), listar el contenido del directorio \cw{imagenes} usando
-            directorios relativos.
+            rutas relativas.
 
         \item Sin cambiar de directorio(es decir, sin utilizar el comando
             \cw{cd}), listar el contenido del directorio \cw{imagenes} usando
-            directorios absolutos. Para armar una dirección absoluta puede
-            usar el comando \cw{pwd} para conocer como se conforma el camino
-            completo hasta la ubicación actual.
+            rutas absolutas. Para armar una dirección absoluta puede usar el
+            comando \cw{pwd} para conocer como se conforma el camino completo
+            hasta la ubicación actual.
 
     \end{enumerate}
 
@@ -318,11 +324,11 @@ nano a3.txt
 
     \item Liste el contenido del directorio \cw{imagenes} con el comando \cw{ls
         -l \emph{camino\_a\_imagenes}} (remplace \emph{camino\_a\_imagenes}
-        por la ruta apropiada). Analice la información que se muestra por
-        pantalla, fecha de creación de los archivos, propietario de los
-        archivos y tamaño de los archivos. Modifique alguno de los archivos en
-        el editor de texto y vuelva a analizar la salida del comando \cw{ls
-        -l}.
+        por la ruta apropiada, \cw{-l} es ``L'' minuscula). Analice la
+        información que se muestra por pantalla, fecha de creación de los
+        archivos, propietario de los archivos y tamaño de los archivos.
+        Modifique alguno de los archivos en el editor de texto y vuelva a
+        analizar la salida del comando \cw{ls -l}(\cw{-l} es ``L'' minuscula).
 
     \item Ejecute los comando \cw{cat}, \cw{more} y \cw{less} para visualizar
         el contenido del archivo \cw{/etc/wgetrc} ¿Cual es la utilizad de
