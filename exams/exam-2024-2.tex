@@ -1,0 +1,178 @@
+%%% lAtEx tEMPLATE: Article/Thesis/etc. with colored headings and special fonts
+%%%
+%%% Source: http://www.howtotex.com/
+% vim: set spell spelllang=es syntax=tex :
+
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{styles/apuntes-estilo}
+\usepackage{styles/egyptian}
+\usepackage{fancyhdr,lastpage}
+\usepackage{hyperref}
+\usepackage[inline]{enumitem}
+\usepackage{pmboxdraw} % Para poder usar la salida del comando tree
+
+\def\maketitle{
+
+\makeatletter{
+    \color{blue} \centering \huge \sc
+    \textbf{
+        Segundo examen parcial\\
+        \small \vspace*{-8pt} \color{black}
+        Tema: 3
+        \vspace*{8pt}
+    }\\
+    \par
+}
+\makeatother
+
+\makeatletter
+\input{tex/banner.tex}
+
+}
+
+% Custom headers and footers
+\fancyhf{} % clear all header and footer fields
+\fancypagestyle{plain}{\fancyhf{}}
+\pagestyle{fancy}
+\lhead{\footnotesize Segundo examen parcial}
+\rhead{\footnotesize \thepage\ }
+
+\def\ti#1#2{\texttt{#1} & #2 \\ }
+
+\begin{document}
+
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{1pt}
+
+
+\begin{enumerate}
+
+    \item Si se utiliza un esquema de compresión \emph{RLE(Run Lenght
+        Encoding)} utilizando una codificación ``\emph{cantidad/color}'' de
+        \textbf{2+2} (dos bits para la cantidad y dos bits para el color),
+        donde la paleta de colores es 00 = blanco, 01 = amarillo, 10 = naranja
+        y 11 = negro.
+
+        \begin{enumerate}
+
+            \item ¿Cuál es la imagen codificada en la siguiente secuencia de
+                bytes representada en hexadecimal: \textbf{04 05 02 89 89 87
+                46 4B E7}?
+
+            \item ¿Cuántos bytes ocupa la imagen sin comprimir? \textbf{No
+                olvide incluir la cabecera.}
+
+        \end{enumerate}
+
+    \item Dado el siguiente programa:
+
+        \begin{verbatim}
+     0: START:  LD  I
+     1:         ADD UNO
+     2:         ST  I
+     3:         ST  OUT
+     4:         SUB MAX
+     5:         JZ  FIN
+     6:         JMP START
+     7: FIN:    HLT
+     8: I:      0
+     9: MAX:    2
+    10: UNO:    1
+        \end{verbatim}
+
+        \begin{enumerate}
+
+            \item ¿Cuál es la salida del programa?
+
+            \item ¿Cuál es el equivalente en código maquina binario de las
+                instrucciones de las direcciones \textbf{0}, \textbf{5} y
+                \textbf{6}?
+
+        \end{enumerate}
+
+    \item Dado el siguiente programa en binario:
+
+        \begin{verbatim}
+     0: 01001010
+     1: 11100111
+     2: 10101100
+     3: 01101010
+     4: 01001011
+     5: 01111111
+     6: 11011010
+     7: 00100000
+     8: 01111111
+     9: 11011110
+    10: 00000010
+    11: 00000101
+    12: 00000010
+        \end{verbatim}
+
+        ¿Cuál es la salida del programa?
+
+    \item Sea un formato de instrucción que utiliza 5 bits para el código de
+        operación y 11 para el operando que indica el número de la celda de
+        memoria: ¿Cual es el máximo de instrucciones y celdas de memoria que
+        se pueden acceder con este formato de instrucción?
+
+    \item Muestre una secuencia de comandos que permita crear la estructura de
+        directorios mostrada en el anexo. Asuma que el
+        directorio raíz (``/'') ya existe.
+
+    \item Si el usuario se encuentra posicionado en el directorio
+        \emph{fuentes} del árbol de directorios mostrado en el anexo:
+
+        \begin{enumerate}
+
+            \item Indique una secuencia de comandos para mover el archivo
+                \emph{tp02.pdf} a la carpeta \emph{tps} utilizando solo rutas
+                relativas.
+
+            \item Indique una secuencia de comandos para mover el archivo
+                \emph{correcciones.txt} a la carpeta \emph{tps} utilizando
+                solo rutas absolutas.
+
+        \end{enumerate}
+
+\end{enumerate}
+
+\subsection*{ \large\textbf{Anexo:} }
+
+\begin{minipage}{0.45\textwidth}
+\textbf{Códigos de operación}
+
+\begin{verbatim}
+    010     LD
+    011     ST
+    100     ADD
+    101     SUB
+    110     JMP
+    111     JZ
+    001     HLT
+    000     NOP
+\end{verbatim}
+\end{minipage}
+~
+\begin{minipage}{0.45\textwidth}
+\textbf{Estructura de directorios}
+
+\begin{verbatim}
+/
+├── parciales
+│   ├── 2022
+│   │   └── correcciones.txt
+│   └── 2021
+│       └── notas.tar.gz
+└── tps
+    ├── tp01.pdf
+    └── fuentes
+        ├── tp01.tex
+        ├── tp02.tex
+        └── tp02.pdf
+\end{verbatim}
+
+\end{minipage}
+
+\end{document}
