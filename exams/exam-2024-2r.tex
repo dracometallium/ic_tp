@@ -1,0 +1,164 @@
+%%% lAtEx tEMPLATE: Article/Thesis/etc. with colored headings and special fonts
+%%%
+%%% Source: http://www.howtotex.com/
+% vim: set spell spelllang=es syntax=tex :
+
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{styles/apuntes-estilo}
+\usepackage{styles/egyptian}
+\usepackage{fancyhdr,lastpage}
+\usepackage{hyperref}
+\usepackage[inline]{enumitem}
+\usepackage{pmboxdraw} % Para poder usar la salida del comando tree
+
+\def\maketitle{
+
+\makeatletter{
+    \color{blue} \centering \huge \sc
+    \textbf{
+        Segundo examen parcial\\
+        \small \vspace*{-8pt} \color{black}
+        Recuperatorio
+        \vspace*{8pt}
+    }\\
+    \par
+}
+\makeatother
+
+\makeatletter
+\input{tex/banner.tex}
+
+}
+
+% Custom headers and footers
+\fancyhf{} % clear all header and footer fields
+\fancypagestyle{plain}{\fancyhf{}}
+\pagestyle{fancy}
+\lhead{\footnotesize Segundo examen parcial}
+\rhead{\footnotesize \thepage\ }
+
+\def\ti#1#2{\texttt{#1} & #2 \\ }
+
+\begin{document}
+
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{1pt}
+
+
+\begin{enumerate}
+
+    \item Considerando la imagen que se muestra abajo, aplique el esquema de
+        codificación de imágenes visto en la práctica. \textbf{No olvide
+        incluir la cabecera}. Asuma que 00 = blanco, 11 = negro y 01 = gris.
+        Muestre el resultado final expresado en hexadecimal.
+
+    \includegraphics[width=0.50\textwidth]{img/img_2020_1tpo-r.pdf}
+
+    \item Si se tiene una imagen con 200 colores distintos ¿Cuál es la
+        cantidad mínima de bits necesarios para la profundidad de color, de
+        manera de poder representar la imagen sin pérdida de colores
+
+    \item Dado el siguiente programa:
+
+        \begin{verbatim}
+     0: START:  LD  NUM
+     1:         JZ  FIN
+     2:         ST  OUT
+     3:         SUB DOS
+     4:         ST  NUM
+     5:         JMP START
+     6: FIN:    HLT
+     7: NUM:    10
+     8: DOS:    2
+        \end{verbatim}
+
+        \begin{enumerate}
+
+            \item ¿Cuál es la salida del programa?
+
+            \item ¿Cuál es el equivalente en código maquina binario de las
+                instrucciones de las direcciones \textbf{0}, \textbf{1} y
+                \textbf{5}?
+
+        \end{enumerate}
+
+    \item Dado el siguiente programa en binario:
+
+        \begin{verbatim}
+     0: 0100 0010
+     1: 0111 1111
+     2: 1010 0010
+     3: 1111 1101
+     4: 0010 0000
+     5: 0000 0011
+        \end{verbatim}
+
+        ¿Cuál es la salida del programa?
+
+    \item Si se desea extender la funcionalidad de la \emph{MCBE} para que
+        tenga un total de 32 instrucciones distintas y la cantidad de celdas
+        de memoria se extiende a 256 (incluyendo aquellas mapeadas a la
+        \emph{entrada/salida} ¿Cuántos bits deberán tener el código de
+        operación y el argumento?
+
+    \item Muestre una secuencia de comandos que permita crear la estructura de
+        directorios mostrada en el anexo. Asuma que el directorio raíz (``/'')
+        ya existe.
+
+    \item Si el usuario se encuentra posicionado en el directorio
+        \emph{notas} del árbol de directorios mostrado en el anexo:
+
+        \begin{enumerate}
+
+            \item Indique una secuencia de comandos para mover el archivo
+                \emph{apunte.txt} a la carpeta \emph{linux} utilizando solo
+                rutas relativas.
+
+            \item Indique una secuencia de comandos para eliminar el archivo
+                \emph{2023.tsv} utilizando solo rutas absolutas.
+
+        \end{enumerate}
+
+\end{enumerate}
+
+\subsection*{ \large\textbf{Anexo:} }
+
+\begin{minipage}{0.45\textwidth}
+\textbf{Códigos de operación}
+
+\begin{verbatim}
+    010     LD
+    011     ST
+    100     ADD
+    101     SUB
+    110     JMP
+    111     JZ
+    001     HLT
+    000     NOP
+\end{verbatim}
+\end{minipage}
+~
+\begin{minipage}{0.45\textwidth}
+\textbf{Estructura de directorios}
+
+\begin{verbatim}
+/
+├── notas
+│   ├── iadmin
+│   │   └── 2024.tsv
+│   └── ic
+│       ├── 2023.tsv
+│       └── 2024.tsv
+└── wiki
+    ├── c
+    │   └── apunte.txt
+    └── linux
+        ├── ls.2
+        └── man.1
+\end{verbatim}
+
+\end{minipage}
+
+\end{document}
