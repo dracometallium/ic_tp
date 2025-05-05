@@ -1,0 +1,63 @@
+%%% LaTeX Template: Article/Thesis/etc. with colored headings and special fonts
+%%%
+%%% Source: http://www.howtotex.com/
+% vim: set spell spelllang=es syntax=tex :
+
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{styles/apuntes-estilo}
+\usepackage{styles/egyptian}
+\usepackage{fancyhdr,lastpage}
+\usepackage{hyperref}
+\usepackage[inline]{enumitem}
+\usepackage{pmboxdraw} % Para poder usar la salida del comando tree
+
+\def\maketitle{
+
+\makeatletter{
+    \color{blue} \centering \huge \sc
+    \textbf{
+        Primer examen\\
+        de promoción
+    }\\
+    \par
+}
+\makeatother
+
+\makeatletter
+\input{tex/banner.tex}
+
+}
+
+% Custom headers and footers
+\fancyhf{} % clear all header and footer fields
+\fancypagestyle{plain}{\fancyhf{}}
+\pagestyle{fancy}
+\lhead{\footnotesize Primer examen de promoción}
+\rhead{\footnotesize \thepage\ }
+
+\def\ti#1#2{\texttt{#1} & #2 \\ }
+
+\begin{document}
+
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{1pt}
+
+\begin{enumerate}
+
+    \item ¿Cuáles son las ventajas y desventajas del \emph{sistema de
+        complemento a 2} sobre el \emph{sistema de signo magnitud}?
+
+    \item ¿Cuales son las ventajas y desventajas de punto flotante contra
+        punto fijo? ¿En que caso elegiría cada uno?
+
+    \item ¿Qué es el rango de representación? ¿De que factores depende?
+        (ayuda: es más de uno).
+
+    \item Explique cuales son las diferencias entre la compresión con y sin
+        perdida. De ejemplos del uso de cada una.
+
+\end{enumerate}
+
+\end{document}

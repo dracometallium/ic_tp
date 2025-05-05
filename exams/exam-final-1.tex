@@ -1,0 +1,93 @@
+%%% LaTeX Template: Article/Thesis/etc. with colored headings and special fonts
+%%%
+%%% Source: http://www.howtotex.com/
+% vim: set spell spelllang=es syntax=tex :
+
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{styles/apuntes-estilo}
+\usepackage{styles/egyptian}
+\usepackage{fancyhdr,lastpage}
+\usepackage{hyperref}
+\usepackage[inline]{enumitem}
+\usepackage{pmboxdraw} % Para poder usar la salida del comando tree
+\usepackage{graphicx}
+
+\def\maketitle{
+
+\makeatletter{
+    \color{blue} \centering \huge \sc
+    \textbf{
+        Examen final regular
+    }\\
+    \par
+}
+\makeatother
+
+\makeatletter
+\input{tex/banner.tex}
+
+}
+
+% Custom headers and footers
+\fancyhf{} % clear all header and footer fields
+\fancypagestyle{plain}{\fancyhf{}}
+\pagestyle{fancy}
+\lhead{\footnotesize Primer examen de promoción}
+\rhead{\footnotesize \thepage\ }
+
+\def\ti#1#2{\texttt{#1} & #2 \\ }
+
+\begin{document}
+
+\begin{minipage}[c]{0.9\linewidth}
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{1pt}
+
+\begin{enumerate}
+
+    \item ¿Qué es el rango de representación? ¿De que factores depende?
+        (ayuda: es más de uno) Responda brevemente: ¿Qué relación tiene con el
+        \emph{overflow}?
+
+    \item ¿Qué función cumple cada una de las cuatro componentes básicas de
+        una computadora durante el ciclo de instrucción?
+
+    \item Explique que es el esquema de asignación de memoria contigua ¿Qué
+        problema soluciona? Explique que problemas tiene y cuales son las
+        posibles soluciones.
+
+    \item ¿Qué es el DNS? ¿Cuál es su utilidad? ¿Cuales son los pasos para
+        resolver ``\emph{www.uncoma.edu.ar}''?
+
+\end{enumerate}
+\end{minipage}
+
+\vspace{10em}
+
+\begin{minipage}[c]{0.9\linewidth}
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{1pt}
+
+\begin{enumerate}
+
+    \item ¿Qué es el rango de representación? ¿De que factores depende?
+        (ayuda: es más de uno) Responda brevemente: ¿Qué relación tiene con el
+        \emph{overflow}?
+
+    \item ¿Qué función cumple cada una de las cuatro componentes básicas de
+        una computadora durante el ciclo de instrucción?
+
+    \item Explique que es el esquema de asignación de memoria contigua ¿Qué
+        problema soluciona? Explique que problemas tiene y cuales son las
+        posibles soluciones.
+
+    \item ¿Qué es el DNS? ¿Cuál es su utilidad? ¿Cuales son los pasos para
+        resolver ``\emph{www.uncoma.edu.ar}''?
+
+\end{enumerate}
+\end{minipage}
+
+\end{document}

@@ -1,0 +1,122 @@
+%%% LaTeX Template: Article/Thesis/etc. with colored headings and special fonts
+%%%
+%%% Source: http://www.howtotex.com/
+% vim: set spell spelllang=es syntax=tex :
+
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{styles/apuntes-estilo}
+\usepackage{styles/egyptian}
+\usepackage{fancyhdr,lastpage}
+\usepackage{hyperref}
+\usepackage[inline]{enumitem}
+\usepackage{pmboxdraw} % Para poder usar la salida del comando tree
+\usepackage{graphicx}
+
+\def\maketitle{
+
+\makeatletter{
+    \color{blue} \centering \huge \sc
+    \textbf{
+        Examen final regular
+    }\\
+    \par
+}
+\makeatother
+
+\makeatletter
+\input{tex/banner.tex}
+
+}
+
+% Custom headers and footers
+\fancyhf{} % clear all header and footer fields
+\fancypagestyle{plain}{\fancyhf{}}
+\pagestyle{fancy}
+\lhead{\footnotesize Primer examen de promoción}
+\rhead{\footnotesize \thepage\ }
+
+\def\ti#1#2{\texttt{#1} & #2 \\ }
+
+\begin{document}
+
+\begin{minipage}[c]{\linewidth}
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{1pt}
+
+\begin{enumerate}[topsep=4pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
+
+    \item \textbf{Representación de datos numéricos}
+        \small{(tiempo estimado: 15 minutos)}
+        ¿Qué significa que una operación aritmética tuvo ``overflow''? ¿Es
+        importante detectarlo? Justifique.
+
+    \item \textbf{Organización de Computadoras}
+        \small{(tiempo estimado: 25 minutos)}
+        Describa características y funcionalidad (lo mas completo que pueda)
+        de cada componente de una computadora (son 4). Aclaración: En este
+        ejercicio, cuando decimos ``computadora'' nos referimos a una
+        computadora general (llamadas también de arquitectura de von Neumman).
+        Puede ejemplificar con la \texttt{MCBE} u otra.
+
+    \item \textbf{MCBE}
+        \small{(tiempo estimado: 15 minutos)} ¿Cuál es el tamaño de una
+        instrucción de la máquina \texttt{MCBE}? Si ese tamaño se amplía ¿para
+        qué puede ser útil? (presente al menos dos opciones de utilidad).
+
+    \item \textbf{El Software}
+        \small{(tiempo estimado: 20 minutos)} ¿Cómo se denomina el proceso de
+        conversión de código fuente a programa ejecutable? Explique el
+        proceso.
+
+    \item \textbf{Sistemas Operativos}
+        \small{(tiempo estimado: 20 minutos)} Explique qué entiende por
+        ``llamada al sistema (\texttt{system call})'' en un Sistema Operativo
+        ¿Para qué se utilizan? Explique brevemente su funcionamiento.
+
+\end{enumerate}
+\end{minipage}
+
+%\pagebreak
+\vspace{5em}
+
+\begin{minipage}[c]{\linewidth}
+\thispagestyle{empty}
+\maketitle
+\setlength{\parindent}{1pt}
+
+\begin{enumerate}[topsep=4pt,itemsep=2pt,partopsep=2pt, parsep=2pt]
+
+    \item \textbf{Sistemas Operativos}
+        \small{(tiempo estimado: 20 minutos)} Explique qué entiende por
+        ``llamada al sistema (\texttt{system call})'' en un Sistema Operativo
+        ¿Para qué se utilizan? Explique brevemente su funcionamiento.
+
+    \item \textbf{El Software}
+        \small{(tiempo estimado: 20 minutos)} ¿Cómo se denomina el proceso de
+        conversión de código fuente a programa ejecutable? Explique el
+        proceso.
+
+    \item \textbf{MCBE}
+        \small{(tiempo estimado: 15 minutos)} ¿Cuál es el tamaño de una
+        instrucción de la máquina \texttt{MCBE}? Si ese tamaño se amplía ¿para
+        qué puede ser útil? (presente al menos dos opciones de utilidad).
+
+    \item \textbf{Organización de Computadoras}
+        \small{(tiempo estimado: 25 minutos)}
+        Describa características y funcionalidad (lo mas completo que pueda)
+        de cada componente de una computadora (son 4). Aclaración: En este
+        ejercicio, cuando decimos ``computadora'' nos referimos a una
+        computadora general (llamadas también de arquitectura de von Neumman).
+        Puede ejemplificar con la \texttt{MCBE} u otra.
+
+    \item \textbf{Representación de datos numéricos}
+        \small{(tiempo estimado: 15 minutos)}
+        ¿Qué significa que una operación aritmética tuvo ``overflow''? ¿Es
+        importante detectarlo? Justifique.
+
+\end{enumerate}
+\end{minipage}
+
+\end{document}
