@@ -19,10 +19,20 @@ $(TP_PDF): %.pdf : %.tex $(STYLES) $(LOGOS_PDF) $(FIGURAS_PDF) $(TEX_INC)
 		-output-directory "$$(dirname $<)" $<
 
 $(FIGURAS_PDF): %.pdf : %.svg
-	DISPLAY="" inkscape $< --batch-process --export-area-drawing  -o $@
+	printf "file-open:%s;\
+		export-area-page;\
+		export-filename:%s;\
+		export-overwrite;\
+		export-do;" $^ $@\
+		| DISPLAY="" SELF_CALL=NO inkscape --shell
 
 $(LOGOS_PDF): %.pdf : %.svg
-	DISPLAY="" inkscape $< --batch-process --export-area-drawing -o $@
+	printf "file-open:%s;\
+		export-area-drawing;\
+		export-filename:%s;\
+		export-overwrite;\
+		export-do;" $^ $@\
+		| DISPLAY="" SELF_CALL=NO inkscape --shell
 
 clean: clean-garbage
 	rm -f $(PDF) $(TP_PDF)
