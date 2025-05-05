@@ -107,29 +107,36 @@ interactúa (más abajo se explica esto con un ejemplo).
 \begin{enumerate}
 
     \item Ingrese remotamente a los laboratorios siguiendo alguna de las
-        opciones plateadas en el tutorial del anexo \ref{sec:anexoConexion}.
+        opciones plateadas en el tutorial del anexo de la página
+        \pageref{sec:anexoConexion}.
         
     \item Una vez realizada la conexión, el \emph{shell} \bash{} en la
         terminal espera que se escriban órdenes para ejecutar (comandos). En
         la terminal escriba el comando \cw{hostname} y presione la tecla
         \emph{enter} para verificar el nombre del equipo al que se conecto.
+        ¿Cuál es el nombre del equipo?
 
     \item Ejecute el comando \cw{who} para ver que usuarios están conectados
-        actualmente al sistema.
+        actualmente al sistema ¿Cuántos usuarios están conectados actualmente?
+
+    \item Ejecute \cw{last | tac} para ver la lista de últimas conexiones
+        ¿Reconoce a alguno de los usuarios?
 
     \item Ejecute el comando \cw{lscpu} para ver las características del
-        \emph{CPU} del sistema al que se ha conectado.
+        \emph{CPU} del sistema al que se ha conectado ¿Cuántos núcleos tiene
+        el sistema?
 
     \item Ejecute el comando \cw{man free} para leer el manual del comando
         \cw{free}. Para salir, presione la tecla \cw{q}.
 
     \item Ejecute el comando \cw{free} ¿Cómo puede hacer para que muestre la
-        información en \cw{GiB}? (ayuda: lea el manual)
+        información en \cw{GiB}? ¿Cuántos \cw{GiB} tiene el sistema?
+        \emph{(ayuda: lea el manual)}
 
     \item Ejecute el comando \cw{top} para ver los procesos que están
         ejecutando en el sistema de forma dinámica, así como información del
         uso del tiempo de \emph{CPU} y memoria. Para salir, presione la tecla
-        \cw{q}.
+        \cw{q}. Identifique la cantidad de memoria utilizada actualmente.
 
 \end{enumerate}
 
@@ -148,7 +155,7 @@ directorios sirven para organizar ``lógicamente'' las cosas, igual que una
 persona tiene estanterías y cajones en un escritorio para organizar sus
 papeles.
 
-La figura \ref{arbolDirectorios} muestra un esquema de como se puede pensar en
+La figura \ref{arbolDirectorios}  muestra un esquema de como se puede pensar en
 una estructura de directorios y archivos. \cw{ic}, \cw{parciales} y
 \cw{imagenes} son directorios, mientras que \cw{notas.tsv}, \cw{p1.pdf},
 \cw{p2.pdf} y \cw{gatito.jpg} son archivos.
@@ -172,7 +179,9 @@ directamente al contenido de dicha carpeta.
 En general, al iniciar una consola de texto, junto con un intérprete de
 comandos, se posiciona al usuario en la carpeta personal o \textbf{``HOME''}
 (en Linux en general es \cw{``/home/usuarioX''}). Desde aquí el usuario
-puede navegar por sus archivos y ejecutar comandos.
+puede navegar por sus archivos y ejecutar comandos. Para saber cual es el
+directorio en el que se encuentra, ejecute el comando \cw{pwd} (\emph{Print
+Working Directory}).
 
 Además, existen dos formas de hacer referencia a los directorios y a los
 archivos en el intérprete, absoluta y relativa. Cuando utilizamos la forma
@@ -195,8 +204,8 @@ Por ejemplo, las siguientes son direcciones relativas:
 
     \item \cw{../} (directorio inmediatamente superior)
 
-    \item \cw{./trabajo1} (directorio trabajo1 ubicado dentro del directorio
-        actual)
+    \item \cw{./trabajo1} (directorio \cw{trabajo1} ubicado dentro del
+        directorio actual)
 
     \item \cw{../../archivoX} (archivo ubicado dos directorios más arriba en
         la jerarquía)
@@ -212,15 +221,20 @@ Por ejemplo, las siguientes son direcciones relativas:
         encuentran en el directorio actual.
 
     \item Para crear un archivo de texto ejecute el comando \cw{nano
-        archivo.txt}. Escriba el texto que le plazca. Para guardar presione
-        \emph{Ctrl+O}, presione \emph{enter} para confirmar, y presione
-        \emph{Ctrl+X} para salir.
+        archivo.txt}. Escriba el texto que le plazca (puede ser un poema, una
+        frase sabia, o \cw{ASCII Art}). Para guardar presione \emph{Ctrl+O},
+        presione \emph{enter} para confirmar, y presione \emph{Ctrl+X} para
+        salir.
 
     \item Ejecute el comando \cw{ls} para verificar que el archivo fue creado
         exitosamente.
 
     \item Ejecute el comando \cw{cat archivo.txt} para mostrar el contenido
         del archivo en pantalla.
+
+    \item Para mayor dramatismo, ejecute lo siguiente: \cw{cat archivo.txt |
+        cowsay -n | lolcat} ¿Qué hace cada uno de los comandos de la
+        secuencia?
 
     \item Ejecute la siguiente secuencia de comandos. Lo que se encuentra
         luego del caracter \cw{\#} es un comentario explicativo de que debe
@@ -260,8 +274,9 @@ Por ejemplo, las siguientes son direcciones relativas:
 \end{center}
 
     \item Realice un esquema visual como el de la \textbf{figura
-        \ref{arbolDirectorios}}, que muestre la estructura de directorios
-        resultante de ejecutar la siguiente secuencia de comandos:
+        \ref{arbolDirectorios}} (ver página \pageref{arbolDirectorios}) que
+        muestre la estructura de directorios resultante de ejecutar la
+        siguiente secuencia de comandos:
 
         \begin{verbatim}
 mkdir newdir
