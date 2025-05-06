@@ -400,16 +400,97 @@ done
 
     \item Ejecute el programa ingresando en la terminal \cw{./dance.sh}.
 
-    \item Abra otra ventana y utilizando los comandos \cw{top} o \cw{ps a}
-        encuentre el \cw{PID} del proceso del programa \cw{dance.sh}.
-        Termine el programa utilizando el comando \cw{kill
-        \emph{PID\_DEL\_PROCESO}}.
+    \item Abra otra ventana y utilizando el comando \cw{ps a} encuentre el
+        \cw{PID} del proceso del programa \cw{dance.sh}. Termine el programa
+        utilizando el comando \cw{kill \emph{PID\_DEL\_PROCESO}}.
 
     \item Ejecute el comando \cw{file} sobre el archivo \cw{dance.sh} y
         \cw{/bin/ls} ¿Cuál es la función del comando \cw{file}?
 
-    \item ¿En qué tipo de lenguaje esta escrito el programa \cw{dance.sh}:
-        compilado o interpretado? ¿Y el comando \cw{ls}?
+    %\item ¿En qué tipo de lenguaje esta escrito el programa \cw{dance.sh}:
+        %compilado o interpretado? ¿Y el comando \cw{ls}?
+
+\end{enumerate}
+
+\section{Lenguajes compilados e interpretados}
+
+\subsection{Lenguajes interpretados}
+
+\begin{enumerate}[resume]
+
+    \item Cree un archivo con nombre \cw{calcular.sh} con el siguiente
+        contenido. Verifique que ha copiado correctamente cada linea.
+
+        \begin{verbatim}
+#!/bin/sh
+max=${1:-10}
+num=0
+for i in $(seq 1 "$max");do
+    num=$((num + 3))
+done
+echo "El resultado de sumar 3 unas $max veces es: $num"
+        \end{verbatim}
+
+    \item Agregue permisos de ejecución utilizando el comando \cw{chmod +x
+        calcular.sh}. Mida el tiempo de ejecución para $100$, $100\,000$ y
+        $1\,000\,000$ utilizando el comando \cw{time ./calcular.sh \$NUM}
+        (remplace \cw{\$NUM} por cada uno delos valores).
+
+\end{enumerate}
+
+\subsection{Lenguajes compilados}
+
+\begin{enumerate}[resume]
+
+    \item Cree un archivo con nombre \cw{calcular.c} con el siguiente
+        contenido. Verifique que ha copiado correctamente cada linea.
+
+        \begin{verbatim}
+#include<stdio.h>
+#include<stdlib.h>
+#include<stdint.h>
+
+int main(int carg, char **varg)
+{
+    uint64_t max = 10, i, num = 0;
+    if (carg > 1) {
+        max = atoi(varg[1]);
+    }
+    for (i = 0; i < max; i++) {
+        num = num + 3;
+    }
+    printf("El resultado de sumar 3 unas %d veces es: %d\n", max, num);
+    return 0;
+}
+        \end{verbatim}
+
+    \item Cree un archivo ensamblador optimizado con el comando \cw{gcc
+        calcular.c -S -O3} (\cw{-O} es la letra ``O'' mayuscula). Inspeccione
+        el contenido del archivo \cw{calcular.s}.
+
+    \item Cree un archivo ejecutable con el comando \cw{gcc calcular.s -o
+        calcular} (\cw{-o} es la letra ``o'' minuscula). Ejecute el comando
+        \cw{file calcular} ¿Qué información retorna el comando?
+
+    \item Mida el tiempo de ejecución para $100$, $100\,000$ y $1\,000\,000$
+        utilizando el comando \cw{time ./calcular \$NUM} (remplace \cw{\$NUM}
+        por cada uno delos valores).
+
+\end{enumerate}
+
+\subsection{Comparando resultados}
+
+\begin{enumerate}[resume]
+
+    \item ¿Cuál de los dos ejecutables fue más rápido?
+
+    \item Modifique ambos programas para que sumen el número 42 en lugar de 3.
+        Verifique que el cambio se realizo con exito sumando 100 veces.
+
+    \item ¿Cuál considera que fue más simple de modificar?
+
+    \item Indique en sus palabras cuales son las ventajas y desventajas de los
+        lenguajes compilados y los interpretados.
 
 \end{enumerate}
 
