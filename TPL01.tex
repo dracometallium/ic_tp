@@ -91,23 +91,23 @@ la facultad, diríjase al anexo de la página \pageref{sec:anexoConexion}.
 
 El sistema operativo controla diferentes procesos de una computadora. Uno de
 ellos es el intérprete de comandos o \emph{shell}. Este es un programa que
-permite al usuario interactuar con el Sistema Operativo. Permite iniciar
-(ejecutar) otros programas así como también tiene comandos propios que no
-necesitan de otros programas, como por ejemplo comandos para movernos en la
-estructura de directorios. En este práctico, utilizaremos el intérprete
-\bash\emph{(Bourne-Again SHell)}, muy popular en el mundo de Linux.
+permite las personas usuarias del Sistema Operativo interactuar con el.  Le
+permitirá iniciar (ejecutar) otros programas, así como también comandos
+propios que no necesitan de otros programas (como por ejemplo comandos para
+movernos en la estructura de directorios). En este práctico, utilizaremos el
+intérprete \bash\emph{(Bourne-Again SHell)}, muy popular en el mundo de Linux.
 
 Dicho programa debe ser ejecutado en lo que llamamos Terminal o Consola, que
 es otro programa que nos permite interactuar mediante el teclado (ingresar
 caracteres) y ver los resultados de la ejecución de otros programas en la
 pantalla. Al iniciar una consola o terminal de textos, automáticamente se
-inicia el \emph{shell} \bash, que es con el que el usuario realmente
+inicia el \emph{shell} \bash, que es con el que la usuaria realmente
 interactúa (más abajo se explica esto con un ejemplo).
 
 \begin{enumerate}
 
     \item Ingrese remotamente a los laboratorios siguiendo alguna de las
-        opciones plateadas en el tutorial del anexo de la página
+        opciones planteadas en el tutorial del anexo de la página
         \pageref{sec:anexoConexion}.
         
     \item Una vez realizada la conexión, el \emph{shell} \bash{} en la
@@ -116,11 +116,12 @@ interactúa (más abajo se explica esto con un ejemplo).
         \emph{enter} para verificar el nombre del equipo al que se conecto.
         ¿Cuál es el nombre del equipo?
 
-    \item Ejecute el comando \cw{who} para ver que usuarios están conectados
-        actualmente al sistema ¿Cuántos usuarios están conectados actualmente?
+    \item Ejecute el comando \cw{who} para ver que los nombres de \emph{login}
+        de las personas que están conectadas en este momento al sistema ¿Cuántos
+        hay conectadas actualmente?
 
     \item Ejecute \cw{last | tac} para ver la lista de últimas conexiones
-        ¿Reconoce a alguno de los usuarios?
+        ¿Reconoce a alguna de las personas?
 
     \item Ejecute el comando \cw{lscpu} para ver las características del
         \emph{CPU} del sistema al que se ha conectado ¿Cuántos núcleos tiene
@@ -142,7 +143,6 @@ interactúa (más abajo se explica esto con un ejemplo).
         \begin{itemize}
             \item \cw{bastet}: Tetris\textsuperscript{\textregistered} clone with
                 ``evil'' block-choosing AI.
-            \item \cw{boohu}: coffee-break roguelike game.
             \item \cw{empire}: the wargame of the century.
             \item \cw{greed}: eat a game field until you run out of moves.
             \item \cw{ninvaders}: ncurses version of space invaders.
@@ -156,15 +156,14 @@ interactúa (más abajo se explica esto con un ejemplo).
 \label{sec:sistemaDeArchivos}
 
 El concepto de directorios (comúnmente llamados ``carpetas'') y archivos es
-hoy en día familiar a los usuarios de computadoras. En general el usuario se
-maneja visualmente con el ratón y el Explorador de Archivos, utilizando estos
-para acceder a los directorios, abrir archivos, ejecutar programas, etc.
-Podemos pensar el sistema de archivos como una forma de organizar todo el
-contenido en el dispositivo de almacenamiento. Los archivos son datos
-concretos, utilizan espacio físico del dispositivo, mientras que los
-directorios sirven para organizar ``lógicamente'' las cosas, igual que una
-persona tiene estanterías y cajones en un escritorio para organizar sus
-papeles.
+nos hoy en día familiar. En general quienes utilizan el sistema se manejan
+visualmente con el ratón y el Explorador de Archivos, utilizando estos para
+acceder a los directorios, abrir archivos, ejecutar programas, etc.  Podemos
+pensar el sistema de archivos como una forma de organizar todo el contenido en
+el dispositivo de almacenamiento. Los archivos son datos concretos, utilizan
+espacio físico del dispositivo, mientras que los directorios sirven para
+organizar ``lógicamente'' las cosas, igual que una persona tiene estanterías y
+cajones en un escritorio para organizar sus papeles.
 
 La figura \ref{arbolDirectorios}  muestra un esquema de como se puede pensar en
 una estructura de directorios y archivos. \cw{ic}, \cw{parciales} y
@@ -175,7 +174,7 @@ una estructura de directorios y archivos. \cw{ic}, \cw{parciales} y
 
     \centering
 
-    \includegraphics[height=0.45\textheight]{img/directorios.pdf}
+    \includegraphics[height=0.25\textheight]{img/directorios.pdf}
 
     \caption{Árbol de directorios.}
 
@@ -188,17 +187,17 @@ determinada carpeta, es decir, los comandos que se escriben afectarán
 directamente al contenido de dicha carpeta.
 
 En general, al iniciar una consola de texto, junto con un intérprete de
-comandos, se posiciona al usuario en la carpeta personal o \textbf{``HOME''}
-(en Linux en general es \cw{``/home/usuarioX''}). Desde aquí el usuario
-puede navegar por sus archivos y ejecutar comandos. Para saber cual es el
-directorio en el que se encuentra, ejecute el comando \cw{pwd} (\emph{Print
-Working Directory}).
+comandos, se posiciona la persona usuaria en su carpeta personal o
+\textbf{``HOME''} (en Linux en general es \cw{``/home/usuarioX''}). Desde aquí
+la usuaria puede navegar por sus archivos y ejecutar comandos. Para saber cuál
+es el directorio en el que se encuentra, ejecute el comando \cw{pwd}
+(\emph{Print Working Directory}).
 
 Además, existen dos formas de hacer referencia a los directorios y a los
 archivos en el intérprete, absoluta y relativa. Cuando utilizamos la forma
 absoluta se escribe todo el camino desde la carpeta inicial (en \cw{Linux}
 se denota con el símbolo \cw{``/''}) hasta la ubicación deseada. Ejemplos de
-uso absoluto: \cw{/home/usuario/trabajo1}, \cw{/etc}, \cw{/tmp}, etc.
+uso absoluto: \cw{/home/usuarioX/trabajo1}, \cw{/etc}, \cw{/tmp}, etc.
 
 El modo relativo sirve para hacer referencia a un directorio que se encuentra
 ``cerca'' del directorio de trabajo actual en la jerarquía, como por ejemplo
@@ -357,7 +356,7 @@ nano a3.txt
         analizar la salida del comando \cw{ls -l}(\cw{-l} es ``L'' minuscula).
 
     \item Ejecute los comando \cw{cat}, \cw{more} y \cw{less} para visualizar
-        el contenido del archivo \cw{/etc/wgetrc} ¿Cual es la utilizad de
+        el contenido del archivo \cw{/etc/wgetrc} ¿Cuál es la utilizad de
         estos programas? ¿Qué diferencias tienen?
 
     Teclas útiles:
@@ -388,133 +387,17 @@ $ pwd          # pwd le indica cuál es su directorio de trabajo actual
 
 \end{enumerate}
 
-\section{Administración de procesos}
-
-\begin{enumerate}[resume]
-
-    \item Cree un archivo con nombre \cw{dance.sh} con el siguiente contenido.
-        Verifique que ha copiado correctamente cada linea.
-
-        \begin{verbatim}
-#!/bin/sh
-
-while true; do
-    printf "\t(>'-')>\r"
-    sleep 0.5
-    printf "\t<('-'<)\r"
-    sleep 0.5
-done
-        \end{verbatim}
-
-    \item Agregue permisos de ejecución utilizando el comando \cw{chmod +x
-        dance.sh}.
-
-    \item Ejecute el programa ingresando en la terminal \cw{./dance.sh}.
-
-    \item Abra otra ventana y utilizando el comando \cw{ps a} encuentre el
-        \cw{PID} del proceso del programa \cw{dance.sh}. Termine el programa
-        utilizando el comando \cw{kill \emph{PID\_DEL\_PROCESO}}.
-
-    \item Ejecute el comando \cw{file} sobre el archivo \cw{dance.sh} y
-        \cw{/bin/ls} ¿Cuál es la función del comando \cw{file}?
-
-    %\item ¿En qué tipo de lenguaje esta escrito el programa \cw{dance.sh}:
-        %compilado o interpretado? ¿Y el comando \cw{ls}?
-
-\end{enumerate}
-
-\section{Lenguajes compilados e interpretados}
-
-\subsection{Lenguajes interpretados}
-
-\begin{enumerate}[resume]
-
-    \item Cree un archivo con nombre \cw{calcular.sh} con el siguiente
-        contenido. Verifique que ha copiado correctamente cada linea.
-
-        \begin{verbatim}
-#!/bin/sh
-max=${1:-10}
-num=0
-for i in $(seq 1 "$max");do
-    num=$((num + 3))
-done
-echo "El resultado de sumar 3 unas $max veces es: $num"
-        \end{verbatim}
-
-    \item Agregue permisos de ejecución utilizando el comando \cw{chmod +x
-        calcular.sh}. Mida el tiempo de ejecución para $100$, $100\,000$ y
-        $1\,000\,000$ utilizando el comando \cw{time ./calcular.sh \$NUM}
-        (remplace \cw{\$NUM} por cada uno delos valores).
-
-\end{enumerate}
-
-\subsection{Lenguajes compilados}
-
-\begin{enumerate}[resume]
-
-    \item Cree un archivo con nombre \cw{calcular.c} con el siguiente
-        contenido. Verifique que ha copiado correctamente cada linea.
-
-        \begin{verbatim}
-#include<stdio.h>
-#include<stdlib.h>
-#include<stdint.h>
-
-int main(int carg, char **varg)
-{
-    uint64_t max = 10, i, num = 0;
-    if (carg > 1) {
-        max = atoi(varg[1]);
-    }
-    for (i = 0; i < max; i++) {
-        num = num + 3;
-    }
-    printf("El resultado de sumar 3 unas %d veces es: %d\n", max, num);
-    return 0;
-}
-        \end{verbatim}
-
-    \item Cree un archivo ensamblador optimizado con el comando \cw{gcc
-        calcular.c -S -O3} (\cw{-O} es la letra ``O'' mayuscula). Inspeccione
-        el contenido del archivo \cw{calcular.s}.
-
-    \item Cree un archivo ejecutable con el comando \cw{gcc calcular.s -o
-        calcular} (\cw{-o} es la letra ``o'' minuscula). Ejecute el comando
-        \cw{file calcular} ¿Qué información retorna el comando?
-
-    \item Mida el tiempo de ejecución para $100$, $100\,000$ y $1\,000\,000$
-        utilizando el comando \cw{time ./calcular \$NUM} (remplace \cw{\$NUM}
-        por cada uno delos valores).
-
-\end{enumerate}
-
-\subsection{Comparando resultados}
-
-\begin{enumerate}[resume]
-
-    \item ¿Cuál de los dos ejecutables fue más rápido?
-
-    \item Modifique ambos programas para que sumen el número 42 en lugar de 3.
-        Verifique que el cambio se realizo con exito sumando 100 veces.
-
-    \item ¿Cuál considera que fue más simple de modificar?
-
-    \item Indique en sus palabras cuales son las ventajas y desventajas de los
-        lenguajes compilados y los interpretados.
-
-\end{enumerate}
-
 \clearpage
 \section*{Anexo: Conexión remota}
 \label{sec:anexoConexion}
 
 Para conectarnos remotamente tenemos varias opciones, pero para todas es
-crucial primero conocer el usuario de los laboratorios y su contraseña. Si
-tiene e-mail institucional, el usuario es el mismo que el de su correo (si tu
-correo es \emph{peperina@est.fi.uncoma.edu.ar}, su usuario es
+crucial primero conocer nombre de \emph{login} de los laboratorios y su
+contraseña. Si tiene e-mail institucional, el nombre de \emph{login} es el
+mismo que el de su correo (si tu correo es
+\emph{peperina@est.fi.uncoma.edu.ar}, su nombre de \emph{login} es
 \emph{peperina}), y la contraseña inicial es tu número de DNI. Si no tiene
-cuenta de usuario, o quiere cambiar la contraseña, puede dirigirse a este
+cuenta en el sistema, o quiere cambiar la contraseña, puede dirigirse a este
 sitio: \url{https://formulario.fi.uncoma.edu.ar/}.
 
 \subsection*{Shell WEB}
@@ -523,14 +406,14 @@ sitio: \url{https://formulario.fi.uncoma.edu.ar/}.
     \item Abra en el navegador el sitio
         \url{https://aula-ssh.fi.uncoma.edu.ar/}.
 
-    \item Ingrese su usuario y presione la tecla \emph{enter}.
+    \item Ingrese su nombre de \emph{login} y presione la tecla \emph{enter}.
 
     \item Ingrese su contraseña. Por cuestiones de seguridad, no se mostrará
         ningún eco de las teclas presionadas (al presionar teclas no se
         mostrarán en pantalla). Al terminar, presione la tecla 
         \emph{enter}.
 
-    \item Si el usuario y contraseña son correctos, se iniciará el
+    \item Si el nombre de \emph{login} y contraseña son correctos, se iniciará el
         \emph{shell} y esperará a que ingrese un comando.
 
 \end{enumerate}
@@ -573,9 +456,9 @@ sitio: \url{https://formulario.fi.uncoma.edu.ar/}.
 \end{figure}
 
 
-    \item En el campo \emph{Host Name} ingrese su nombre de usuario seguido de
-        \\cw{@aula-ssh.fi.uncoma.edu.ar}. Por ejemplo si su nombre de
-        usuario es \emph{peperina}, debe ingresar
+    \item En el campo \emph{Host Name} ingrese su nombre de \emph{login}
+        seguido de \cw{@aula-ssh.fi.uncoma.edu.ar}. Por ejemplo si su nombre
+        de \emph{login} es \emph{peperina}, debe ingresar
         \cw{peperina@aula-ssh.fi.uncoma.edu.ar}.
 
     \item En el campo \emph{Port} ingrese el número \texttt{60173}.
@@ -592,25 +475,27 @@ sitio: \url{https://formulario.fi.uncoma.edu.ar/}.
         mostrarán en pantalla). Al terminar, presione la tecla 
         \emph{enter}.
 
-    \item Si el usuario y contraseña son correctos, se iniciará el
-        \emph{shell} y esperará a que ingrese un comando.
+    \item Si el nombre de \emph{login} y contraseña son correctos, se iniciará
+        el \emph{shell} y esperará a que ingrese un comando.
 
 \end{enumerate}
 
 \subsection*{\emph{SSH}}
 
 \begin{enumerate}
+
     \item Abra una consola e ingrese el comando \cw{ssh -p 60173
         \emph{\$USER}@aula-ssh.fi.uncoma.edu.ar}, remplazando \emph{\$USER}
-        por su usuario de los laboratorios. Presione la tecla \emph{enter}.
+        por su nombre de \emph{login} de los laboratorios.  Presione la tecla
+        \emph{enter}.
 
     \item Ingrese su contraseña. Por cuestiones de seguridad, no se mostrará
         ningún eco de las teclas presionadas (al presionar teclas no se
         mostrarán en pantalla). Al terminar, presione la tecla 
         \emph{enter}.
 
-    \item Si el usuario y contraseña son correctos, se iniciará el
-        \emph{shell} y esperará a que ingrese un comando.
+    \item Si el nombre de \emph{login} y contraseña son correctos, se iniciará
+        el \emph{shell} y esperará a que ingrese un comando.
 
 \end{enumerate}
 
