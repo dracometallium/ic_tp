@@ -20,7 +20,7 @@
 \makeatletter{
     \color{blue} \centering \huge \sc
     \textbf{
-        Trabajo práctico de Laboratorio 01\\
+        Trabajo práctico de Laboratorio\\
         \large \vspace*{-8pt} \color{black}
         Introducción al shell del sistema GNU/LINUX
         \vspace*{8pt}
@@ -39,7 +39,7 @@
 \fancyhf{} % clear all header and footer fields
 \fancypagestyle{plain}{\fancyhf{}}
 \pagestyle{fancy}
-\lhead{\footnotesize Trabajo práctico de Laboratorio 01 - Introducción al shell del sistema GNU/LINUX}
+\lhead{\footnotesize Trabajo práctico de Laboratorio - Introducción al shell del sistema GNU/LINUX}
 \rhead{\footnotesize \thepage\ }
 
 \def\ti#1#2{\texttt{#1} & #2 \\ }
@@ -113,7 +113,7 @@ interactúa (más abajo se explica esto con un ejemplo).
     \item Una vez realizada la conexión, el \emph{shell} \bash{} en la
         terminal espera que se escriban órdenes para ejecutar (comandos). En
         la terminal escriba el comando \cw{hostname} y presione la tecla
-        \emph{enter} para verificar el nombre del equipo al que se conecto.
+        \emph{enter} para verificar el nombre del equipo al que se conecto
         ¿Cuál es el nombre del equipo?
 
     \item Ejecute el comando \cw{who} para ver que los nombres de \emph{login}
@@ -155,8 +155,8 @@ interactúa (más abajo se explica esto con un ejemplo).
 
 \label{sec:sistemaDeArchivos}
 
-El concepto de directorios (comúnmente llamados ``carpetas'') y archivos es
-nos hoy en día familiar. En general quienes utilizan el sistema se manejan
+El concepto de directorios (comúnmente llamados ``carpetas'') y archivos nos
+es hoy en día familiar. En general quienes utilizan el sistema se manejan
 visualmente con el ratón y el Explorador de Archivos, utilizando estos para
 acceder a los directorios, abrir archivos, ejecutar programas, etc.  Podemos
 pensar el sistema de archivos como una forma de organizar todo el contenido en
@@ -194,10 +194,11 @@ es el directorio en el que se encuentra, ejecute el comando \cw{pwd}
 (\emph{Print Working Directory}).
 
 Además, existen dos formas de hacer referencia a los directorios y a los
-archivos en el intérprete, absoluta y relativa. Cuando utilizamos la forma
-absoluta se escribe todo el camino desde la carpeta inicial (en \cw{Linux}
-se denota con el símbolo \cw{``/''}) hasta la ubicación deseada. Ejemplos de
-uso absoluto: \cw{/home/usuarioX/trabajo1}, \cw{/etc}, \cw{/tmp}, etc.
+archivos en el intérprete, con rutas absolutas y relativas. Cuando utilizamos
+la forma absoluta se escribe todo el camino desde la carpeta inicial (en
+\cw{Linux} se denota con el símbolo \cw{``/''}) hasta la ubicación deseada.
+Ejemplos de uso absoluto: \cw{/home/usuarioX/trabajo1}, \cw{/etc}, \cw{/tmp},
+etc.
 
 El modo relativo sirve para hacer referencia a un directorio que se encuentra
 ``cerca'' del directorio de trabajo actual en la jerarquía, como por ejemplo
@@ -243,7 +244,8 @@ Por ejemplo, las siguientes son direcciones relativas:
         del archivo en pantalla.
 
     \item Para mayor dramatismo, ejecute lo siguiente: \cw{cat archivo.txt |
-        cowsay -n | lolcat} ¿Qué hace cada uno de los comandos de la
+        cowsay -n | lolcat} (todos los comandos en la misma linea, separados
+        por el carácter ``\cw{|}'') ¿Qué hace cada uno de los comandos de la
         secuencia?
 
     \item Ejecute la siguiente secuencia de comandos. Lo que se encuentra
@@ -302,6 +304,7 @@ cd h2
 nano otroArchivo
 cd ../../
 nano a3.txt
+cd ..
         \end{verbatim}
 
         Puede verificar que su esquema es correcto ejecutando el comando
@@ -410,7 +413,8 @@ done
 
     \item Ejecute el programa ingresando en la terminal \cw{./dance.sh}.
 
-    \item Abra otra ventana y utilizando el comando \cw{ps a} encuentre el
+    \item Abra otra ventana (sin cerrar aquella donde se esta ejecutando el
+        programa \cw{dance.sh}) y utilizando el comando \cw{ps a} encuentre el
         \cw{PID} del proceso del programa \cw{dance.sh}. Termine el programa
         utilizando el comando \cw{kill \emph{PID\_DEL\_PROCESO}}.
 
