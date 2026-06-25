@@ -57,9 +57,6 @@
 
     \itemsep2pt \parskip0pt \parsep0pt
 
-    \item Apunte del shell de Linux:
-        \url{http://pedco.uncoma.edu.ar/mod/resource/view.php?id=207175}
-
     \item Apunte introductorio a \bash:
         \url{http://pedco.uncoma.edu.ar/mod/resource/view.php?id=244968}
 
@@ -394,8 +391,7 @@ $ pwd          # pwd le indica cuál es su directorio de trabajo actual
 
 \begin{enumerate}[resume]
 
-    \item Cree un archivo con nombre \cw{dance.sh} con el siguiente contenido.
-        Verifique que ha copiado correctamente cada linea.
+    \item Cree un archivo con nombre \cw{dance.sh} y el siguiente contenido.
 
         \begin{verbatim}
 #!/bin/sh
@@ -407,6 +403,9 @@ while true; do
     sleep 0.5
 done
         \end{verbatim}
+
+    \item Verifique que el contenido del archivo es correcto revisando la
+        salida del comando \cw{cat danse.sh}.
 
     \item Agregue permisos de ejecución utilizando el comando \cw{chmod +x
         dance.sh}.
@@ -420,9 +419,6 @@ done
 
     \item Ejecute el comando \cw{file} sobre el archivo \cw{dance.sh} y
         \cw{/bin/ls} ¿Cuál es la función del comando \cw{file}?
-
-    %\item ¿En qué tipo de lenguaje esta escrito el programa \cw{dance.sh}:
-        %compilado o interpretado? ¿Y el comando \cw{ls}?
 
 \end{enumerate}
 
@@ -444,6 +440,9 @@ for i in $(seq 1 "$max");do
 done
 echo "El resultado de sumar 3 unas $max veces es: $num"
         \end{verbatim}
+
+    \item Verifique que el contenido del archivo se almaceno correctamente
+        ejecutando el comando \cw{cat calcular.sh}.
 
     \item Agregue permisos de ejecución utilizando el comando \cw{chmod +x
         calcular.sh}. Mida el tiempo de ejecución para $100$, $100\,000$ y
@@ -478,17 +477,27 @@ int main(int carg, char **varg)
 }
         \end{verbatim}
 
-    \item Cree un archivo ensamblador optimizado con el comando \cw{gcc
-        calcular.c -S -O3} (\cw{-O} es la letra ``O'' mayuscula). Inspeccione
-        el contenido del archivo \cw{calcular.s}.
+    \item Verifique que el contenido del archivo se almaceno correctamente
+        ejecutando el comando \cw{cat calcular.c}.
 
-    \item Cree un archivo ejecutable con el comando \cw{gcc calcular.s -o
+    \item Cree un archivo objeto optimizado con el comando \cw{gcc -c -O3
+        calcular.c } (\cw{-O} es la letra ``O'' mayúscula) ¿Qué son los
+        archivos objeto?
+
+    \item Cree un archivo ejecutable con el comando \cw{gcc calcular.o -o
         calcular} (\cw{-o} es la letra ``o'' minuscula). Ejecute el comando
         \cw{file calcular} ¿Qué información retorna el comando?
 
     \item Mida el tiempo de ejecución para $100$, $100\,000$ y $1\,000\,000$
         utilizando el comando \cw{time ./calcular \$NUM} (remplace \cw{\$NUM}
         por cada uno delos valores).
+
+    \item \cw{GCC} tiene una función que permite convertir el programa en
+        lenguaje \emph{C} a ensamblador, para permitirle al programador saber
+        exactamente a que instrucciones se traducirá el programa.  Cree un
+        archivo ensamblador optimizado con el comando \cw{gcc -S -O3
+        calcular.c } (\cw{-O} es la letra ``O'' mayúscula). Puede inspecionar
+        el contenido del archivo \cw{calcular.s} (con \cw{less} o similaar).
 
 \end{enumerate}
 
@@ -499,7 +508,7 @@ int main(int carg, char **varg)
     \item ¿Cuál de los dos ejecutables fue más rápido?
 
     \item Modifique ambos programas para que sumen el número 42 en lugar de 3.
-        Verifique que el cambio se realizo con exito sumando 100 veces.
+        Verifique que el cambio se realizo con éxito sumando 100 veces.
 
     \item ¿Cuál considera que fue más simple de modificar?
 
@@ -507,6 +516,47 @@ int main(int carg, char **varg)
         lenguajes compilados y los interpretados.
 
 \end{enumerate}
+
+\section{Redes de computadoras}
+
+\subsection{Direcciones \emph{IP} y enrutamiento}
+
+\begin{enumerate}[resume]
+
+    \item Utilice el comando \cw{dig} para obtener la dirección \emph{IP} del
+        servidor cuyo nombre de dominio es ``\url{uncoma.edu.ar}''.
+
+    \item Verifique que sus mensajes pueden llegar hasta el servidor, usando
+        el comando\\
+        \cw{ping -n uncoma.edu.ar} ¿Qué otra información provee el comando?
+
+    \item ¿Existe alguna diferencia entre ejecutar el comando \cw{ping}
+        utilizando la dirección \emph{IP} en lugar del nombre de dominio del
+        servidor? ¿Cuál es la utilidad de los nombres de dominio?
+
+    \item El comando \cw{traceroute} permite obtener información sobre los
+        routers por los que pasaran los paquetes en su camino hasta el
+        servidor destino ¿Cuántos nodos hay entre su computadora y el servidor
+        de ``\url{uncoma.edu.ar}''?
+
+\end{enumerate}
+
+\iffalse
+\subsection{Protocolos}
+
+\begin{enumerate}[resume]
+
+    \item El comando \cw{netcat} nos permitirá recibir y enviar bytes a
+        través de la red. Abra dos consolas, en una  ejecute el comando
+        \cw{netcat -l -p 8080}, y en la otra \cw{netcat localhost 8080}. Si
+        escribe algo en una de las consolas, al presionar la tecla \cw{enter},
+        se enviara a la otra. Si tiene otra computadora conectada en la misma
+        red, puede remplazar ``\cw{localhost}'' por la \emph{IP} de la
+        computadora donde ejecuto el primer comando. Para salir, presione
+        \cw{CTRL-C}.
+
+\end{enumerate}
+\fi
 
 \clearpage
 \section*{Anexo: Conexión remota}
