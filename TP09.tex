@@ -1,25 +1,8 @@
-%%% LaTeX Template: Article/Thesis/etc. with colored headings and special fonts
-%%%
-%%% Source: http://www.howtotex.com/
 % vim: set spell spelllang=es syntax=tex :
 
 \documentclass[12pt]{article}
 \usepackage{styles/apuntes-estilo}
 \usepackage{fancyhdr,lastpage}
-\usepackage{hyperref}
-\usepackage[inline]{enumitem}
-\usepackage{xurl}
-\usepackage{nameref}
-\usepackage{tabularx}
-
-\usepackage{appendix}
-\renewcommand{\appendixname}{Anexo}
-\renewcommand{\appendixtocname}{Anexo}
-\renewcommand{\appendixpagename}{Anexo}
-
-\newcommand{\multiline}[2][c]{
-      \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}
-      }
 
 \def\maketitle{
 
@@ -31,9 +14,8 @@
         El software
         \vspace*{8pt}
     }\\
-    \small Fecha de finalización: 3 de Junio\\
-    \color{red}
-    \par
+    %\small Fecha de finalización: 3 de Junio\\
+    %\par
 }
 
 \makeatother
@@ -44,13 +26,7 @@
 }
 
 % Custom headers and footers
-\fancyhf{} % clear all header and footer fields
-\fancypagestyle{plain}{\fancyhf{}}
-\pagestyle{fancy}
 \lhead{\footnotesize TP N° 9 - El Software}
-\rhead{\footnotesize \thepage\ }
-
-\def\ti#1#2{\texttt{#1} & #2 \\ }
 
 \begin{document}
 

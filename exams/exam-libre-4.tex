@@ -1,16 +1,8 @@
-%%% LaTeX Template: Article/Thesis/etc. with colored headings and special fonts
-%%%
-%%% Source: http://www.howtotex.com/
 % vim: set spell spelllang=es syntax=tex :
 
 \documentclass[12pt]{article}
-\usepackage[T1]{fontenc}
 \usepackage{styles/apuntes-estilo}
 \usepackage{styles/egyptian}
-\usepackage{fancyhdr,lastpage}
-\usepackage{hyperref}
-\usepackage[inline]{enumitem}
-\usepackage{pmboxdraw} % Para poder usar la salida del comando tree
 
 \def\maketitle{
 
@@ -32,19 +24,12 @@
 }
 
 % Custom headers and footers
-\fancyhf{} % clear all header and footer fields
-\fancypagestyle{plain}{\fancyhf{}}
-\pagestyle{fancy}
 \lhead{\footnotesize Examen final libre}
-\rhead{\footnotesize \thepage\ }
-
-\def\ti#1#2{\texttt{#1} & #2 \\ }
 
 \begin{document}
 
 \thispagestyle{empty}
 \maketitle
-\setlength{\parindent}{1pt}
 
 \begin{enumerate}
 
@@ -78,8 +63,7 @@
         \end{enumerate}
 
     \item ¿Cuál es la representación hexadecimal del número $-18.6$ cuando es
-        almacenado utilizando el sistema de \emph{Punto Flotante IEEE-754 de
-        precisión simple (32 bits)}?
+        almacenado utilizando el sistema de \emph{minifloat}?
 
     \item ¿Cuál es la representación hexadecimal de la codificación
         en \emph{ASCII} la cadena ``\emph{Final IC/22}''?

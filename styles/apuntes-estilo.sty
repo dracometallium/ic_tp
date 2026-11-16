@@ -4,33 +4,49 @@
 
 \usepackage[a4paper,left=1.5cm,right=1.5cm,top=2.0cm,bottom=2.0cm]{geometry}
 
+\usepackage[T1]{fontenc} % Mejor codificación de la fuente
+\usepackage[compact]{titlesec} 
+\usepackage[inline]{enumitem}
+\usepackage[normalem]{ulem} % Tachados (\xout)
 \usepackage[spanish,es-tabla]{babel}
 \usepackage{amsmath}
+\usepackage{appendix}
+\usepackage{booktabs}
+\usepackage{fancyhdr,lastpage}
 \usepackage{graphicx}
-\usepackage{xcolor}
+\usepackage{hyperref}
+%\usepackage{inconsolata-nerd-font} % Mejor fuente monoespaciada
+\usepackage{inconsolata} % Mejor fuente monoespaciada
+\usepackage{pmboxdraw}
 \usepackage{listings}
-\usepackage{fix-cm}
-\definecolor{bl}{rgb}{0.0,0.2,0.6} 
-
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{enumerate}
-
-\usepackage{epsfig}
-\usepackage{url}
-
-
+\usepackage{nameref}
 \usepackage{sectsty}
-\usepackage[compact]{titlesec} 
+\usepackage{setspace} % para el espacio de las filas de la tabla
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{xurl}
+
+\fancyhf{} % clear all header and footer fields
+\fancypagestyle{plain}{\fancyhf{}}
+\pagestyle{fancy}
+\rhead{\footnotesize \thepage\ }
+
+\definecolor{bl}{rgb}{0.0,0.2,0.6}
 \allsectionsfont{\color{bl}\scshape\selectfont}
 
+\renewcommand{\appendixname}{Anexo}
+\renewcommand{\appendixtocname}{Anexo}
+\renewcommand{\appendixpagename}{Anexo}
 
+\newcommand{\cw}[1]{\begin{raggedright}%
+    \textbf{\texttt{\textcolor{blue}{#1}}}%
+\end{raggedright}}
 
-\definecolor{grey}{rgb}{0.9,0.9,0.9} 
-\def\cm#1#2{{\tt#1}\hfill#2\par}
+\newcommand{\multiline}[2][c]{
+    \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}
+}
 
 % para que haya un espacio entre parrafos
 \parskip 2ex
-% para que se pueda escribir en typewritter y bold
-\DeclareFontShape{OT1}{cmtt}{bx}{n}{<5><6><7><8><9><10><10.95><12><14.4><17.28><20.74><24.88>cmttb10}{}
 
+\setlength{\parindent}{1pt}

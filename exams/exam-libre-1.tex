@@ -1,16 +1,8 @@
-%%% LaTeX Template: Article/Thesis/etc. with colored headings and special fonts
-%%%
-%%% Source: http://www.howtotex.com/
 % vim: set spell spelllang=es syntax=tex :
 
 \documentclass[12pt]{article}
-\usepackage[T1]{fontenc}
 \usepackage{styles/apuntes-estilo}
 \usepackage{styles/egyptian}
-\usepackage{fancyhdr,lastpage}
-\usepackage{hyperref}
-\usepackage[inline]{enumitem}
-\usepackage{pmboxdraw} % Para poder usar la salida del comando tree
 
 \def\maketitle{
 
@@ -32,19 +24,12 @@
 }
 
 % Custom headers and footers
-\fancyhf{} % clear all header and footer fields
-\fancypagestyle{plain}{\fancyhf{}}
-\pagestyle{fancy}
 \lhead{\footnotesize Examen final libre}
-\rhead{\footnotesize \thepage\ }
-
-\def\ti#1#2{\texttt{#1} & #2 \\ }
 
 \begin{document}
 
 \thispagestyle{empty}
 \maketitle
-\setlength{\parindent}{1pt}
 
 \begin{enumerate}
 
@@ -77,10 +62,9 @@
 
         \end{enumerate}
 
-    \item Sea \textbf{0x418C0000} un número en base 16 (hexadecimal) que
-        representa a un número real expresado en el sistema de \emph{Punto
-        Flotante IEEE-754 de precisión simple (32 bits)}. Indique cuál es el
-        valor en base 10 de dicho número real.
+    \item Sea \textbf{0x41} un número en base 16 (hexadecimal) que representa
+        a un número real expresado en el sistema de \emph{minifloat}. Indique
+        cuál es el valor en base 10 de dicho número real.
 
     \item ¿Que mensaje esta codificado en la siguiente secuencia de bytes
         expresados en hexadecimal: \textbf{46 69 6E 61 6C 20 64 65  20 49 43 2E}?
@@ -202,6 +186,7 @@ Dec Hex    Dec Hex    Dec Hex  Dec Hex  Dec Hex  Dec Hex   Dec Hex   Dec Hex
 
 \begin{figure}
     \centering
+        \lineskip            0pt
 
 \begin{verbatim}
 /

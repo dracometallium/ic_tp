@@ -1,17 +1,8 @@
-%%% LaTeX Template: Article/Thesis/etc. with colored headings and special fonts
-%%%
-%%% Source: http://www.howtotex.com/
 % vim: set spell spelllang=es syntax=tex :
 
 \documentclass[12pt]{article}
 \usepackage{styles/apuntes-estilo}
 \usepackage{styles/egyptian}
-\usepackage{fancyhdr,lastpage}
-\usepackage{hyperref}
-\usepackage[inline]{enumitem}
-\usepackage{xurl}
-\usepackage{setspace} % para el espacio de las filas de la tabla
-\usepackage{booktabs}
 
 \def\maketitle{
 
@@ -35,19 +26,12 @@
 }
 
 % Custom headers and footers
-\fancyhf{} % clear all header and footer fields
-\fancypagestyle{plain}{\fancyhf{}}
-\pagestyle{fancy}
 \lhead{\footnotesize TP N° 2 - Unidades de información}
-\rhead{\footnotesize \thepage\ }
-
-\def\ti#1#2{\texttt{#1} & #2 \\ }
 
 \begin{document}
 
 \thispagestyle{empty}
 \maketitle
-\setlength{\parindent}{1pt}
 
 \textbf{Objetivo:} Comprender las diferencias y similitudes entre los sistemas
 de medida internacional y de prefijo binario.
