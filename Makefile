@@ -12,10 +12,13 @@ GARBAGE=*.aux *.bbl *.blg *.log *.toc *.lof *.nav *.out *.snm
 
 all: $(TP_PDF)
 
+pdf_engine=pdflatex
+
 $(TP_PDF): %.pdf : %.tex $(STYLES) $(LOGOS_PDF) $(FIGURAS_PDF) $(TEX_INC)
-	pdflatex -interaction=nonstopmode -halt-on-error \
+	$(info Building $(@))
+	$(pdf_engine) -interaction=nonstopmode -halt-on-error \
 		-output-directory "$$(dirname $<)" $<
-	pdflatex -interaction=nonstopmode -halt-on-error \
+	$(pdf_engine) -interaction=nonstopmode -halt-on-error \
 		-output-directory "$$(dirname $<)" $<
 
 $(FIGURAS_PDF): %.pdf : %.svg
